@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+  @font-face {
+    font-family: 'BaseAbel';
+    src: url('assets/fonts/Abel-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'BaseJoseBold3x';
+    src: url('assets/fonts/JosefinSans-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'BaseJoseThinner';
+    src: url('assets/fonts/JosefinSans-ExtraLight.ttf');
+  }
+  @font-face {
+    font-family: 'BaseJoseThin';
+    src: url('assets/fonts/JosefinSans-Light.ttf');
+  }
+  @font-face {
+    font-family: 'BaseJoseBold';
+    src: url('assets/fonts/JosefinSans-Medium.ttf');
+  }
+  @font-face {
+    font-family: 'BaseJoseBold2x';
+    src: url('assets/fonts/JosefinSans-SemiBold.ttf');
+  }
+  @font-face {
+    font-family: 'BaseJose';
+    src: url('assets/fonts/JosefinSans-Regular.ttf');
+  }
+
+  h1 {
+    font-family: "BaseAbel";
+    font-weight: bolder;
+    font-size:xx-large;
+  }
+  h2 {
+    font-family: "BaseAbel";
+    font-weight: bolder;
+    font-size: x-large;
+  }
+  h3 {
+    font-family: "BaseAbel";
+    font-weight: bolder;
+    font-size: larger;
+  }
+  h4 {
+    font-family: "BaseAbel";
+    font-weight: bolder;
+    font-size:large;
+  }
+  h5 {
+    font-family: "BaseAbel";
+    font-weight: bolder;
+    font-size:medium;
+  }
+  h6 {
+    font-family: "BaseAbel";
+    font-weight: bolder;
+    font-size:small;
+  }
+
+  p {
+    font-family: "BaseJose";
+    font-size:medium;
+  }
+}
