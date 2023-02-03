@@ -1,10 +1,15 @@
 <nav class="w-full flex justify-between bg-baseDeep">
-  <a href="Notes" class=" px-2 py-4 font-extrabold text-baseSky hover:bg-slate-400">
+  <a href="Notes" class=" px-2 py-4 font-extrabold
+   text-baseSky hover:bg-slate-400">
     Frinno.IO
   </a>
   <div class="flex justify-end">
-    <div class=" px-2 py-4 font-medium text-baseSky hover:bg-slate-400" *ngFor="let nav of navs">
+    <div class=" cursor-default px-2 py-4
+    font-medium
+     text-baseSky hover:bg-slate-400"
+     *ngFor="let nav of navs">
       <a (click)="onNavigate(nav)">{{nav.Title}}</a>
+      <p *ngIf="nav.IsActive" class="w-auto py-0.5 bg-baseOrange"></p>
     </div>
   </div>
 </nav>

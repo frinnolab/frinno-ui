@@ -37,17 +37,27 @@ export class NavComponent implements OnInit {
     {
       //Notes
       case this.navs[0].Url:
-        route.IsActive = true;
+        route.IsActive = false;
+        this.navs[0].IsActive = true;
+        this.navs[1].IsActive = false;
+        this.navs[2].IsActive = false;
         this.router.navigateByUrl(`${route.Url}`);
         break
-      case this.navs[1].Url:
-        //Projects
-        route.IsActive = true;
-        this.router.navigateByUrl(`${route.Url}`);
-        break
-      case this.navs[2].Url:
-        //About
-        route.IsActive = true;
+        case this.navs[1].Url:
+          route.IsActive = false;
+          //Projects
+          this.navs[1].IsActive = true;
+          this.navs[0].IsActive = false;
+          this.navs[2].IsActive = false;
+          this.router.navigateByUrl(`${route.Url}`);
+
+          break
+          case this.navs[2].Url:
+            route.IsActive = false;
+            this.navs[0].IsActive = false;
+            this.navs[1].IsActive = false;
+          //About
+        this.navs[2].IsActive = true;
         this.router.navigateByUrl(`${route.Url}`);
         break
     }
