@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from 'src/app/pages/Home/home.component';
 
 const routes: Routes = [
   {
@@ -8,10 +8,17 @@ const routes: Routes = [
     redirectTo:'',
     pathMatch:'full'
   },
+  {
+    path:'',
+    component:HomeComponent
+  },
+  {
+    path:'articles',
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class LayoutRoutingModule { }
