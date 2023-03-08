@@ -4,19 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { LayoutComponent } from './layout/layout.component';
 import { PagesModule } from './pages/pages.module';
-import { LayoutModule } from './shared/components/layout/layout.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    PagesModule,
-    LayoutModule
+    SharedModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

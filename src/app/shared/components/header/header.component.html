@@ -1,1 +1,11 @@
-<p>header works!</p>
+<div class="w-full flex flex-col bg-coreSky">
+  <!-- Header Actions -->
+  <app-header-action class="border-b border-coreDeepSky"></app-header-action>
+  <!-- Logo -->
+  <div class="flex justify-between items-center px-4">
+    <img class="w-20 h-20" src="assets/svgs/fao-light.svg" alt="" srcset="">
+    <!-- Nav -->
+    <app-navigation></app-navigation>
+    <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'solid/unlock-keyhole.svg'"></app-facon-sm-regular>
+  </div>
+</div>

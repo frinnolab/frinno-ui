@@ -1,0 +1,23 @@
+<div *ngFor="let data of dataList">
+  <!-- Article Card -->
+  <div class="flex flex-col gap-4 border-b">
+    <img class="h-80" src="{{data?.thumbnail}}" alt="" srcset="">
+
+    <h2 class="underline">{{data?.title}}</h2>
+
+    <article>{{data?.longText}}</article>
+
+    <div class="flex gap-2">
+      <p>Tags:</p>
+      <div *ngFor="let tag of data?.tags">
+        <p class="cursor-pointer rounded-md p-1 bg-coreBase hover:bg-coreDeepSky">{{tag}}</p>
+      </div>
+    </div>
+
+
+    <div class="my-2">
+      <button class="px-4 py-2 bg-coreBase rounded-md hover:bg-coreDeepSky">Read more</button>
+    </div>
+
+  </div>
+</div>

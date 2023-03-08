@@ -1,0 +1,9 @@
+<div class="w-full flex flex-col" *ngFor="let data of dataList">
+  <div class="border-b my-4 hover:bg-coreBase hover:z-10">
+    <img src="{{data?.img}}" alt="" srcset="">
+    <h2 class="underline">{{data?.title}}</h2>
+    <article>{{data?.article}}</article>
+    <a class="underline hover:bg-coreDeepSky" href="#">{{data?.source}}</a>
+    <p>Date: {{data?.dateCreated}}</p>
+  </div>
+</div>

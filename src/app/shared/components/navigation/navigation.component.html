@@ -1,1 +1,5 @@
-<p>navigation works!</p>
+<nav class="w-full flex items-center gap-4 ">
+  <div class="" *ngFor="let nav of navs">
+    <a [href]="nav.url">{{nav.title}}</a>
+  </div>
+</nav>
