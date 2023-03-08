@@ -7,15 +7,15 @@
 
     <article>{{data?.longText}}</article>
 
-    <div class="flex gap-2">
+    <div class="flex items-center gap-2">
       <p>Tags:</p>
       <div *ngFor="let tag of data?.tags">
-        <p class="cursor-pointer rounded-md p-1 bg-coreBase hover:bg-coreDeepSky">{{tag}}</p>
+        <p class="cursor-pointer rounded-md p-2 bg-coreBase hover:bg-coreDeepSky">{{tag}}</p>
       </div>
     </div>
 
 
-    <div class="my-2">
+    <div class="mb-10">
       <button class="px-4 py-2 bg-coreBase rounded-md hover:bg-coreDeepSky">Read more</button>
     </div>
 
