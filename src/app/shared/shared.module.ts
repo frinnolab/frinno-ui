@@ -30,7 +30,7 @@ import { FaconSmRegularComponent } from './widgets/facons/facon-sm-regular/facon
     FaconSmRegularComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class SharedModule { }

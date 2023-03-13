@@ -1,7 +1,11 @@
 <div class="w-full flex flex-col">
-  <app-header class="z-50"></app-header>
+  <div ngSwitch="link">
+    <app-header hidden *ngSwitchCase="link === '/login'" class="z-50 "></app-header>
+    <app-header hidden *ngSwitchCase="link === '/register'" class="z-50 "></app-header>
+    <app-header *ngSwitchDefault class="z-50 "></app-header>
+  </div>
   <div class="w-full main-container">
     <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
+  <app-footer ></app-footer>
 </div>

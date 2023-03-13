@@ -5,6 +5,8 @@ import { HomeFeaturedComponent } from './home/components/featured/home-featured.
 import { HomeAsideComponent } from './home/components/aside/home-aside.component';
 import { HomeHeroComponent } from './home/components/hero/home-hero.component';
 import { SharedModule } from '../shared/shared.module';
+import { LoginComponent } from './auth/components/login/login.component';
+import { RegisterComponent } from './auth/components/register/register.component';
 
 
 
@@ -13,7 +15,9 @@ import { SharedModule } from '../shared/shared.module';
     HomeComponent,
     HomeFeaturedComponent,
     HomeAsideComponent,
-    HomeHeroComponent
+    HomeHeroComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   exports:[
     HomeComponent,
@@ -23,7 +27,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class PagesModule { }
