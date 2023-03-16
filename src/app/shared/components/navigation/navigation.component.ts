@@ -21,6 +21,11 @@ export class NavigationComponent implements OnInit {
       isActive:false
     },
     {
+      title:'Projects',
+      url:'/projects',
+      isActive:false
+    },
+    {
       title:'About',
       url:'/about',
       isActive:false
