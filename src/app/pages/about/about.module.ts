@@ -7,6 +7,7 @@ import { AboutProfileComponent } from './components/about-profile/about-profile.
 import { AboutProjectsComponent } from './components/about-projects/about-projects.component';
 import { AboutContactComponent } from './components/about-contact/about-contact.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { LayoutModule } from 'src/app/layout/layout.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     AboutRoutingModule,
-    SharedModule
+    SharedModule,
+    LayoutModule
   ]
 })
 export class AboutModule { }

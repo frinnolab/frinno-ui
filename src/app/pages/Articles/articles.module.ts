@@ -5,6 +5,8 @@ import { ArticlesRoutingModule } from './articles-routing.module';
 import { ArticlesComponent } from './articles.component';
 import { ArticleListComponent } from './components/list/article-list.component';
 import { ArticleDetailComponent } from './components/detail/article-detail.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { LayoutModule } from 'src/app/layout/layout.module';
 
 
 @NgModule({
@@ -14,8 +16,10 @@ import { ArticleDetailComponent } from './components/detail/article-detail.compo
     ArticleDetailComponent
   ],
   imports: [
+    SharedModule,
     CommonModule,
-    ArticlesRoutingModule
+    ArticlesRoutingModule,
+    LayoutModule
   ]
 })
 export class ArticlesModule { }

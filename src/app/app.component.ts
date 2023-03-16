@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'frinno-ui';
+  link?:string;
 
-  constructor() {
-
-  }
+  constructor(private router:Router) {
+    this.link = this.router.url;
+   }
 }

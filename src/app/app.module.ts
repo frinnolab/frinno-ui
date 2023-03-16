@@ -4,23 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { LayoutComponent } from './layout/layout.component';
-import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignInComponent } from './pages/auth/signin/sign-in.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    SignInComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    PagesModule,
+    FormsModule,
     BrowserAnimationsModule,
+  ],
+  exports:[
   ],
   providers: [],
   bootstrap: [AppComponent]

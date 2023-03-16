@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/auth/components/login/login.component';
-import { RegisterComponent } from './pages/auth/components/register/register.component';
-import { HomeComponent } from './pages/home/home.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { SignInComponent } from './pages/auth/signin/sign-in.component';
 
 const routes: Routes = [
   {
@@ -13,15 +12,7 @@ const routes: Routes = [
   },
   {
     path:'home',
-    component:HomeComponent
-  },
-  {
-    path:'login',
-    component:LoginComponent
-  },
-  {
-    path:'register',
-    component:RegisterComponent
+    loadChildren:()=> import('./pages/home/home.module').then((x)=>x.HomeModule)
   },
   {
     path:'articles',
@@ -30,6 +21,14 @@ const routes: Routes = [
   {
     path:'about',
     loadChildren:()=> import('./pages/about/about.module').then((x)=>x.AboutModule)
+  },
+  {
+    path:'login',
+    component:SignInComponent
+  },
+  {
+    path:'register',
+    component:RegisterComponent
   }
 ];
 

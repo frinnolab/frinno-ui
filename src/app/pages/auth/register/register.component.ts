@@ -12,4 +12,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onRegister()
+  {
+    alert('Registering Account....!')
+    setTimeout(()=>{
+      alert('Account Registered...!')
+    },1000);
+  }
+
 }
