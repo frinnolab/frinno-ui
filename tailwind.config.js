@@ -17,6 +17,12 @@ module.exports = {
           coreAlert: '#D64045',
           coreDeepSky: '#455A64',
           coreDeepBase: '#1D3354',
+          frnLight:'#F7F7F7',
+          frnBase:'#051726',
+          frnHot:'#F13A2B',
+          frnDark:'#2C2D34',
+          frnBlack:'#00000',
+          frnAccent:'#89778E'
         },
       },
       fontFamily:{

@@ -1,4 +1,4 @@
-<div class="w-full flex flex-col justify-center items-center gap-4">
+<div class="w-full flex flex-col justify-center items-center gap-4 text-frnDark">
   <p class="text-6xl">My Core Skills</p>
 
   <div class="w-full flex gap-8">
@@ -6,16 +6,16 @@
       <p class="text-3xl">{{skill.title}}</p>
       <hr>
       <div *ngFor="let tool of skill.tools">
-        <p class="text-lg ">{{tool.title}}</p>
+        <p class="text-lg">{{tool.title}}</p>
         <div class="flex gap-1 justify-between">
-          <p class="text-slate-600">{{tool.language ?? ''}}</p>
+          <p class="text-frnAccent">{{tool.language ?? ''}}</p>
           <img class="w-5 h-5" src="{{tool.logo??''}}" alt="" srcset="">
         </div>
       </div>
     </div>
   </div>
 
-  <div class="my-8">
-    <button (click)="onViewProjects()" class="px-10 py-5 bg-coreDeepBase text-white rounded hover:bg-opacity-90">View Projects</button>
+  <div class="my-4">
+    <button (click)="onViewProjects()" class="px-10 py-5 bg-frnBase bg-opacity-90 text-frnLight rounded hover:bg-opacity-80">View more in Projects</button>
   </div>
 </div>
