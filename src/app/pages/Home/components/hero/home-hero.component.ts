@@ -56,6 +56,6 @@ export class HomeHeroComponent implements OnInit {
           this.currentBuild = this.dummyBuilds[0]
           break;
       }
-    },2000);
+    },3500);
   }
 }

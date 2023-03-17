@@ -6,8 +6,17 @@
     <app-home-featured></app-home-featured>
   </div>
   <!-- Home Articles Intro Summary -->
-  <div class="w-full bg-frnBase bg-opacity-95 text-center p-28 text-frnLight">
-    <p>Articles Summary</p>
+  <div class="w-full flex flex-col justify-center items-center gap-4 bg-frnBase bg-opacity-95 text-center p-12 text-frnAccent">
+    <!-- <h1>Artiles Rant</h1> -->
+
+    <div class="w-full flex flex-col gap-4">
+      <img class="w-10 h-10" src="assets/svgs/solid/quote-left.svg" alt="" srcset="">
+      <p class="text-2xl"><span class="text-frnHot text-3xl text-opacity-90">I</span> often talk about <span class="text-frnHot text-3xl text-opacity-90">{{currentTopic.title}}</span> topics in the <span class="text-frnHot text-3xl text-opacity-90">Articles</span> section.</p>
+      <img class="w-10 h-10 self-end" src="assets/svgs/solid/quote-right.svg" alt="" srcset="">
+    </div>
+
+
+    <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">Read articles</button>
   </div>
 </div>
 <app-footer></app-footer>
