@@ -16,13 +16,13 @@ export class NavigationComponent implements OnInit {
       isActive:false
     },
     {
-      title:'Articles',
-      url:'/articles',
+      title:'Projects',
+      url:'/projects',
       isActive:false
     },
     {
-      title:'Projects',
-      url:'/projects',
+      title:'Articles',
+      url:'/articles',
       isActive:false
     },
     {

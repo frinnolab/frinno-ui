@@ -19,7 +19,7 @@ export class ArticleListComponent implements OnInit {
       author:{},
       datePublished:new Date(),
       tags:['quisquam', 'adipisci', 'delectus', 'animi','impedit','molestiae'],
-      thumbnail:`assets/images/small_01.jpg`
+      thumbnail:``
     },
     {
       id:2,
@@ -40,7 +40,7 @@ export class ArticleListComponent implements OnInit {
       author:{},
       datePublished:new Date(),
       tags:['adipisci','molestiae', 'delectus','animi','impedit'],
-      thumbnail:`assets/images/small_01.jpg`
+      thumbnail:``
     },
     {
       id:3,

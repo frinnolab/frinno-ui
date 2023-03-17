@@ -1,22 +1,29 @@
-<div *ngFor="let data of dataList">
-  <!-- Article Card -->
-  <div class="flex flex-col gap-4 border-b">
-    <img class="h-80" src="{{data?.thumbnail}}" alt="" srcset="">
+<div class="w-full flex flex-col">
+  <div class="py-4">
+    <h1 class="underline cursor-pointer text-3xl">Recently added Topics</h1>
+  </div>
+  <div *ngFor="let data of dataList">
+    <!-- Article Card -->
+    <div class="flex flex-col gap-4 border-x px-10 mb-4">
+      <h1 class="underline cursor-pointer text-3xl">{{data?.title}}</h1>
+      <img *ngIf="data?.thumbnail" class="h-60" src="{{data?.thumbnail ?? ''}}" alt="" srcset="">
 
-    <h2 class="underline cursor-pointer">{{data?.title}}</h2>
 
-    <article>{{data?.longText}}</article>
+      <article class="text-base">{{data?.longText}}</article>
 
-    <div class="flex items-center gap-2">
-      <p>Tags:</p>
-      <div *ngFor="let tag of data?.tags">
-        <p class="cursor-pointer rounded-md p-2 bg-coreBase hover:bg-coreDeepSky">{{tag}}</p>
+      <div class="flex items-center gap-2">
+        <p>Tags:</p>
+        <div *ngFor="let tag of data?.tags">
+          <p class="cursor-pointer rounded-md px-2 py-1 text-frnAccent hover:bg-opacity-90 hover:shadow-inner hover:bg-frnAccent hover:text-frnLight">{{tag}}</p>
+        </div>
       </div>
-    </div>
 
 
-    <div class="mb-10">
-      <button class="px-4 py-2 bg-coreBase rounded-md hover:bg-coreDeepSky">Read more</button>
+      <div class="mb-2">
+        <button class="px-6 py-3 bg-transparent rounded-md text-frnAccent border border-frnAccent hover:bg-frnAccent hover:text-frnLight hover:shadow-2xl hover:shadow-frnAccent">Read more</button>
+      </div>
+
+      <hr class="w-full">
     </div>
 
   </div>
