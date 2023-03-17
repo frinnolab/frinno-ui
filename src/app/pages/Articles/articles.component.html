@@ -1,14 +1,15 @@
 <app-layout></app-layout>
 <div class="w-full flex flex-col gap-4">
-  <div class="hidden w-full justify-start items-center bg-frnAccent gap-4">
-    <div class="flex justify-start bg-frnLight ">
-      <img class="w-60 h-60 self-start bg-blend-overlay" src="assets/images/art_bnr.jpg" alt="" srcset="">
-    </div>
+  <!-- Articles Hero -->
+  <div class="mb-4 top-0 p-12 flex gap-4 bg-frnBase text-frnLight">
+    <img class="w-1/4 h-1/4  block" src="assets/svgs/logos/article-bnr.svg" alt="">
+
     <div class="flex flex-col gap-4">
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta quis ipsam similique culpa expedita cumque?</p>
+      <p class="text-3xl text-frnLight"> <span class="text-frnHot text-opacity-90">Articles.</span></p>
+      <p class="text-lg">Articles works!</p>
     </div>
   </div>
+  <!-- Articles Container -->
   <div class="w-full flex gap-4  my-8 px-10">
     <app-article-list class="flex-1 w-3/4  flex flex-col gap-4 text-frnDark"></app-article-list>
     <div class="flex-2 w-1/4 flex flex-col gap-4 items-center">
