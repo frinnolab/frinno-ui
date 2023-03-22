@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInComponent } from './pages/auth/signin/sign-in.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     CoreModule,
     SharedModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
   ],
   exports:[

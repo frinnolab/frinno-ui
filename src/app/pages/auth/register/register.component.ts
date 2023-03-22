@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterRequest, RegisterResponse } from 'src/app/data/dtos/auth/auth-dto.model';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,17 +9,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  testUser:RegisterResponse = {};
+  constructor(
+    private auth:AuthService
+  ) { }
 
   ngOnInit(): void {
+
+
   }
 
   onRegister()
   {
-    alert('Registering Account....!')
-    setTimeout(()=>{
-      alert('Account Registered...!')
-    },1000);
+    this.auth.setCount(2);
+    // alert('Registering Account....!')
+    // let data:RegisterRequest = {
+    //   "firstName": "client2",
+    //   "lastName": "string2",
+    //   "email": "client@string2",
+    //   "password": "client@2@string",
+    //   "addressInfo": {
+    //     "mobile": "client2 string",
+    //     "city": "client2 string"
+    //   }
+    // }
+
+    // let role = 2;
+    // setTimeout(()=>{
+    //   this.auth.register(data,`?role=${role}`)
+    //   .subscribe((data)=>{
+    //     if(data)
+    //     {
+    //       this.testUser = data
+
+    //       console.log(this.testUser);
+
+    //     }
+    //   })
+    //   alert('Account Registered...!')
+    // },1000);
+  }
+
+  ngAfterViewInit()
+  {
+    this.auth.currentCount.subscribe((d)=>{
+      console.log(d);
+
+    })
   }
 
 }
