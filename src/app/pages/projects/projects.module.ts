@@ -3,22 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
-import { ProjectDetailComponent } from './detail/project-detail.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { LayoutModule } from 'src/app/layout/layout.module';
 
 
 @NgModule({
   declarations: [
-    ProjectsComponent,
-    ProjectDetailComponent
-
-  ],
-  imports: [
-    CommonModule,
-    ProjectsRoutingModule
+    ProjectsComponent
   ],
   exports:[
-    ProjectsComponent,
-    ProjectDetailComponent
+    ProjectsComponent
+  ]
+  ,
+  imports: [
+    CommonModule,
+    LayoutModule,
+    SharedModule,
+    ProjectsRoutingModule
   ]
 })
 export class ProjectsModule { }

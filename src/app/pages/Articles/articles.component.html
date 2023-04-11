@@ -1,0 +1,31 @@
+<app-layout></app-layout>
+<div class="w-full flex flex-col gap-4">
+  <!-- Articles Hero -->
+  <div class="mb-4 top-0 p-10 flex gap-4 bg-frnBase text-frnLight">
+    <img class="w-1/4 h-1/4  block" src="assets/svgs/logos/article-bnr.svg" alt="">
+
+    <div class="flex flex-col gap-4 text-center justify-center">
+      <p class="self-start text-6xl text-frnLight"> <span class="text-frnHot text-opacity-90">Article.</span>Topics</p>
+      <p class="self-start text-3xl">Articles works!</p>
+    </div>
+  </div>
+  <!-- Articles Container -->
+  <div class="w-full flex gap-4  my-8 px-10">
+    <app-article-list class="flex-1 w-3/4  flex flex-col gap-4 text-frnDark"></app-article-list>
+    <div class="flex-2 w-1/4 flex flex-col gap-4 items-center">
+      <div class="shadow flex flex-col gap-4 px-12 py-6 rounded-md bg-frnLight text-frnAccent">
+        <h1 class="text-lg text-frnDark">Recent.</h1>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+      <div class="shadow flex flex-col gap-4 px-12 py-6 rounded-md bg-frnAccent text-frnLight">
+        <h1 class="text-lg text-frnDark">Categories.</h1>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

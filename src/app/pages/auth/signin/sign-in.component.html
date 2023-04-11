@@ -1,0 +1,47 @@
+<div class="w-full flex justify-center items-center p-12 bg-coreDeepBase min-h-screen">
+  <form class="bg-white rounded-xl shadow-md w-6/12 flex flex-col gap-4" (ngSubmit)="onLogin()">
+    <div class="flex flex-col gap-2 px-16 mt-6">
+      <h1>Login</h1>
+      <div class="flex gap-2">
+        <p>or</p>
+        <a href="/register">Create Account</a>
+      </div>
+    </div>
+    <!-- email -->
+    <div class="flex flex-col gap-2 px-16">
+      <label for="email">Email</label>
+      <input type="text" class="bg-coreSky px-6 py-2">
+    </div>
+    <!-- pssword  -->
+    <div class="flex flex-col gap-2 px-16">
+      <label for="password">Password</label>
+      <input type="password" class="bg-coreSky px-6 py-2">
+    </div>
+    <!-- reset  -->
+    <div class="flex flex-col gap-2 px-16">
+      <a href="/login">Reset password</a>
+    </div>
+
+    <div class="flex flex-col  px-16 gap-2">
+      <hr>
+      <p class="text-center">Or</p>
+    </div>
+
+    <!-- Social -->
+    <div class="flex flex-col justify-center items-center px-16 gap-1">
+      <p class="text-center">Login with:</p>
+      <div class="flex justify-between items-center gap-1">
+        <!-- google -->
+        <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'brands/google.svg'"></app-facon-sm-regular>
+        <!-- twitter -->
+        <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'brands/twitter.svg'"></app-facon-sm-regular>
+      </div>
+    </div>
+
+
+    <!-- Submit -->
+    <button class="bg-coreDeepSky px-12 py-6 text-white rounded-bl-lg rounded-br-lg hover:bg-coreDeepBase">
+      Login
+    </button>
+  </form>
+</div>

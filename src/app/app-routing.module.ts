@@ -1,31 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './pages/about/about.component';
-import { NotesComponent } from './pages/notes/notes.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { SignInComponent } from './pages/auth/signin/sign-in.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'Notes',
+    redirectTo:'home',
     pathMatch:'full'
   },
   {
-    path:'Notes',
-    loadChildren:()=>
-    import('./pages/notes/notes.module').then(m=>m.NotesModule),
+    path:'home',
+    loadChildren:()=> import('./pages/home/home.module').then((x)=>x.HomeModule)
   },
   {
-    path:'Projects',
-    loadChildren:()=>
-    import('./pages/projects/projects.module').then(m=>m.ProjectsModule),
+    path:'articles',
+    loadChildren:()=> import('./pages/articles/articles.module').then((x)=>x.ArticlesModule)
   },
   {
-    path:'About',
-    loadChildren:()=>
-    import('./pages/about/about.module').then(m=>m.AboutModule),
+    path:'projects',
+    loadChildren:()=> import('./pages/projects/projects.module').then((x)=>x.ProjectsModule)
   },
+  {
+    path:'about',
+    loadChildren:()=> import('./pages/about/about.module').then((x)=>x.AboutModule)
+  },
+  {
+    path:'login',
+    component:SignInComponent
+  },
+  {
+    path:'register',
+    component:RegisterComponent
+  }
 ];
 
 @NgModule({

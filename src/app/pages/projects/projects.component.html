@@ -1,1 +1,64 @@
-<p>projects works!</p>
+<app-layout></app-layout>
+<div class="w-full flex flex-col gap-4 min-h-screen">
+  <!-- Projects Hero -->
+  <div class="mb-4 top-0 p-10 flex gap-4 bg-frnBase text-frnLight">
+    <img class="w-1/4 h-1/4 block" src="assets/svgs/logos/code-bro-0.svg" alt="">
+
+    <div class="flex flex-col gap-4 text-center justify-center">
+      <p class="text-6xl text-frnLight self-start"> <span class="text-frnHot text-opacity-90">Projects.</span>Repository</p>
+      <p class="text-3xl self-start">Here are some of the Projects i've been involved in.!</p>
+    </div>
+  </div>
+
+  <!-- Projects Container -->
+
+  <div class="flex flex-col gap-8 my-8 px-10">
+    <div class="py-2">
+      <h1 class="underline cursor-pointer text-3xl">Recently added Projects</h1>
+    </div>
+
+    <!-- Project List -->
+    <div class="w-full flex justify-between items-center  gap-4">
+      <div class="px-12 py-6 flex justify-center rounded-md shadow">
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+      <div class="px-12 py-6 flex justify-center rounded-md shadow">
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+      <div class="px-12 py-6 flex justify-center rounded-md shadow">
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+    </div>
+
+    <div class="w-full flex justify-between items-center  gap-4">
+      <div class="px-12 py-6 flex justify-center rounded-md shadow">
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+      <div class="px-12 py-6 flex justify-center rounded-md shadow">
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+      <div class="px-12 py-6 flex justify-center rounded-md shadow">
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+      <div class="px-12 py-6 flex justify-center rounded-md shadow">
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+    </div>
+    <!-- Project List END-->
+
+    <!-- Projs Articles Intro Summary -->
+  <div class="w-full flex flex-col justify-center items-center gap-4 bg-frnBase bg-opacity-95 text-center p-12 text-frnAccent">
+
+    <div class="w-full flex flex-col gap-4">
+      <img class="w-10 h-10" src="assets/svgs/solid/quote-left.svg" alt="" srcset="">
+      <p class="text-2xl"><span class="text-frnHot text-3xl text-opacity-90">Are</span> you looking to <span class="text-frnHot text-3xl text-opacity-90">{{currentTopic?.title}}</span> me on a <span class="text-frnHot text-3xl text-opacity-90">Project</span> ?.</p>
+      <img class="w-10 h-10 self-end" src="assets/svgs/solid/quote-right.svg" alt="" srcset="">
+    </div>
+
+
+    <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">Contact me</button>
+  </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

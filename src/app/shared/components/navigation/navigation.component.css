@@ -1,0 +1,3 @@
+.active-link{
+  @apply border-b-4 border-b-frnHot px-4 bg-frnAccent bg-opacity-10
+}

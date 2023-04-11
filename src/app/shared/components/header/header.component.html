@@ -1,0 +1,11 @@
+<div class="w-full flex flex-col gap-4 bg-frnLight bg-opacity-90 overflow-hidden hover:shadow">
+  <!-- Header Actions -->
+  <app-header-action class="border-b border-frnDark shadow"></app-header-action>
+  <!-- Logo -->
+  <div class="flex justify-between items-center px-6">
+    <img class="w-14 h-14 cursor-pointer" (click)="onLogoClick()"  src="assets/svgs/logos/frn-logo-bk.svg" alt="" srcset="">
+    <!-- Nav -->
+    <app-navigation></app-navigation>
+    <app-facon-sm-regular (click)="onLoginClick()" class="p-2 rounded-full hover:bg-frnAccent" [icon]="'solid/unlock-keyhole.svg'"></app-facon-sm-regular>
+  </div>
+</div>

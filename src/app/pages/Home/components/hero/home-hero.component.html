@@ -1,0 +1,18 @@
+<div class="w-full flex justify-between items-center p-4">
+  <div class="w-1/2 text-frnDark flex flex-col gap-8 px-4">
+    <div class="flex flex-col gap-2">
+      <p class="text-8xl">Hi, I'm Frank!.</p>
+      <p class="text-2xl">I help build immersive <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span> experiences for Individuals, Small-Medium businesses & Agencies.</p>
+    </div>
+
+    <div>
+      <button (click)="onViewProfile()" class="px-8 py-4 rounded-sm text-frnLight bg-frnHot shadow-2xl shadow-frnAccent hover:bg-opacity-80">
+        View Profile
+      </button>
+    </div>
+
+  </div>
+  <div class="flex flex-col justify-center items-center w-1/2">
+    <img class="w-1/2 h-1/2  rounded-lg shadow-2xl" src="{{'assets/images/frn_00.jpg'}}" alt="" srcset="">
+  </div>
+</div>

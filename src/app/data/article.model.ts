@@ -1,4 +1,11 @@
 export interface Article
 {
-  Title?:string;
+  id?:number;
+  thumbnail?:string;
+  title?:string;
+  longText?:string;
+  likes?:number;
+  author?:any;
+  datePublished?:Date;
+  tags?:string[];
 }

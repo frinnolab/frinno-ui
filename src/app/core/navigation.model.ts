@@ -1,6 +1,6 @@
 export interface NavItem
 {
-  Title? : string;
-  Url? : string;
-  IsActive? : boolean;
+  title? : string;
+  url? : string;
+  isActive? : boolean;
 }

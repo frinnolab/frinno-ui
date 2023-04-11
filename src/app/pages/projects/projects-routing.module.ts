@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjectDetailComponent } from './detail/project-detail.component';
 import { ProjectsComponent } from './projects.component';
 
 const routes: Routes = [
   {
     path:'',
+    pathMatch:'full',
     component:ProjectsComponent
-  },
-  {
-    path:':id',
-    component:ProjectDetailComponent
   }
 ];
 
