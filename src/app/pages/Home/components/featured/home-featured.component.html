@@ -2,7 +2,7 @@
   <p class="text-6xl">My Core Skills</p>
 
   <div class="w-full flex gap-8">
-    <div *ngFor="let skill of dummySkills" class="border shadow-sm rounded-lg flex flex-col gap-1 px-8 py-4">
+    <div *ngFor="let skill of dummySkills" class="cursor-auto border shadow-sm rounded-lg flex flex-col gap-1 px-8 py-4 hover:bg-white  hover:shadow-2xl hover:shadow-frnAccent">
       <p class="text-3xl">{{skill.title}}</p>
       <hr>
       <div *ngFor="let tool of skill.tools">

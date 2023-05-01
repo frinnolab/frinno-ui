@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren:()=> import('./pages/about/about.module').then((x)=>x.AboutModule)
   },
   {
+    path:'account',
+    loadChildren:()=> import('./pages/dashboard/dashboard.module').then((x)=>x.DashboardModule)
+  },
+  {
     path:'login',
     component:SignInComponent
   },
