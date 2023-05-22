@@ -23,7 +23,7 @@ export class AuthService {
     private apiService:ApiService,
     private server:HttpClient,
     ) {
-      this.path = `${this.api}/${this.path}`
+      this.path = `${this.api}`
     }
 
   login(data:LoginRequest):Observable<LoginResponse>
@@ -31,7 +31,7 @@ export class AuthService {
     return this.server.post<LoginResponse>(`${this.path}/${this.loginRoute}`, data);
   }
 
-  register=(data:RegisterRequest, options?:string):Observable<RegisterResponse>=>
+  register=(data:RegisterRequest, options:string = ""):Observable<RegisterResponse>=>
   {
     return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}${options}`, data);
   }

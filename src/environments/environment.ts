@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  apiBase:`https://localhost:7291/api`
+  apiBase:`http://frnlab-001-site1.gtempurl.com/api`
 };
 
+//apiBase:`https://localhost:7291/api`
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

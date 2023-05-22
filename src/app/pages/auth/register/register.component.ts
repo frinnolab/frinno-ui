@@ -21,33 +21,33 @@ export class RegisterComponent implements OnInit {
 
   onRegister()
   {
-    this.auth.setCount(2);
-    // alert('Registering Account....!')
-    // let data:RegisterRequest = {
-    //   "firstName": "client2",
-    //   "lastName": "string2",
-    //   "email": "client@string2",
-    //   "password": "client@2@string",
-    //   "addressInfo": {
-    //     "mobile": "client2 string",
-    //     "city": "client2 string"
-    //   }
-    // }
+    //this.auth.setCount(2);
+    alert('Registering Account....!')
+    let data:RegisterRequest = {
+      "firstName": "client2",
+      "lastName": "string2",
+      "email": "client@string2",
+      "password": "client@2@string",
+      "role":2,
+      "addressInfo": {
+        "mobile": "client2 string",
+        "city": "client2 string"
+      }
+    }
 
-    // let role = 2;
-    // setTimeout(()=>{
-    //   this.auth.register(data,`?role=${role}`)
-    //   .subscribe((data)=>{
-    //     if(data)
-    //     {
-    //       this.testUser = data
+    setTimeout(()=>{
+      this.auth.register(data, "")
+      .subscribe((data)=>{
+        if(data)
+        {
+          this.testUser = data
 
-    //       console.log(this.testUser);
+          console.log(this.testUser);
 
-    //     }
-    //   })
-    //   alert('Account Registered...!')
-    // },1000);
+        }
+      })
+      alert('Account Registered...!')
+    },1000);
   }
 
   ngAfterViewInit()
