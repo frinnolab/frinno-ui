@@ -1,15 +1,24 @@
 <app-layout></app-layout>
 <div class="w-full flex flex-col gap-4 min-h-screen">
+  <!-- Hero Info-->
   <app-home-hero></app-home-hero>
-
-  <div class="w-full flex p-12 justify-center items-center">
-    <app-home-featured></app-home-featured>
-    <!-- <img class="w-20 h-20 self-end" src="assets/images/logos/frn-h-lg-01.svg" alt="" srcset=""> -->
+  <!-- Services Info-->
+  <div class="flex flex-col justify-center items-center gap-4 text-center p-4 m-4">
+    <p class="text-4xl">I help build modern</p>
+    <div class="flex flex-col justify-center items-center text-center p-4">
+      <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span> 
+    </div>
+    <p class="text-4xl">experiences for Individuals, Small-Medium businesses & Agencies.</p>
   </div>
-  <!-- Home Articles Intro Summary -->
-  <div class="w-full flex flex-col justify-center items-center gap-4 bg-frnBase bg-opacity-95 text-center p-12 text-frnAccent">
-    <!-- <h1>Artiles Rant</h1> -->
 
+  <!-- Skills Info-->
+  <app-home-featured></app-home-featured>
+  <!-- Articles Info-->
+
+  <!-- <div class="w-full flex p-12 justify-center items-center">
+  </div> -->
+
+  <!-- <div class="w-full flex flex-col justify-center items-center gap-4 bg-frnBase bg-opacity-95 text-center p-12 text-frnAccent">
     <div class="w-full flex flex-col gap-4">
       <img class="w-10 h-10" src="assets/svgs/solid/quote-left.svg" alt="" srcset="">
       <p class="text-2xl"><span class="text-frnHot text-3xl text-opacity-90">I</span> often talk about <span class="text-frnHot text-3xl text-opacity-90">{{currentTopic.title}}</span> topics in the <span class="text-frnHot text-3xl text-opacity-90">Articles</span> section.</p>
@@ -18,6 +27,6 @@
 
 
     <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">Read articles</button>
-  </div>
+  </div> -->
 </div>
 <app-footer></app-footer>

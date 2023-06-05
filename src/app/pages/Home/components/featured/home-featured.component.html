@@ -1,14 +1,14 @@
-<div class="w-full flex flex-col justify-center items-center gap-4 text-frnDark">
-  <p class="text-6xl">My Core Skills</p>
+<div class="w-full p-4 bg-frnBase flex flex-col justify-center items-center gap-4 text-frnDark">
+  <p class="text-4xl text-frnLight">My Core Skills</p>
 
-  <div class="w-full flex gap-8">
-    <div *ngFor="let skill of dummySkills" class="cursor-auto border shadow-sm rounded-lg flex flex-col gap-1 px-8 py-4 hover:bg-white  hover:shadow-2xl hover:shadow-frnAccent">
-      <p class="text-3xl">{{skill.title}}</p>
+  <div class="w-auto h-auto flex gap-8 justify-center">
+    <div *ngFor="let skill of dummySkills" class="cursor-auto bg-frnAccent m-8 text-frnLight shadow-lg rounded-lg flex flex-col gap-1 px-8 py-4  hover:shadow-md">
+      <p class="text-3xl text-frnLight">{{skill.title}}</p>
       <hr>
       <div *ngFor="let tool of skill.tools">
         <p class="text-lg">{{tool.title}}</p>
         <div class="flex gap-1 justify-between">
-          <p class="text-frnAccent">{{tool.language ?? ''}}</p>
+          <p class="">{{tool.language ?? ''}}</p>
           <img class="w-5 h-5" src="{{tool.logo??''}}" alt="" srcset="">
         </div>
       </div>
@@ -16,6 +16,6 @@
   </div>
 
   <div class="my-4">
-    <button (click)="onViewProjects()" class="px-10 py-5 bg-frnBase bg-opacity-90 text-frnLight rounded hover:bg-opacity-80">View more in Projects</button>
+    <button (click)="onViewProjects()" class="px-10 py-5 border border-frnAccent text-frnLight rounded hover:bg-frnAccent hover:bg-opacity-80">View more in Projects</button>
   </div>
 </div>
