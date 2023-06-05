@@ -1,6 +1,9 @@
 <div class="w-full flex justify-between items-center p-4 bg-frnBase">
-  <div class="w-1/2 text-frnDark flex flex-col gap-8 px-4">
-    <p class="text-white text-8xl">Hi,  <span class="text-8xl text-frnHot">I'm Frank</span> </p>
+
+  
+  <div class="flex flex-col justify-between">
+    <!-- <p class="text-white text-8xl flex">Hi.<span class="text-8xl text-end text-frnHot">I'm Frank</span> </p> -->
+    <!-- <p class="text-slate-500 flex"><span class="text-end">Fullstack Software Engineer.</span></p> -->
     <!-- <div class="flex flex-col gap-2">
       <p class="text-4xl">Hi, I'm Frank!.</p>
       <p class="text-xl">I help build modern-immersive <span class="text-frnHot text-3xl" >{{currentBuild.title}}</span> experiences for Individuals, Small-Medium businesses & Agencies.</p>
@@ -13,7 +16,24 @@
     </div> -->
 
   </div>
-  <div class="flex flex-col justify-center items-center w-1/2">
+
+
+  <div class="flex justify-between items-center">
+    <!-- location -->
+    <div class="cursor-default flex justify-between items-center gap-4 border-solid rounded-lg border">
+      <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'solid/map-pin.svg'"></app-facon-sm-regular>
+      <p class="text-slate-500">Dar Es Salaam, Tanzania</p>
+    </div>
+    <!-- github -->
+    <div class="cursor-default flex justify-between items-center gap-4 border-solid rounded-lg border">
+      <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'brands/github-alt.svg'"></app-facon-sm-regular>
+      <a href="#" class="underline text-slate-500">github/frinnolab</a>
+    </div>
+
+  </div>
+
+
+  <div class="flex flex-col justify-center items-center">
     <img class="w-1/2 h-1/2  rounded-full border-8 border-frnHot shadow-2xl" src="{{'assets/images/frn_00.jpg'}}" alt="" srcset="">
   </div>
 </div>
