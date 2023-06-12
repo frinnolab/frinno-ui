@@ -8,23 +8,23 @@ import { Router } from '@angular/router';
 })
 export class HomeHeroComponent implements OnInit {
 
-  dummyBuilds:any[] =
+  dummyTopics:any[] =
   [
     {
       id:1,
-      title:`Web`
+      title:`Fullstack Developer`
     },
     {
       id:2,
-      title:`Mobile`
+      title:`Back-End Developer`
     },
     {
       id:3,
-      title:`Design`
-    },
+      title:`Front-End Developer`
+    }
   ]
 
-  currentBuild:any= {
+  currentTopic:any= {
     id:0,
     title:`...`
   };
@@ -41,19 +41,19 @@ export class HomeHeroComponent implements OnInit {
   ngAfterViewInit()
   {
     setInterval(()=>{
-      switch (this.currentBuild.id) {
+      switch (this.currentTopic.id) {
         case 0:
-          this.currentBuild = this.dummyBuilds[0]
+          this.currentTopic = this.dummyTopics[0]
           break;
         case 1:
-            this.currentBuild = this.dummyBuilds[1]
+            this.currentTopic = this.dummyTopics[1]
           break;
         case 2:
-              this.currentBuild = this.dummyBuilds[2]
+              this.currentTopic = this.dummyTopics[2]
           break;
 
         default:
-          this.currentBuild = this.dummyBuilds[0]
+          this.currentTopic = this.dummyTopics[0]
           break;
       }
     },3500);
