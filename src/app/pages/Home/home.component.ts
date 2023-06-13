@@ -42,16 +42,43 @@ export class HomeComponent implements OnInit {
   [
     {
       id:1,
-      title:`Web`
+      title:`Web`,
+      description:``,
+      projectTypes:[
+        {
+          title:`Front-End`,
+          technologies:["Angular", "Nuxt 3", "Vanilla Js"]
+        },
+        {
+          title:`Back-End`,
+          technologies:[".NetCore", "Laravel", "SQL"]
+        },
+      ]
     },
     {
       id:2,
-      title:`Mobile`
+      title:`Mobile`,
+      description:``,
+      projectTypes:[
+        {
+          title:`Mobile (Android, iOS)`,
+          technologies:["Flutter", "MAUI (.NetCore)"]
+        },
+
+      ]
     },
     {
       id:3,
-      title:`Design`
-    },
+      title:`Design`,
+      description:``,
+      projectTypes:[
+        {
+          title:`Graphics Design`,
+          technologies:["Figma", "Adobe Illustrator", "Photoshop"]
+        },
+
+      ]
+    }
   ]
 
   currentBuild:any= {
