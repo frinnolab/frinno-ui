@@ -1,7 +1,7 @@
 <app-layout></app-layout>
 <div class="w-full flex flex-col gap-4 min-h-screen">
   <!-- Projects Hero -->
-  <div class="mb-4 top-0 p-10 flex justify-between gap-4 bg-frnAccent bg-opacity-10">
+  <div class="mb-4 top-0 p-10 flex justify-between gap-4 bg-frnAccent bg-opacity-20">
     <div class="flex flex-col gap-4 justify-center text-start">
       <p class="text-6xl text-frnBase"> <span class="text-frnHot text-opacity-90">Projects.</span>Repository</p>
       <p class="text-4xl">Here are some of the Projects i've been involved in.!</p>
@@ -20,7 +20,7 @@
       <div class="w-full flex justify-between gap-10 mb-10">
         <div *ngFor="let data of dataList">
           <!-- Project card -->
-          <div class="w-full flex flex-1 flex-col gap-4  bg-frnAccent  bg-opacity-10 hover:shadow-md hover:bg-frnLight rounded-2xl border px-4 py-2 mb-4 shadow-sm">
+          <div class="w-full flex flex-1 flex-col gap-4  bg-frnAccent  bg-opacity-20 hover:shadow-sm hover:bg-frnLight rounded-2xl border px-4 py-2 mb-4">
             <p class="text-2xl">{{data?.title}}</p>
             <article>{{data?.description}}</article>
     
@@ -45,7 +45,7 @@
     <!-- Project List END-->
 
     <!-- Projects Techs Summary -->
-  <div class="rounded-2xl w-full flex flex-col justify-center items-center gap-4 bg-frnAccent bg-opacity-10 text-center px-4 py-8 text-frnAccent">
+  <div class="rounded-2xl w-full flex flex-col justify-center items-center gap-4 bg-frnAccent bg-opacity-20 text-center px-4 py-8 text-frnAccent">
     <p class="text-start self-start text-2xl text-frnAccent text-opacity-80">For the Nerds ></p>
 
     <p class="text-4xl text-frnBase text-center">This Site's Technology Stack:</p>
