@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { SignInComponent } from './pages/auth/signin/sign-in.component';
+import { AuthGuard } from './pages/auth/auth.guard.guard';
+import { ErrorPageComponent } from './pages/error/error-page.component';
 
 const routes: Routes = [
   {
@@ -28,7 +30,12 @@ const routes: Routes = [
   },
   {
     path:'account',
+    canActivate:[AuthGuard.canActivate],
     loadChildren:()=> import('./pages/dashboard/dashboard.module').then((x)=>x.DashboardModule)
+  },
+  {
+    path:"error",
+    component:ErrorPageComponent
   },
   {
     path:'login',

@@ -31,6 +31,7 @@ export class AuthService {
     return this.server.post<LoginResponse>(`${this.path}/${this.loginRoute}`, data);
   }
 
+
   register=(data:RegisterRequest, options:string = ""):Observable<RegisterResponse>=>
   {
     return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}${options}`, data);

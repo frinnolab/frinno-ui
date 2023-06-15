@@ -10,12 +10,14 @@ import { SignInComponent } from './pages/auth/signin/sign-in.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './pages/error/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     RegisterComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
