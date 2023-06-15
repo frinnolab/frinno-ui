@@ -55,6 +55,28 @@ export class ProjectsComponent implements OnInit {
     },
   ]
 
+  stackList:any[] = [
+    {
+      title:`Frontend`,
+      tools:[
+        'Angular 14 upgraded to 15',
+        'Angular Material UI',
+        'Tailwind CSS',
+        'Vercel Hosting'
+      ],
+      url:`github.com/frinno-ui`
+    },
+    {
+      title:`Backend`,
+      tools:[
+        'DotNet Core 7 Web API',
+        'SQL Server Database',
+        'Azure Hosting'
+      ],
+      url:`github.com/frinno-io`
+    },
+  ]
+
 
   currentTopic:any= {
     id:0,

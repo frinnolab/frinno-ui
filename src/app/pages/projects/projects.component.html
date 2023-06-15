@@ -45,17 +45,27 @@
     <!-- Project List END-->
 
     <!-- Projects Techs Summary -->
-  <div class="rounded-2xl w-full flex flex-col justify-center items-center gap-4 bg-frnAccent bg-opacity-10 text-center p-12 text-frnAccent">
+  <div class="rounded-2xl w-full flex flex-col justify-center items-center gap-4 bg-frnAccent bg-opacity-10 text-center px-4 py-8 text-frnAccent">
+    <p class="text-start self-start text-2xl text-frnAccent text-opacity-80">For the Nerds ></p>
+
     <p class="text-4xl text-frnBase text-center">This Site's Technology Stack:</p>
 
-    <div class="w-full flex flex-col gap-4">
-      <img class="w-10 h-10" src="assets/svgs/solid/quote-left.svg" alt="" srcset="">
-      <p class="text-2xl"><span class="text-frnHot text-3xl text-opacity-90">Are</span> you looking to <span class="text-frnHot text-3xl text-opacity-90">{{currentTopic?.title}}</span> me on a <span class="text-frnHot text-3xl text-opacity-90">Project</span> ?.</p>
-      <img class="w-10 h-10 self-end" src="assets/svgs/solid/quote-right.svg" alt="" srcset="">
+    <div class="w-full flex gap-10 justify-center text-start">
+      <div class="flex gap-10" *ngFor="let stack of stackList">
+        <div class="flex flex-col flex-1 justify-between">
+          <p class="text-4xl">{{stack.title}}</p>
+          <div class="flex gap-4" *ngFor="let stackTool of stack.tools">
+            <li class="text-2xl">{{stackTool}}</li>
+          </div>
+          <a href="#" class="underline text-2xl inline-flex gap-4 items-center">
+            <span>
+              <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'brands/github.svg'"></app-facon-sm-regular>
+            </span>
+            {{stack.url}}
+          </a>
+        </div>
+      </div>
     </div>
-
-
-    <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">Contact me</button>
   </div>
   </div>
 
