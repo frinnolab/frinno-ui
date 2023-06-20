@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
 
   ngAfterViewInit()
   {
-    this.auth.currentCount.subscribe((d)=>{
+    this.auth.currentRequest.subscribe((d)=>{
       console.log(d);
 
     })

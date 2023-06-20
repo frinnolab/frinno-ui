@@ -1,6 +1,7 @@
-export interface Article
+import { BaseEntity } from "./entities/base-entity";
+
+export interface Article extends BaseEntity
 {
-  id?:number;
   thumbnail?:string;
   title?:string;
   longText?:string;

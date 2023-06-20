@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBase:`http://frnlab-001-site1.gtempurl.com/api`
+  apiBase:`https://localhost:7291/api`
 };
 
 //apiBase:`https://localhost:7291/api`

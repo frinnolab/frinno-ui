@@ -16,12 +16,16 @@ export class HomeHeroComponent implements OnInit {
     },
     {
       id:2,
-      title:`Back-End Developer`
+      title:`Backend Developer`
     },
     {
       id:3,
-      title:`Front-End Developer`
-    }
+      title:`Frontend Developer`
+    },
+    {
+      id:4,
+      title:`Mobile Developer`
+    },
   ]
 
   currentTopic:any= {
@@ -50,6 +54,9 @@ export class HomeHeroComponent implements OnInit {
           break;
         case 2:
               this.currentTopic = this.dummyTopics[2]
+          break;
+        case 3:
+              this.currentTopic = this.dummyTopics[3]
           break;
 
         default:
