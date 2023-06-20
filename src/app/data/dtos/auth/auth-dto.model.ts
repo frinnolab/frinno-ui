@@ -7,11 +7,12 @@ export interface LoginRequest
   password?:string;
 }
 
-export interface LoginResponse
+export interface LoginResponse extends BaseEntity
 {
-  profile?:Profile;
-  accessToken?:string;
-  refreshToken?:string;
+  username?:string;
+  email?:string,
+  role?:number,
+  token?:string;
 }
 
 //Register DTOs

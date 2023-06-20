@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { LoginRequest, RegisterRequest } from 'src/app/data/dtos/auth/auth-dto.model';
+import { LoginRequest, LoginResponse, RegisterRequest } from 'src/app/data/dtos/auth/auth-dto.model';
 import { Subject, take, takeUntil } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/utils/storage.service';
@@ -16,8 +16,8 @@ export class SignInComponent implements OnInit {
 
   $subscribe = new Subject();
 
-  signInForm:FormGroup = new FormGroup({
-    email:new FormControl("Enter Email address", 
+  signInForm = new FormGroup({
+    email:new FormControl("", 
     [
       Validators.required,
       Validators.email]
@@ -34,6 +34,12 @@ export class SignInComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.storage.isLoggedIn())
+    {
+      this.router.navigateByUrl("/account")
+    }
+    this.signInForm.get("password")?.setValue("");
+    this.signInForm.get("email")?.setValue("");
   }
 
   onLogin()
@@ -41,21 +47,28 @@ export class SignInComponent implements OnInit {
     alert('Logging in....!')
     var data:LoginRequest = 
     {
-      email:`client00@client.com`,
-      password:`12345678`,
+      email:`${this.signInForm.get("email")?.value}`,
+      password:`${this.signInForm.get("password")?.value}`,
     };
+
+    console.log(data);
+    
     this.auth.login(data)
     .pipe(takeUntil(this.$subscribe))
     .subscribe((res)=>{
       if(res)
       {
-        
-        this.storage.saveObject("user", res)
+        var reData:LoginResponse = {
+          id:res['id'],
+          token:res['token'],
+          role:2,
+          email:res["email"]
+        }
+        this.storage.saveObject("user", reData)
         console.log(res);
         alert('Logged in....!')
         this.isLoggedIn = true;
-        this.router.navigateByUrl("/account");
-        
+        this.router.navigateByUrl("/account");        
       }
     })
   }

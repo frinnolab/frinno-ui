@@ -15,10 +15,10 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if(this.session.isLoggedIn())
+    if(!this.session.isLoggedIn())
     {
-      console.log(this.session.getCurrentUser());
-      
+      this.session.clearSession();
+      this.router.navigateByUrl("/login");
     }
   }
 
