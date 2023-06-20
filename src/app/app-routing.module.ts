@@ -30,7 +30,6 @@ const routes: Routes = [
   },
   {
     path:'account',
-    canActivate:[AuthGuard.canActivate],
     loadChildren:()=> import('./pages/dashboard/dashboard.module').then((x)=>x.DashboardModule)
   },
   {

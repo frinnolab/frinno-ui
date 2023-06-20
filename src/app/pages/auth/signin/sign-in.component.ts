@@ -41,8 +41,8 @@ export class SignInComponent implements OnInit {
     alert('Logging in....!')
     var data:LoginRequest = 
     {
-      email:`${this.signInForm.get("email")?.value}`,
-      password:`${this.signInForm.get("pasword")?.value}`,
+      email:`client00@client.com`,
+      password:`12345678`,
     };
     this.auth.login(data)
     .pipe(takeUntil(this.$subscribe))
@@ -50,10 +50,11 @@ export class SignInComponent implements OnInit {
       if(res)
       {
         
-        this.storage.saveObject("profile", res)
+        this.storage.saveObject("user", res)
         console.log(res);
         alert('Logged in....!')
         this.isLoggedIn = true;
+        this.router.navigateByUrl("/account");
         
       }
     })

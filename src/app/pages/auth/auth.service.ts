@@ -33,8 +33,8 @@ export class AuthService {
   }
 
 
-  register=(data:RegisterRequest, query:string = ""):Observable<RegisterResponse>=>
+  register=(data:RegisterRequest):Observable<RegisterResponse>=>
   {
-    return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}${query}`, data, this.headerOptions);
+    return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}`, data, this.headerOptions);
   }
 }
