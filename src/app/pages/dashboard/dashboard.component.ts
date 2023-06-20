@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/app/utils/storage.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +10,16 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   constructor(
-    private router:Router
+    private router:Router,
+    private session:StorageService
   ) { }
 
   ngOnInit(): void {
+    if(this.session.isLoggedIn())
+    {
+      console.log(this.session.getCurrentUser());
+      
+    }
   }
 
   onHomeRoute()

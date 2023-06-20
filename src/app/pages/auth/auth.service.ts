@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LoginRequest, LoginResponse, RegisterRequest, RegisterResponse } from 'src/app/data/dtos/auth/auth-dto.model';
@@ -10,43 +10,31 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  path:string = 'mockauth';
+  path:string = '';
   loginRoute:string = 'login'
   registerRoute:string = 'register'
   api:string = environment.apiBase;
+  headerOptions = {
+    headers:new HttpHeaders ({'Content-type': 'application/json'})
+  }
 
-  count = 0;
-
-  currentCount = new BehaviorSubject<number>(this.count);
+  responseData:any = {};
+  currentRequest = new BehaviorSubject<any>(this.responseData);
 
   constructor(
-    private apiService:ApiService,
     private server:HttpClient,
     ) {
-      this.path = `${this.api}/${this.path}`
+      this.path = `${this.api}/auth`;
     }
 
   login(data:LoginRequest):Observable<LoginResponse>
   {
-    return this.server.post<LoginResponse>(`${this.path}/${this.loginRoute}`, data);
+    return this.server.post<LoginResponse>(`${this.path}/${this.loginRoute}`, data, this.headerOptions);
   }
 
-  register=(data:RegisterRequest, options?:string):Observable<RegisterResponse>=>
-  {
-    return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}${options}`, data);
-  }
 
-  getPath():string
+  register=(data:RegisterRequest):Observable<RegisterResponse>=>
   {
-    return `${this.path}/${this.loginRoute}`
-  }
-
-  getCount():Observable<number>
-  {
-    return this.currentCount;
-  }
-  setCount(countAdd:number):void
-  {
-    this.count+=countAdd;
+    return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}`, data, this.headerOptions);
   }
 }

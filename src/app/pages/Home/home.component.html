@@ -1,23 +1,51 @@
 <app-layout></app-layout>
 <div class="w-full flex flex-col gap-4 min-h-screen">
+  <!-- Hero Info-->
   <app-home-hero></app-home-hero>
+  <!-- Services Info-->
+  <div class="flex flex-col justify-center items-center gap-4 text-center p-4">
+    <p class="text-4xl my-4">I help build Modern</p>
+    <div class="container flex justify-center gap-4 p-8">
+      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 justify-center items-stretch text-center p-4">
+        <!-- <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span>  -->
+        <div class="service-card flex flex-col flex-1 border  bg-frnAccent  bg-opacity-20 hover:shadow-sm hover:bg-frnLight rounded-2xl">
+          <p class="cursor-default text-4xl text-frnHot px-20 py-4 rounded-2xl bg-frnAccent bg-opacity-10">{{sCard.title}}</p>
+          <!-- <p class="text-start text-xl px-4">{{sCard.description}}Lorem ipsum dolor sit amet.</p> -->
+          <!-- project Types -->
+          <div class="w-full flex flex-col gap-4 justify-between px-4">
+            <div class="flex flex-col justify-between items-stretch text-center" *ngFor="let pType of sCard.projectTypes">
+              <p class="text-start text-xl">{{pType.title}}</p>
+              <div class="flex gap-4 min-w-[10%]">
+                <p class="text-start" *ngFor="let techno of pType.technologies">{{techno}}</p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="w-full p-8 border border-frnHot">
 
-  <div class="w-full flex p-12 justify-center items-center">
-    <app-home-featured></app-home-featured>
-    <!-- <img class="w-20 h-20 self-end" src="assets/images/logos/frn-h-lg-01.svg" alt="" srcset=""> -->
-  </div>
-  <!-- Home Articles Intro Summary -->
-  <div class="w-full flex flex-col justify-center items-center gap-4 bg-frnBase bg-opacity-95 text-center p-12 text-frnAccent">
-    <!-- <h1>Artiles Rant</h1> -->
-
-    <div class="w-full flex flex-col gap-4">
-      <img class="w-10 h-10" src="assets/svgs/solid/quote-left.svg" alt="" srcset="">
-      <p class="text-2xl"><span class="text-frnHot text-3xl text-opacity-90">I</span> often talk about <span class="text-frnHot text-3xl text-opacity-90">{{currentTopic.title}}</span> topics in the <span class="text-frnHot text-3xl text-opacity-90">Articles</span> section.</p>
-      <img class="w-10 h-10 self-end" src="assets/svgs/solid/quote-right.svg" alt="" srcset="">
+          </div> -->
+        </div>
+      </div>
     </div>
+    <p class="self-start text-4xl p-12">Experiences for Individuals, Small-Medium businesses, Agencies & Myself.</p>
+    <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">View all</button>
 
-
-    <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">Read articles</button>
   </div>
+
+  <!-- Quick Contact -->
+  <div class="w-full p-12 flex justify-between flex-1 text-center">
+    <div class="w-1/2 flex flex-col gap-8 bg-frnAccent  bg-opacity-20 px-4 py-28 shadow-2xl">
+    <p class="text-6xl text-frnBase">Got a project Idea in Mind?.</p>
+    <p class="text-6xl text-frnBase">Let me help you <span class="text-frnHot">Build</span>  it!.</p>
+  </div>
+  <div class="w-1/2">
+      <p class="text-2xl text-frnBase">Contact me</p>
+    </div>
+  </div>
+  <!-- Quick Contact End -->
+
+  
+  <!-- For Nerds -->
+  <app-home-featured></app-home-featured>
+  <!-- For Nerds End -->
 </div>
 <app-footer></app-footer>

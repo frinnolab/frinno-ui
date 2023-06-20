@@ -37,12 +37,87 @@ export class HomeComponent implements OnInit {
     title:`...`
   };
 
+  //Builds
+  dummyBuilds:any[] =
+  [
+    {
+      id:1,
+      title:`Web`,
+      description:``,
+      projectTypes:[
+        {
+          title:`Front-End`,
+          technologies:["Angular", "Nuxt 3", "Vanilla Js"]
+        },
+        {
+          title:`Back-End`,
+          technologies:[".NetCore", "Laravel", "SQL"]
+        },
+      ]
+    },
+    {
+      id:2,
+      title:`Mobile`,
+      description:``,
+      projectTypes:[
+        {
+          title:`Mobile (Android, iOS)`,
+          technologies:["Flutter", "MAUI (.NetCore)"]
+        },
+
+      ]
+    },
+    {
+      id:3,
+      title:`Design`,
+      description:``,
+      projectTypes:[
+        {
+          title:`Graphics Design`,
+          technologies:["Figma", "Adobe Illustrator", "Photoshop"]
+        },
+
+      ]
+    }
+  ]
+
+  currentBuild:any= {
+    id:0,
+    title:`...`
+  };
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(){
+    this.getTopicInterval();
+    this.getBuildInterval();
+  }
+
+  getBuildInterval = ()=>{
+    setInterval(()=>{
+      switch (this.currentBuild.id) {
+        case 0:
+          this.currentBuild = this.dummyBuilds[0]
+          break;
+        case 1:
+            this.currentBuild = this.dummyBuilds[1]
+          break;
+        case 2:
+              this.currentBuild = this.dummyBuilds[2]
+          break;
+
+        default:
+          this.currentBuild = this.dummyBuilds[0]
+          break;
+      }
+    },3500);
+  }
+
+  getTopicInterval = ()=>{
     setInterval(()=>{
       switch (this.currentTopic.id) {
         case 0:

@@ -1,11 +1,12 @@
 <div class="w-full flex flex-col">
-  <div class="py-4">
-    <h1 class="underline cursor-pointer text-3xl">Recently added Topics</h1>
+  <div class="py-6">
+    <p class="text-4xl">Recently added Topics</p>
+
   </div>
   <div *ngFor="let data of dataList">
     <!-- Article Card -->
     <div class="flex flex-col gap-4 border-x px-10 mb-4">
-      <h1 class="underline cursor-pointer text-3xl">{{data?.title}}</h1>
+      <p class="underline text-3xl">{{data?.title}}</p>
       <img *ngIf="data?.thumbnail" class="h-60" src="{{data?.thumbnail ?? ''}}" alt="" srcset="">
 
 
