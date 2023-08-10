@@ -86,6 +86,39 @@ export class HomeComponent implements OnInit {
     title:`...`
   };
 
+  //Dummy Projects
+
+  dummyProjects:any = [
+    {
+      id:0,
+      title:'Project A',
+      description:'Project A description.',
+      url:'www.projecta.com',
+      git:'projecta.git'
+    },
+    {
+      id:1,
+      title:'Project B',
+      description:'Project B description.',
+      url:'www.projectb.com',
+      git:''
+    },
+    {
+      id:2,
+      title:'Project C',
+      description:'Project C description.',
+      url:'www.projectc.com',
+      git:''
+    },
+    {
+      id:3,
+      title:'Project D',
+      description:'Project D description.',
+      url:'www.projectd.com',
+      git:'projectd.git'
+    },
+  ];
+
 
   constructor() { }
 

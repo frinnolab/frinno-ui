@@ -1,0 +1,12 @@
+.list-container
+{
+    @apply p-4 text-white text-lg w-full hover:bg-frnBase text-start
+}
+a{
+    cursor: pointer;
+}
+
+.active-link{
+    @apply border-b-4 border-b-frnHot bg-frnBase
+  }
+  

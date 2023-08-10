@@ -64,8 +64,7 @@ export class SignInComponent implements OnInit {
           role:2,
           email:res["email"]
         }
-        this.storage.saveObject("user", reData)
-        console.log(res);
+        this.storage.saveObject("user",reData)
         alert('Logged in....!')
         this.isLoggedIn = true;
         this.router.navigateByUrl("/account");        

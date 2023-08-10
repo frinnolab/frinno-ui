@@ -19,7 +19,8 @@ export class AuthService {
   }
 
   responseData:any = {};
-  currentRequest = new BehaviorSubject<any>(this.responseData);
+  currentRequest = 
+  new BehaviorSubject<any>(this.responseData);
 
   constructor(
     private server:HttpClient,

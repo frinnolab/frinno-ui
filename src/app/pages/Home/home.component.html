@@ -3,7 +3,7 @@
   <!-- Hero Info-->
   <app-home-hero></app-home-hero>
   <!-- Services Info-->
-  <div class="flex flex-col justify-center items-center gap-4 text-center p-4">
+  <div class="flex flex-col justify-center items-center gap-4 text-center p-4 w-full">
     <p class="text-4xl my-4">I help build Modern</p>
     <div class="container flex justify-center gap-4 p-8">
       <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 justify-center items-stretch text-center p-4">
@@ -26,7 +26,14 @@
         </div>
       </div>
     </div>
-    <p class="self-start text-4xl p-12">Experiences for Individuals, Small-Medium businesses, Agencies & Myself.</p>
+
+    <!-- Recent Projects -->
+    <div class="w-full flex flex-col space-between gap-8 items-center text-center p-4" >
+      <p class="self-start text-4xl p-10">Experiences for Individuals, Small-Medium businesses, Agencies & Myself.</p>
+
+      <!-- <p class="self-start text-4xl px-10">Recent Projects</p> -->
+
+    </div>
     <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">View all</button>
 
   </div>
