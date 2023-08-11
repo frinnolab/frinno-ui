@@ -7,6 +7,7 @@ import { DashProjectsComponent } from './components/dash-projects/dash-projects.
 import { DashProfileComponent } from './components/dash-profile/dash-profile.component';
 import { DashArticlesComponent } from './components/dash-articles/dash-articles.component';
 import { DashResumeComponent } from './components/dash-resume/dash-resume.component';
+import { DashOverviewComponent } from './components/dash-overview/dash-overview.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -14,6 +15,7 @@ import { DashResumeComponent } from './components/dash-resume/dash-resume.compon
     DashProjectsComponent,
     DashArticlesComponent,
     DashResumeComponent,
+    DashOverviewComponent,
   ],
   imports: [
     CommonModule,

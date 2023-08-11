@@ -1,0 +1,26 @@
+<div class="w-full">
+    <p class="text-2xl text-frnDark">Overview</p>
+    <p class="text-lg">Manage all your resources.</p>
+
+    <!-- Section Cards -->
+    <div class="w-full flex justify-between items-center gap-4">
+        <div class="w-full shadow-md bg-slate-100 
+            p-4
+            rounded-md
+            flex-1
+            flex flex-col" *ngFor="let section of sections">
+            <div class="flex justify-start gap-4 items-center w-full">
+                <p class="flex-1 text-4xl">{{section.title}}</p>
+                <p class="self-start text-lg">{{section.count}}</p>
+            </div>
+
+            <div class="flex justify-center">
+                <p class="p-12 text-2xl bg-frnHot bg-opacity-50 rounded-full"><i class="{{section.avatar}} fa-lg"></i></p>
+            </div>
+
+            <button class="border-frnBase border px-4 py-2 rounded
+            hover:bg-frnBase hover:text-white"
+            (click)="switchSection(section)">Manage</button>
+        </div>
+    </div>
+</div>

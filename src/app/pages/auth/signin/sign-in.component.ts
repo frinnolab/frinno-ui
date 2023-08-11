@@ -62,7 +62,8 @@ export class SignInComponent implements OnInit {
           id:res['id'],
           token:res['token'],
           role:res['role'],
-          email:res["email"]
+          email:res["email"],
+          username:res['username']
         }
         this.storage.saveObject("user",reData)
         alert('Logged in....!')

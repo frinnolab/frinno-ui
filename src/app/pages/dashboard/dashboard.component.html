@@ -9,21 +9,24 @@ flex flex-col">
         <p>{{currentUser.email ?? ''}}</p>
     </div>
     <div class="flex-1 w-full flex flex-col">
-        <li class="list-container w-full" (click)="switchNav(nav)" [ngClass]="{'active-link': nav.isActive}" *ngFor="let nav of navs">
-            <a class="w-full" >{{nav.title}}</a>
+        <li class="list-container w-full flex gap-4 items-center" (click)="switchNav(nav)" [ngClass]="{'active-link': nav.isActive}" *ngFor="let nav of navs">
+            <i class="{{nav.icon}}"></i><a class="w-full" >{{nav.title}}</a>
         </li>
     </div>
-    <li class="list-container"><a href="#" (click)="onLogOut()">Logout</a></li>
+    <li class="list-container flex gap-4 items-center" (click)="onLogOut()">
+        <i class="fas fa-power-off text-frnHot"></i>
+        <a href="#">Logout</a>
+    </li>
 </ul>
 <!-- Content -->
 <div class="w-full min-h-screen p-4
     flex flex-col">
     <div class="flex gap-4">
         <p class="text-2xl">Welcome:</p>
-        <p class="text-2xl">{{currentUser.email ?? ''}}</p>
+        <p class="text-2xl" >{{currentUser.email ?? ''}}</p>
     </div>
     <div>
-        <p *ngIf="currentSection?.id === 0">Dash</p>
+        <app-dash-overview *ngIf="currentSection?.id === 0" (selectedTab)="switchNav($event)"></app-dash-overview>
         <app-dash-profile *ngIf="currentSection?.id === 1"></app-dash-profile>
         <app-dash-articles *ngIf="currentSection?.id === 2"></app-dash-articles>
         <app-dash-projects *ngIf="currentSection?.id === 3"></app-dash-projects>

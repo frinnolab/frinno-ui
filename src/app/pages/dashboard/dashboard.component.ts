@@ -11,41 +11,41 @@ import { StorageService } from 'src/app/utils/storage.service';
 })
 export class DashboardComponent implements OnInit {
 
-  currentUser:LoginResponse = {}
-  currentSection:any = { }
-
   navs:any[] = [
     {
       id:0,
       title:'Dashboard',
-      url:'/account',
+      icon:'fas fa-home',
       isActive:false
     },
     {
       id:1,
       title:'Profile',
-      url:'',
+      icon:'fas fa-address-card',
       isActive:false
     },
     {
       id:2,
       title:'Articles',
-      url:'',
+      icon:'fas fa-book',
       isActive:false
     },
     {
       id:3,
       title:'Projects',
-      url:'',
+      icon:'fas fa-terminal',
       isActive:false
     },
     {
       id:4,
       title:'Resume',
-      url:'',
+      icon:'fas fa-file-alt',
       isActive:false
     },
   ]
+
+  currentUser:LoginResponse = {}
+  currentSection:any = { }
 
   constructor(
     private router:Router,
@@ -54,9 +54,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //console.log(JSON.parse(this.session.getCurrentUser()));
-    
-    
     if(!this.session.isLoggedIn())
     {
       console.log(this.session.isLoggedIn());
@@ -68,7 +65,6 @@ export class DashboardComponent implements OnInit {
   
       this.currentSection = this.navs[0];
       this.currentSection.isActive = true;
-      let currentNav = this.navs.filter((x)=>x.url === this.router.url);
       this.switchNav(this.currentSection)
     }
 
@@ -79,7 +75,6 @@ export class DashboardComponent implements OnInit {
   {
 
     this.currentSection = nav;
-
     switch (nav.id) {
       case 0:
         this.navs[0].isActive = true;
