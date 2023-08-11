@@ -9,8 +9,8 @@ flex flex-col">
         <p>{{currentUser.email ?? ''}}</p>
     </div>
     <div class="flex-1 w-full flex flex-col">
-        <li class="list-container w-full" [ngClass]="{'active-link': currentSection?.isActive}" *ngFor="let nav of navs">
-            <a class="w-full" (click)="switchNav(nav)">{{nav.title}}</a>
+        <li class="list-container w-full" (click)="switchNav(nav)" [ngClass]="{'active-link': nav.isActive}" *ngFor="let nav of navs">
+            <a class="w-full" >{{nav.title}}</a>
         </li>
     </div>
     <li class="list-container"><a href="#" (click)="onLogOut()">Logout</a></li>
@@ -24,10 +24,10 @@ flex flex-col">
     </div>
     <div>
         <p *ngIf="currentSection?.id === 0">Dash</p>
-        <p *ngIf="currentSection?.id === 1">Profile</p>
-        <p *ngIf="currentSection?.id === 2">Articles</p>
-        <p *ngIf="currentSection?.id === 3">Projects</p>
-        <p *ngIf="currentSection?.id === 4">Resume</p>
+        <app-dash-profile *ngIf="currentSection?.id === 1"></app-dash-profile>
+        <app-dash-articles *ngIf="currentSection?.id === 2"></app-dash-articles>
+        <app-dash-projects *ngIf="currentSection?.id === 3"></app-dash-projects>
+        <app-dash-resume *ngIf="currentSection?.id === 4"></app-dash-resume>
     </div>
 
     <!-- Sections -->

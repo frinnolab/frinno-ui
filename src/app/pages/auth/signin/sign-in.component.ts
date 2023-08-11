@@ -61,7 +61,7 @@ export class SignInComponent implements OnInit {
         var reData:LoginResponse = {
           id:res['id'],
           token:res['token'],
-          role:2,
+          role:res['role'],
           email:res["email"]
         }
         this.storage.saveObject("user",reData)

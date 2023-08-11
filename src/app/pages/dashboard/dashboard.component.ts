@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit {
       this.currentUser = this.session.getCurrentUser()  ;
   
       this.currentSection = this.navs[0];
-      //this.currentSection.isActive = true;
+      this.currentSection.isActive = true;
       let currentNav = this.navs.filter((x)=>x.url === this.router.url);
       this.switchNav(this.currentSection)
     }
@@ -77,27 +77,46 @@ export class DashboardComponent implements OnInit {
 
   switchNav(nav:any)
   {
-    this.currentSection = {};
+
+    this.currentSection = nav;
+
     switch (nav.id) {
       case 0:
-        this.currentSection = this.navs[nav.id]
-        //this.currentSection.isActive = true;
+        this.navs[0].isActive = true;
+        this.navs[1].isActive = false;
+        this.navs[2].isActive = false;
+        this.navs[3].isActive = false;
+        this.navs[4].isActive = false;
         break;
-        case 1:
-          this.currentSection = this.navs[nav.id]
-          //this.currentSection.isActive = true;
+      case 1:
+        this.navs[0].isActive = false;
+        this.navs[1].isActive = true;
+        this.navs[2].isActive = false;
+        this.navs[3].isActive = false;
+        this.navs[4].isActive = false;
         break;
-      default:
-        this.currentSection = this.navs[nav.id];
+      case 2:
+        this.navs[0].isActive = false;
+        this.navs[1].isActive = false;
+        this.navs[2].isActive = true;
+        this.navs[3].isActive = false;
+        this.navs[4].isActive = false;
+        break;
+      case 3:
+        this.navs[0].isActive = false;
+        this.navs[1].isActive = false;
+        this.navs[2].isActive = false;
+        this.navs[3].isActive = true;
+        this.navs[4].isActive = false;
+        break;
+      case 4:
+        this.navs[0].isActive = false;
+        this.navs[1].isActive = false;
+        this.navs[2].isActive = false;
+        this.navs[3].isActive = false;
+        this.navs[4].isActive = true;
         break;
     }
-    
-    // if(this.currentSection.id !== nav.id)
-    // {
-    //   this.currentSection = nav
-    //   this.currentSection.isActive = true;
-    //   //this.router.navigateByUrl(nav.url)
-    // }
 
 
   }
