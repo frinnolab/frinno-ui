@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavItem } from 'src/app/core/navigation.model';
 import { LoginResponse } from 'src/app/data/dtos/auth/auth-dto.model';
+import { Profile } from 'src/app/data/entities/profile-entity';
+import { ProfileService } from 'src/app/utils/services/profile-service/profile.service';
 import { StorageService } from 'src/app/utils/storage.service';
 
 @Component({
@@ -45,30 +47,44 @@ export class DashboardComponent implements OnInit {
   ]
 
   currentUser:LoginResponse = {}
+  profile:Profile = {};
   currentSection:any = { }
 
   constructor(
     private router:Router,
-    private session:StorageService
+    private session:StorageService,
+    private profileService:ProfileService
   ) { }
 
   ngOnInit(): void {
 
     if(!this.session.isLoggedIn())
     {
-      console.log(this.session.isLoggedIn());
       this.session.clearSession();
       this.router.navigateByUrl("/login");
     }
     else{
       this.currentUser = this.session.getCurrentUser()  ;
-  
       this.currentSection = this.navs[0];
       this.currentSection.isActive = true;
       this.switchNav(this.currentSection)
+
+      this.fetchProfile()
     }
 
     
+  }
+
+  fetchProfile(profile_id?:string)
+  {
+    this.profileService.getAll().pipe()
+    .subscribe((res)=>{
+      if(res)
+      {
+        console.log(res);
+        
+      }
+    })
   }
 
   switchNav(nav:any)

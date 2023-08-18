@@ -13,11 +13,7 @@ export namespace AuthGuard {
   export const canActivate = 
   (route:ActivatedRouteSnapshot, state:RouterStateSnapshot)=>{
     const authService = inject(AuthService);
-    const storageService = inject(StorageService);
     const router = inject(Router);
-    const data:LoginRequest = {};
-
-    console.log(route.data);
     return authService.login(route.data)
     .pipe(
       map(()=>true),

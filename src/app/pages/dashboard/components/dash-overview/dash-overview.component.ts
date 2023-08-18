@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Profile } from 'src/app/data/entities/profile-entity';
+import { StorageService } from 'src/app/utils/storage.service';
 
 @Component({
   selector: 'app-dash-overview',
@@ -13,6 +15,7 @@ export class DashOverviewComponent implements OnInit {
 
   @Output() selectedTab = new EventEmitter<any>()
 
+  profile:Profile = {};
   sections:any[] = [
     {
       id:1,
@@ -43,10 +46,14 @@ export class DashOverviewComponent implements OnInit {
       avatar:`fas fa-file-alt`
     }
   ]
-  constructor() {
+  constructor(
+    private storage:StorageService
+  ) {
 
   }
   ngOnInit(): void {
+
+    
     
   }
 

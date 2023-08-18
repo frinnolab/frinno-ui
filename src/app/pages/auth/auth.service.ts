@@ -15,13 +15,9 @@ export class AuthService {
   registerRoute:string = 'register'
   api:string = environment.apiBase;
   headerOptions = {
+    
     headers:new HttpHeaders ({'Content-type': 'application/json'})
   }
-
-  responseData:any = {};
-  currentRequest = 
-  new BehaviorSubject<any>(this.responseData);
-
   constructor(
     private server:HttpClient,
     ) {
