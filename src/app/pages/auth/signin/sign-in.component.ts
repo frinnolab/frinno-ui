@@ -5,6 +5,7 @@ import { LoginRequest, LoginResponse, RegisterRequest } from 'src/app/data/dtos/
 import { Subject, take, takeUntil } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/utils/storage.service';
+import { AuthRolesEnum } from 'src/app/data/dtos/auth/auth-roles.enum';
 
 @Component({
   selector: 'app-sign-in',
@@ -50,21 +51,23 @@ export class SignInComponent implements OnInit {
       email:`${this.signInForm.get("email")?.value}`,
       password:`${this.signInForm.get("password")?.value}`,
     };
-
-    console.log(data);
     
     this.auth.login(data)
     .pipe(takeUntil(this.$subscribe))
     .subscribe((res)=>{
       if(res)
       {
+        console.log(res);
+        
         var reData:LoginResponse = {
           id:res['id'],
           token:res['token'],
           role:res['role'],
+          roleName:res['roleName'],
           email:res["email"],
-          username:res['username']
+          userName:res['userName']
         }
+        
         this.storage.saveObject("user",reData)
         alert('Logged in....!')
         this.isLoggedIn = true;

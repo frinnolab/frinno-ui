@@ -10,25 +10,35 @@ import { Router } from '@angular/router';
 export class ProfileService {
 
   path:string = 'profiles';
-
   api:string = environment.apiBase;
-  token:string = ''
-  headerOptions = {
-    
-    headers:new HttpHeaders ({
-      'Content-type': 'application/json',
-    })
-  }
   constructor(
     private server:HttpClient,
     private router:Router
     ) {
     }
 
-  getAll(query?:string)
+  getAll(query:string = "")
   {
-    console.log(this.api);
-    
-    return this.server.get<any[]>(`${this.api}/${this.path}?${query}`);
+    return this.server.get<any>(`${this.api}/${this.path}?${query}`);
+  }
+  
+  getProfile(id:string, query:string = "")
+  {
+    return this.server.get<any>(`${this.api}/${this.path}/${id}/?${query}`);
+  }
+
+  updateProfile(id:string, data:{})
+  {
+    return this.server.put<any>(`${this.api}/${this.path}/${id}`, data);
+  }
+
+  createProfile(data:{})
+  {
+    return this.server.post<any>(`${this.api}/${this.path}`, data);
+  }
+
+  deleteProfile(id:string)
+  {
+    return this.server.delete<any>(`${this.api}/${this.path}/${id}`);
   }
 }

@@ -48,6 +48,8 @@ export class DashboardComponent implements OnInit {
 
   currentUser:LoginResponse = {}
   profile:Profile = {};
+  totalProfiles: number = 0;
+  profiles:Profile[] = [];
   currentSection:any = { }
 
   constructor(
@@ -69,20 +71,35 @@ export class DashboardComponent implements OnInit {
       this.currentSection.isActive = true;
       this.switchNav(this.currentSection)
 
-      this.fetchProfile()
+      this.fetchProfile(`${this.currentUser['id']}`);
     }
 
     
   }
 
-  fetchProfile(profile_id?:string)
+  fetchProfile(profile_id:string)
   {
-    this.profileService.getAll().pipe()
+    this.profileService.getProfile(profile_id).pipe()
     .subscribe((res)=>{
       if(res)
       {
-        console.log(res);
+        console.log(`Profile: ${res['id']}`);
         
+        this.profile = res
+        console.log(this.profile);
+      }
+    })
+  }
+  fetchProfiles(query:string='')
+  {
+    this.profileService.getAll(query).pipe()
+    .subscribe((res)=>{
+      if(res)
+      {
+        console.log('Profiles');
+        
+        console.log(res);
+        //this.totalProfiles = res['totalItems']
       }
     })
   }

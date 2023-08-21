@@ -9,9 +9,11 @@ export interface LoginRequest
 
 export interface LoginResponse extends BaseEntity
 {
-  username?:string;
+  id?:string;
+  userName?:string;
   email?:string,
   role?:number,
+  roleName?:string,
   token?:string;
 }
 
