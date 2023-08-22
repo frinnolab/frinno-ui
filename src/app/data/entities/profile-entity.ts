@@ -1,4 +1,6 @@
+import { AddressInfo } from "./address-info.entity";
 import { BaseEntity } from "./base-entity";
+import { ProfileStats } from "./profile-stats.entity";
 
 export interface Profile extends BaseEntity
 {
@@ -7,4 +9,7 @@ export interface Profile extends BaseEntity
   lastName?:string;
   username?:string;
   email?:string;
+  roleName?:string;
+  addressInfo?:AddressInfo;
+  stats?:ProfileStats;
 }
