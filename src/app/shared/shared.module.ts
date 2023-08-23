@@ -7,7 +7,7 @@ import { HeaderActionComponent } from './components/header/header-action/header-
 import { FaconLgRegularComponent } from './widgets/facons/facon-lg-regular/facon-lg-regular.component';
 import { FaconMdRegularComponent } from './widgets/facons/facon-md-regular/facon-md-regular.component';
 import { FaconSmRegularComponent } from './widgets/facons/facon-sm-regular/facon-sm-regular.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -30,11 +30,13 @@ import { FormsModule } from '@angular/forms';
     FaconLgRegularComponent,
     FaconMdRegularComponent,
     FaconSmRegularComponent,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

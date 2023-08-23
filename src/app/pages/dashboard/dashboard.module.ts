@@ -8,6 +8,7 @@ import { DashProfileComponent } from './components/dash-profile/dash-profile.com
 import { DashArticlesComponent } from './components/dash-articles/dash-articles.component';
 import { DashResumeComponent } from './components/dash-resume/dash-resume.component';
 import { DashOverviewComponent } from './components/dash-overview/dash-overview.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -19,7 +20,8 @@ import { DashOverviewComponent } from './components/dash-overview/dash-overview.
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    SharedModule
   ]
 })
 export class DashboardModule { }
