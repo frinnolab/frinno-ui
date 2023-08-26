@@ -24,13 +24,13 @@ export class DashOverviewComponent implements OnInit {
       icon:`icon`,
       avatar:`fas fa-address-card`
     },
-    {
-      id:2,
-      title:`Articles`,
-      count:0,
-      icon:`icon`,
-      avatar:`fas fa-book`
-    },
+    // {
+    //   id:2,
+    //   title:`Articles`,
+    //   count:0,
+    //   icon:`icon`,
+    //   avatar:`fas fa-book`
+    // },
     {
       id:3,
       title:`Projects`,

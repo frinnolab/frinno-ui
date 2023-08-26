@@ -26,12 +26,12 @@ export class DashboardComponent implements OnInit {
       icon:'fas fa-address-card',
       isActive:false
     },
-    {
-      id:2,
-      title:'Articles',
-      icon:'fas fa-book',
-      isActive:false
-    },
+    // {
+    //   id:2,
+    //   title:'Articles',
+    //   icon:'fas fa-book',
+    //   isActive:false
+    // },
     {
       id:3,
       title:'Projects',
