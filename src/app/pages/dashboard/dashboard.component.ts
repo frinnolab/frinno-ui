@@ -82,11 +82,8 @@ export class DashboardComponent implements OnInit {
     this.profileService.getProfile(profile_id).pipe()
     .subscribe((res)=>{
       if(res)
-      {
-        console.log(`Profile: ${res['id']}`);
-        
+      { 
         this.profile = res
-        console.log(this.profile);
       }
     })
   }
@@ -96,6 +93,8 @@ export class DashboardComponent implements OnInit {
     .subscribe((res)=>{
       if(res)
       {
+
+        //Deprecated Here. To remove
         console.log('Profiles');
         
         console.log(res);
@@ -123,12 +122,12 @@ export class DashboardComponent implements OnInit {
         this.navs[3].isActive = false;
         this.navs[4].isActive = false;
         break;
-      case 2:
-        this.navs[0].isActive = false;
-        this.navs[1].isActive = false;
-        this.navs[2].isActive = true;
-        this.navs[3].isActive = false;
-        this.navs[4].isActive = false;
+      // case 2:
+      //   this.navs[0].isActive = false;
+      //   this.navs[1].isActive = false;
+      //   this.navs[2].isActive = true;
+      //   this.navs[3].isActive = false;
+      //   this.navs[4].isActive = false;
         break;
       case 3:
         this.navs[0].isActive = false;

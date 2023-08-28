@@ -18,6 +18,10 @@ export class ProjectsService {
   {
     return this.server.get<any>(`${this.api}/${this.path}?${query}`);
   }
+  getAllForProfile(profile_id:string ,query:string = "")
+  {
+    return this.server.get<any>(`${this.api}/${this.path}?profile_id=${profile_id},${query}`);
+  }
   
   getProject=(project_id:number, query:string='')=>{
     return this.server.get<any>(`${this.api}/${this.path}/${project_id}?${query}`);
