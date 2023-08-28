@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DummyProject } from '../about/components/about-projects/about-projects.component';
+import { Project } from 'src/app/data/entities/project/project-entity';
+import { ProjectsService } from 'src/app/utils/services/projects-service/projects.service';
+import { Subject, takeUntil } from 'rxjs';
+import { damp } from 'three/src/math/MathUtils';
 
 @Component({
   selector: 'app-projects',
@@ -7,53 +11,6 @@ import { DummyProject } from '../about/components/about-projects/about-projects.
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-
-  dummyTopics:any[] =
-  [
-    {
-      id:1,
-      title:`Hire`
-    },
-    {
-      id:2,
-      title:`Contract`
-    },
-    {
-      id:3,
-      title:`Out-Source`
-    },
-    {
-      id:4,
-      title:`Assign`
-    },
-  ]
-
-  dataList:DummyProject[] = [
-    {
-      id:1,
-      title:`Exercitationem maxime.`,
-      description:`Itaque saepe iure suscipit corporis ad? Ratione eveniet ducimus voluptatibus tempore
-      totam, dolorem neque voluptates earum magni.`,
-      url:`github/commodi`,
-      preview_url:`commodi.com`
-    },
-    {
-      id:2,
-      title:`Voluptatibus eligendi.`,
-      description:`Nam maxime officia eligendi praesentium labore beatae, voluptatem inventore
-      veritatis vel sunt.`,
-      url:`github/eligendi`,
-      preview_url:`eligendi.com`
-    },
-    {
-      id:3,
-      title:`Suscipit esse fugiat.`,
-      description:`Quia voluptate saepe labore, quos repudiandae blanditiis rerum eligendi.
-      Harum voluptatem labore.`,
-      url:`github/fugiat`,
-      preview_url:`fugiat.com`
-    },
-  ]
 
   stackList:any[] = [
     {
@@ -77,38 +34,70 @@ export class ProjectsComponent implements OnInit {
     },
   ]
 
-
-  currentTopic:any= {
-    id:0,
-    title:`...`
-  };
-
-  constructor() { }
+  projects:Project[] = []
+  $subscribe= new Subject<Project>();
+  totalProjects:number = 0;
+  constructor(
+    private projectService:ProjectsService
+  ) { }
 
   ngOnInit(): void {
+
+    this.fetchAllProjects();
   }
 
   ngAfterViewInit(){
-    setInterval(()=>{
-      switch (this.currentTopic.id) {
-        case 0:
-          this.currentTopic = this.dummyTopics[0]
-          break;
-        case 1:
-            this.currentTopic = this.dummyTopics[1]
-          break;
-        case 2:
-              this.currentTopic = this.dummyTopics[2]
-          break;
-        case 3:
-              this.currentTopic = this.dummyTopics[3]
-          break;
 
-        default:
-          this.currentTopic = this.dummyTopics[0]
-          break;
-      }
-    },3500);
   }
+
+  fetchAllProjects=()=>{
+    this.projectService.getAll()
+    .pipe(takeUntil(this.$subscribe))
+    .subscribe((data)=>{
+      if(data)
+      {
+        this.totalProjects = data?.response?.totalItems ?? 0;
+        this.projects =[...this.mapProjects(data?.response?.data)];
+
+      }
+    })
+
+
+  }
+
+  onView=(project_id:number)=>{
+    if(project_id>0)
+    {
+      this.projectService.getProject(project_id)
+      .pipe(takeUntil(this.$subscribe))
+      .subscribe((data)=>{
+        if(data)
+        {
+          console.log(data);
+        }
+      })
+    }
+  }
+
+  mapProjects=(data:any[]):Project[]=>{
+
+    let response:Project[] = data.map((p)=>{
+      return {
+        id:p?.id,
+        title:`${p?.title}`,
+        description:`${p?.description}`
+      }
+    })
+
+    return response;
+  }
+
+  ngOnDestroy()
+  {
+    this.projects = [];
+    this.$subscribe.unsubscribe();
+  }
+
+
 
 }
