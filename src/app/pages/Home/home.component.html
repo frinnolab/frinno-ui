@@ -1,58 +1,85 @@
 <app-layout></app-layout>
-<div class="w-full flex flex-col gap-4 min-h-screen">
+<div class="w-full flex flex-col gap-8 min-h-screen">
   <!-- Hero Info-->
   <app-home-hero></app-home-hero>
-  <!-- Services Info-->
-  <div class="flex flex-col justify-center items-center gap-4 text-center p-4 w-full">
-    <p class="text-4xl my-4">I help build Modern</p>
-    <div class="container flex justify-center gap-4 p-8">
-      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 justify-center items-stretch text-center p-4">
+    <!-- Services Info-->
+  <div class="flex flex-col justify-between items-center gap-8 text-center w-full md:px-8">
+    <p class="text-4xl">I Build Modern</p>
+    <div class="container flex md:flex-row flex-col justify-center md:px-4">
+      <div *ngFor="let sCard of dummyBuilds; let i" class="flex-1 flex flex-col text-center p-4">
         <!-- <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span>  -->
-        <div class="service-card flex flex-col flex-1 border  bg-frnAccent  bg-opacity-20 hover:shadow-sm hover:bg-frnLight rounded-2xl">
-          <p class="cursor-default text-4xl text-frnHot px-20 py-4 rounded-2xl bg-frnAccent bg-opacity-10">{{sCard.title}}</p>
-          <!-- <p class="text-start text-xl px-4">{{sCard.description}}Lorem ipsum dolor sit amet.</p> -->
-          <!-- project Types -->
-          <div class="w-full flex flex-col gap-4 justify-between px-4">
-            <div class="flex flex-col justify-between items-stretch text-center" *ngFor="let pType of sCard.projectTypes">
-              <p class="text-start text-xl">{{pType.title}}</p>
-              <div class="flex gap-4 min-w-[10%]">
-                <p class="text-start" *ngFor="let techno of pType.technologies">{{techno}}</p>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="w-full p-8 border border-frnHot">
-
-          </div> -->
+        <div class="flex-1 flex flex-col border-2 border-frnBase rounded-2xl
+         text-start px-4 py-2 gap-2
+         hover:border-transparent hover:shadow-lg">
+          <i class="{{sCard.icon}} md:text-6xl text-2xl text-frnBase"></i>
+          <p class="cursor-default md:text-4xl text-2xl text-frnHot">{{sCard.title}}</p>
+          <p class="text-start text-xl">{{sCard.description}}Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
     </div>
 
-    <!-- Recent Projects -->
-    <div class="w-full flex flex-col space-between gap-8 items-center text-center p-4" >
-      <p class="self-start text-4xl p-10">Experiences for Individuals, Small-Medium businesses, Agencies & Myself.</p>
-
-      <!-- <p class="self-start text-4xl px-10">Recent Projects</p> -->
-
+    <div class="w-full flex flex-col space-between items-center text-center gap-8 p-4" >
+      <p class="md:text-4xl text-2xl">Experiences for Individuals, Small-Medium businesses, Agencies & Myself.</p>
+      <button class="text-frnBase text-lg border border-frnBase px-4 py-2 
+      rounded-md hover:bg-frnBase hover:text-white" (click)="onViewProjects()">View Projects</button>
     </div>
-    <button class="text-frnAccent border border-frnAccent px-8 py-4 rounded-md hover:bg-frnAccent hover:bg-opacity-90 hover:text-frnLight">View all</button>
 
   </div>
 
   <!-- Quick Contact -->
-  <div class="w-full p-12 flex justify-between flex-1 text-center">
-    <div class="w-1/2 flex flex-col gap-8 bg-frnAccent  bg-opacity-20 px-4 py-28 shadow-2xl">
-    <p class="text-6xl text-frnBase">Got a project Idea in Mind?.</p>
-    <p class="text-6xl text-frnBase">Let me help you <span class="text-frnHot">Build</span>  it!.</p>
-  </div>
-  <div class="w-1/2">
-      <p class="text-2xl text-frnBase">Contact me</p>
+  <div class="w-full flex md:flex-row flex-col  justify-between text-center gap-8">
+    <div class="md:w-1/2 flex flex-col justify-center items-center text-center bg-slate-300 md:p-6 p-10">
+      <p class="md:text-6xl text-4xl text-frnBase">Got a BIG Idea in Mind?.</p>
+      <p class="md:text-6xl text-4xl text-frnBase">Let me help you <span class="text-frnHot">Build</span>  it!.</p>
+    </div>
+    <div class="md:w-1/2 p-6">
+      <form class="flex flex-col justify-start gap-4 px-6 py-2 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
+        <p class="md:text-4xl text-2xl self-center text-frnBase">Get intouch with me</p>
+        
+        <!-- Inputs -->
+        <div class="flex flex-col justify-start border-2 border-frnBase rounded-md p-1">
+          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_fullname">Fullname</label>
+          <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase"  type="text" formControlName="sender_fullname">
+        </div>
+
+        <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
+          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_email">Email</label>
+          <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="email" formControlName="sender_email">
+        </div>
+
+        <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
+          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_mobile">Mobile</label>
+          <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="tel" formControlName="sender_mobile">
+        </div>
+
+        <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
+          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_company">Company</label>
+          <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="text" formControlName="sender_company">
+        </div>
+
+        <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
+          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_role">Role/Occupation</label>
+          <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="text" formControlName="sender_role">
+        </div>
+
+        <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
+          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_message">Message</label>
+            <textarea class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" formControlName="sender_message"  cols="5" rows="2"></textarea>
+        </div>
+
+        <div class="flex justify-end gap-4">
+          <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnBase hover:text-white" (click)="onClearForm()">Clear</button>
+          <button class="text-white border bg-frnBase border-frnBase px-4 py-2 rounded-md  hover:bg-transparent hover:text-frnBase">Submit</button>
+        </div>
+      </form>
+
+
     </div>
   </div>
   <!-- Quick Contact End -->
-
-  
-  <!-- For Nerds -->
-  <app-home-featured></app-home-featured>
-  <!-- For Nerds End -->
 </div>
+<div class="md:p-10 p-5">
+  <app-home-featured ></app-home-featured>
+</div>
+
 <app-footer></app-footer>
