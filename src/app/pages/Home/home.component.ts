@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
       id:1,
       icon:`fa fa-paint-roller`,
       title:`Client Apps`,
-      description:``,
+      description:`Client facing Applications with modern frontend Frameworks`,
       projectTypes:[
         {
           title:`Front-End Tools`,
