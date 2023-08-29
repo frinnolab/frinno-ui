@@ -26,20 +26,14 @@ export class DashboardComponent implements OnInit {
       icon:'fas fa-address-card',
       isActive:false
     },
-    // {
-    //   id:2,
-    //   title:'Articles',
-    //   icon:'fas fa-book',
-    //   isActive:false
-    // },
     {
-      id:3,
+      id:2,
       title:'Projects',
       icon:'fas fa-terminal',
       isActive:false
     },
     {
-      id:4,
+      id:3,
       title:'Resume',
       icon:'fas fa-file-alt',
       isActive:false
@@ -62,6 +56,7 @@ export class DashboardComponent implements OnInit {
 
     if(!this.session.isLoggedIn())
     {
+      this.profile = {};
       this.session.clearSession();
       this.router.navigateByUrl("/login");
     }
@@ -100,7 +95,13 @@ export class DashboardComponent implements OnInit {
         console.log(res);
         //this.totalProfiles = res['totalItems']
       }
-    })
+      else
+      {
+        console.log("error from server");
+        
+      }
+    }
+    )
   }
 
   switchNav(nav:any)
@@ -113,35 +114,24 @@ export class DashboardComponent implements OnInit {
         this.navs[1].isActive = false;
         this.navs[2].isActive = false;
         this.navs[3].isActive = false;
-        this.navs[4].isActive = false;
         break;
       case 1:
         this.navs[0].isActive = false;
         this.navs[1].isActive = true;
         this.navs[2].isActive = false;
         this.navs[3].isActive = false;
-        this.navs[4].isActive = false;
         break;
-      // case 2:
-      //   this.navs[0].isActive = false;
-      //   this.navs[1].isActive = false;
-      //   this.navs[2].isActive = true;
-      //   this.navs[3].isActive = false;
-      //   this.navs[4].isActive = false;
+      case 2:
+        this.navs[0].isActive = false;
+        this.navs[1].isActive = false;
+        this.navs[2].isActive = true;
+        this.navs[3].isActive = false;
         break;
       case 3:
         this.navs[0].isActive = false;
         this.navs[1].isActive = false;
         this.navs[2].isActive = false;
         this.navs[3].isActive = true;
-        this.navs[4].isActive = false;
-        break;
-      case 4:
-        this.navs[0].isActive = false;
-        this.navs[1].isActive = false;
-        this.navs[2].isActive = false;
-        this.navs[3].isActive = false;
-        this.navs[4].isActive = true;
         break;
     }
 
@@ -156,6 +146,19 @@ export class DashboardComponent implements OnInit {
   onLogOut=()=>{
     this.session.clearSession();
     this.router.navigateByUrl('/')
+  }
+
+  ngAfterViewInit()
+  {
+    if(!this.profile)
+    {
+      this.onLogOut();
+    }
+  }
+
+  ngOnDestroy()
+  {
+    this.profile = {};
   }
 
 }
