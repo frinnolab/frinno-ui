@@ -1,5 +1,5 @@
 <div class="w-full flex justify-center items-center p-12 bg-coreDeepBase min-h-screen">
-  <form class="bg-white rounded-xl shadow-md w-6/12 flex flex-col gap-4" (ngSubmit)="onRegister()">
+  <form [formGroup]="regForm" class="bg-white rounded-xl shadow-md w-6/12 flex flex-col gap-4" (ngSubmit)="onRegister()">
     <div class="flex flex-col gap-2 px-16 mt-6">
       <h1>Register</h1>
       <div class="flex gap-2">
@@ -11,28 +11,28 @@
       <!-- fname -->
       <div class="flex flex-col gap-2 w-full">
         <label for="firstname">Firstname</label>
-        <input type="text" class="bg-coreSky px-6 py-2" placeholder="Enter Firstname">
+        <input type="text" formControlName="firstName" class="bg-coreSky px-6 py-2" placeholder="Enter Firstname">
       </div>
       <!-- lname -->
       <div class="flex flex-col gap-2 w-full">
         <label for="lastname">Lastname</label>
-        <input type="text" class="bg-coreSky px-6 py-2" placeholder="Enter Lastname">
+        <input type="text" formControlName="lastName" class="bg-coreSky px-6 py-2" placeholder="Enter Lastname">
       </div>
     </div>
     <!-- email -->
     <div class="flex flex-col gap-2 px-16">
       <label for="email">Email</label>
-      <input type="text" class="bg-coreSky px-6 py-2" placeholder="Enter Email">
+      <input type="text" formControlName="email" class="bg-coreSky px-6 py-2" placeholder="Enter Email">
     </div>
     <!-- pssword  -->
     <div class="flex justify-between items-center px-16 gap-4">
       <div class="flex flex-col gap-2 w-full">
         <label for="password">Password</label>
-        <input type="password" class="bg-coreSky px-6 py-2" placeholder="Enter Password">
+        <input type="password" formControlName="password" class="bg-coreSky px-6 py-2" placeholder="Enter Password">
       </div>
       <div class="flex flex-col gap-2 w-full">
         <label for="confirm password">Confirm Password</label>
-        <input type="password" class="bg-coreSky px-6 py-2" placeholder="Confirm Password">
+        <input type="password" formControlName="confirmPassword" class="bg-coreSky px-6 py-2" placeholder="Confirm Password">
       </div>
     </div>
 
@@ -40,11 +40,11 @@
     <div class="flex justify-between items-center px-16 gap-4">
       <div class="flex flex-col gap-2 w-full">
         <label for="Mobile">Mobile</label>
-        <input type="tel" class="bg-coreSky px-6 py-2" placeholder="Enter Mobile">
+        <input type="tel" formControlName="mobile" class="bg-coreSky px-6 py-2" placeholder="Enter Mobile">
       </div>
       <div class="flex flex-col gap-2 w-full">
         <label for="City">City</label>
-        <input type="text" class="bg-coreSky px-6 py-2" placeholder="Enter City">
+        <input type="text" formControlName="city" class="bg-coreSky px-6 py-2" placeholder="Enter City">
       </div>
     </div>
 

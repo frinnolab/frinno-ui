@@ -16,10 +16,10 @@ const routes: Routes = [
     path:'home',
     loadChildren:()=> import('./pages/Home/home.module').then((x)=>x.HomeModule)
   },
-  {
-    path:'articles',
-    loadChildren:()=> import('./pages/Articles/articles.module').then((x)=>x.ArticlesModule)
-  },
+  // {
+  //   path:'articles',
+  //   loadChildren:()=> import('./pages/Articles/articles.module').then((x)=>x.ArticlesModule)
+  // },
   {
     path:'projects',
     loadChildren:()=> import('./pages/projects/projects.module').then((x)=>x.ProjectsModule)

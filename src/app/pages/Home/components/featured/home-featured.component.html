@@ -1,22 +1,10 @@
-<div class="w-full p-4 bg-frnAccent bg-opacity-20 flex flex-col justify-between gap-4 text-frnDark">
-  <p class="text-left text-2xl text-frnAccent text-opacity-80">For the Nerds ></p>
-  <p class="text-4xl text-frnBase text-center">Tools & Technologies</p>
+<div class="w-full flex flex-col justify-between gap-8 text-frnDark">
+  <!-- <p class="text-left text-2xl text-frnAccent text-opacity-80">For the Nerds ></p> -->
+  <p class="text-4xl text-frnBase text-center">Tools & Technologies I Use</p>
 
-  <div class="w-auto h-auto flex gap-8 justify-center">
-    <div class="flex justify-center" *ngFor="let skill of dummySkills" >
-      <!-- <p class="text-3xl text-frnLight">{{skill.title}}</p>
-      <hr> -->
-      <div *ngFor="let tool of skill.tools" class="flex justify-center">
-        <!-- <p class="text-lg">{{tool.title}}</p> -->
-        <div class="flex gap-1 justify-between">
-          <!-- <p class="">{{tool.language ?? ''}}</p> -->
-          <img class="w-2/4 h-2/4" src="{{tool.logo??''}}" alt="" srcset="">
-        </div>
-      </div>
+  <div class="flex justify-center items-center py-4">
+    <div class="flex-1 flex justify-between" *ngFor="let skill of dummySkills" >
+      <img class="flex-1 block md:w-10 md:h-10 w-6 h-6" *ngFor="let tool of skill.tools" src="{{tool.logo??''}}" alt="" srcset="">
     </div>
   </div>
-
-  <!-- <div class="my-4">
-    <button (click)="onViewProjects()" class="px-10 py-5 border border-frnAccent text-frnLight rounded hover:bg-frnAccent hover:bg-opacity-80">View more in Projects</button>
-  </div> -->
 </div>

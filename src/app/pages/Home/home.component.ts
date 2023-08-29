@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,68 +10,37 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
 
-  dummyTopics:any[] =
-  [
-    {
-      id:1,
-      title:`Software Development`
-    },
-    {
-      id:2,
-      title:`UI/UX Design`
-    },
-    {
-      id:3,
-      title:`Technology News`
-    },
-    {
-      id:4,
-      title:`Tutorial`
-    },
-    {
-      id:5,
-      title:`Career`
-    },
-  ]
-
-  currentTopic:any= {
-    id:0,
-    title:`...`
-  };
-
   //Builds
   dummyBuilds:any[] =
   [
     {
       id:1,
-      title:`Web`,
+      icon:`fa fa-paint-roller`,
+      title:`Client Apps`,
       description:``,
       projectTypes:[
         {
-          title:`Front-End`,
-          technologies:["Angular", "Nuxt 3", "Vanilla Js"]
-        },
-        {
-          title:`Back-End`,
-          technologies:[".NetCore", "Laravel", "SQL"]
+          title:`Front-End Tools`,
+          technologies:["Angular","Vanilla Js"]
         },
       ]
     },
     {
       id:2,
-      title:`Mobile`,
+      icon:`fa fa-server`,
+      title:`Server Apps`,
       description:``,
       projectTypes:[
         {
-          title:`Mobile (Android, iOS)`,
-          technologies:["Flutter", "MAUI (.NetCore)"]
+          title:`Back-End Tools`,
+          technologies:[".NetCore", "Laravel", "SQL", "System design"]
         },
-
       ]
     },
     {
       id:3,
-      title:`Design`,
+      icon:`fa fa-palette`,
+      title:`Graphic Presentations`,
       description:``,
       projectTypes:[
         {
@@ -86,15 +57,46 @@ export class HomeComponent implements OnInit {
     title:`...`
   };
 
+  contactForm = new FormGroup({
+    sender_fullname:new FormControl(""
+    ,[Validators.required]),
+    sender_company:new FormControl(""),
+    sender_role:new FormControl(""),
+    sender_email:new FormControl("",
+    [Validators.email,Validators.required] ),
+    sender_mobile:new FormControl(""
+    ,[Validators.required]),
+    sender_message:new FormControl("",
+    [Validators.required]),
+  })
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onSendContact = ()=>
+  {
+    console.log(this.contactForm.value);
+  }
+
+  onClearForm=()=>{
+    this.contactForm.get('sender_fullname')?.setValue("");
+    this.contactForm.get('sender_company')?.setValue("");
+    this.contactForm.get('sender_email')?.setValue("");
+    this.contactForm.get('sender_mobile')?.setValue("");
+    this.contactForm.get('sender_role')?.setValue("");
+    this.contactForm.get('sender_message')?.setValue("");
+  }
+
   ngAfterViewInit(){
-    this.getTopicInterval();
     this.getBuildInterval();
+  }
+
+  onViewProjects=()=>{
+    this.router.navigateByUrl('/projects');
   }
 
   getBuildInterval = ()=>{
@@ -117,30 +119,6 @@ export class HomeComponent implements OnInit {
     },3500);
   }
 
-  getTopicInterval = ()=>{
-    setInterval(()=>{
-      switch (this.currentTopic.id) {
-        case 0:
-          this.currentTopic = this.dummyTopics[0]
-          break;
-        case 1:
-            this.currentTopic = this.dummyTopics[1]
-          break;
-        case 2:
-              this.currentTopic = this.dummyTopics[2]
-          break;
-        case 3:
-              this.currentTopic = this.dummyTopics[3]
-          break;
-        case 4:
-              this.currentTopic = this.dummyTopics[4]
-          break;
 
-        default:
-          this.currentTopic = this.dummyTopics[0]
-          break;
-      }
-    },3500);
-  }
 
 }

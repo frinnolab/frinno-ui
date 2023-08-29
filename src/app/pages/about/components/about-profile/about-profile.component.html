@@ -1,44 +1,45 @@
-<div class="w-full  flex justify-between gap-10 px-4 py-2 border-b-2 text-frnBase">
+<div class="w-full  flex md:flex-row flex-col justify-between items-center gap-10 px-4 py-2 border-b-2 text-frnBase">
 <!-- Profile Image -->
-<img class="block w-1/4 h-1/4 rounded-full" src="{{'assets/images/frn_00.jpg'}}" alt="" srcset="">
+<img class="block md:w-1/4 md:h-1/4 w-1/2 h-1/2 rounded-full" src="{{'assets/images/frn_00.jpg'}}" alt="" srcset="">
 <!-- Bio -->
-<div class="w-full flex flex-col gap-10 mb-10">
+<div class="md:w-full flex flex-col text-center md:text-start gap-10 mb-10">
   <div>
     <p class="text-4xl ">Frank Leons Malisawa</p>
-    <p class="text-slate-500 text-2xl">Fullstack Software Engineer.</p>
+    <p class="text-slate-500 text-2xl">Software Engineer.</p>
   </div>
-  <div class="w-full flex gap-10">
-    <!-- location -->
-    <div class="cursor-default p-2 flex items-center gap-4 rounded-lg border border-frnBase">
-      <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'solid/map-pin.svg'"></app-facon-sm-regular>
-      <p class="text-slate-500">Dar Es Salaam, Tanzania</p>
-    </div>
-    <!-- github -->
-    <div class="cursor-default p-2 flex items-center gap-4 rounded-lg border border-frnBase">
-      <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'brands/github-alt.svg'"></app-facon-sm-regular>
-      <a href="#" class="underline text-slate-500">github/frinnolab</a>
-    </div>
-
+  <div class="md:w-full flex md:flex-row flex-col items-center gap-10">
+      <!-- location -->
+      <div class="cursor-default gap-2 flex p-2 rounded-lg border border-frnBase">
+        <!-- <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'solid/map-pin.svg'"></app-facon-sm-regular> -->
+        <!-- <p class=" text-slate-500">Dar Es Salaam, Tanzania</p> -->
+        <img class="w-5 h-5" src="{{'assets/svgs/solid/map-pin.svg'}}"/>
+        <a class="no-underline text-slate-500 self-start">Dar Es Salaam, Tanzania</a>
+      </div>
+      <!-- github -->
+      <div class="cursor-default gap-2 flex p-2 rounded-lg border border-frnBase">
+        <!-- <app-facon-sm-regular class="p-2 rounded-full hover:bg-coreDeepSky" [icon]="'brands/github-alt.svg'"></app-facon-sm-regular> -->
+        <img class="w-5 h-5 block " src="{{'assets/svgs/brands/github.svg'}}"/>
+        <a href="https://github.com/frinnolab" target="_blank" class=" block underline text-slate-500">github/frinnolab</a>
+      </div>
   </div>
 
-  <div class="w-full flex flex-col gap-4 rounded-2xl px-4 py-8  bg-frnAccent bg-opacity-20">
+  <div class="w-full flex flex-col gap-4 rounded-2xl md:px-4 md:py-8 p-4  bg-slate-300 ">
     <!-- Bio -->
-    <div class="w-full flex flex-col">
+    <div class="w-full flex flex-col flex-1">
       <p class="text-2xl">Bio:</p>
-      <article class="text-slate-500 text-lg">
-        Animi ducimus error exercitationem vel aliquam voluptas? Illo consequuntur alias voluptas veniam tempore illum consequatur nam recusandae sint perferendis, distinctio autem reiciendis
-        ullam ea aperiam fugit sapiente ad pariatur saepe.
+      <article class="text-slate-500 md:text-xl text-lg">
+        I've always been fascinated by technology, both as a consumer and a creator hence the driving force to keep exploring the depth of it by developing immersive experiences through the eyes of the communities intended, and have growth and fun in the process.
       </article>
     </div>
     
     <!-- Skills -->
-    <div class="w-full flex flex-col">
+    <!-- <div class="w-full flex flex-col flex-1">
       <p class="text-2xl">Skills:</p>
-      <article class="text-slate-500 text-lg">
+      <article class="text-slate-500 md:text-xl text-lg">
         Consectetur nam consequuntur tenetur quibusdam facilis doloremque modi praesentium quis, recusandae accusantium dignissimos consequatur fugiat, animi dolores vero quae architecto
         dolorem repudiandae.
       </article>
-    </div>
+    </div> -->
   </div>
 </div>
 </div>

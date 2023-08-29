@@ -1,0 +1,87 @@
+<div class="w-full flex flex-col gap-4">
+    <p class="text-2xl">Manage your Projects</p>
+
+    <!-- Preview -->
+    <div class="p-4 flex flex-col">
+        <div class="flex flex-row justify-between items-center 
+        bg-slate-100
+        p-4 rounded-md">
+        <div></div>
+            <div class="text-center">
+                <p class="text-lg font-semibold">0 Projects</p>
+                <p class="p-2 rounded-full bg-slate-200">All</p>
+            </div>
+            <hr class="text-3xl font-extrabold border-2 h-10">
+            <div class="text-center">
+                <p class="text-lg font-semibold">0 Projects</p>
+                <p class="p-2 rounded-full bg-slate-200">In Planning</p>
+            </div>
+            <hr class="text-3xl font-extrabold border-2 h-10">
+            <div class="text-center">
+                <p class="text-lg font-semibold">0 Projects</p>
+                <p class="p-2 rounded-full bg-slate-200">In Progress</p>
+            </div>
+            <hr class="text-3xl font-extrabold border-2 h-10">
+            <div class="text-center">
+                <p class="text-lg font-semibold">0 Projects</p>
+                <p class="p-2 rounded-full bg-slate-200">Completed</p>
+            </div>
+            <hr class="text-3xl font-extrabold border-2 h-10">
+
+            <div class="text-center">
+                <p class="text-lg font-semibold">0 Projects</p>
+                <p class="p-2 rounded-full bg-slate-200">Stopped</p>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Preview End -->
+
+    <!-- Table Display -->
+    <!-- To Fix: Change Layout Table to Accordon on Mobile view. -->
+
+    <table class="w-full flex flex-col bg-white px-4 py-2 rounded-md">
+        <thead class="w-full font-semibold">
+            <tr class="w-full flex flex-row justify-between items-center">
+
+                <p class="bg-slate-300 p-2 rounded-full">Total Projects 0</p>
+                <button 
+                    class="border px-2 py-1 
+                    rounded md:text-lg text-base
+                    bg-frnDark hover:bg-frnBase text-white"
+                    >Add New
+                </button>
+            </tr>
+
+            <tr class="w-full flex flex-row justify-between items-center text-start ">
+                <p class="text-xl">Title</p>
+                <p class="text-xl">Description</p>
+                <p class="text-xl">Actions</p>
+            </tr>
+        </thead>
+        <hr>
+
+        <tbody *ngIf="projects.length == 0">
+            <tr>
+                <p>No Projects found. Create a New One by Clicking "ADD" button</p>
+            </tr>
+        </tbody>
+        <tbody *ngIf="projects.length" class="w-full flex flex-col">
+            <div *ngFor="let pj of projects">
+                <tr class="fle-1 flex flex-row justify-between items-center px-0 py-1">
+                    <td>{{pj?.title ?? ''}}</td>
+                    <td>{{pj?.description ?? ''}}</td>
+                    <div class="flex flex-row justify-between gap-4 items-center">
+                        <td><button class="border-frnBase border px-4 py-1 rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" (click)="onView(pj.id)">View</button></td>
+                        <td><button class="border-frnBase border px-4 py-1 rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" (click)="onAddOrEdit(pj.id)">Edit</button></td>
+                        <td><button class="border-frnBase border px-4 py-1 rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" (click)="onDelete(pj.id)">Delete</button></td>
+                    </div>
+                </tr>
+                <hr>
+            </div>
+        </tbody>
+
+    </table>
+    
+    <!-- Table Display End -->
+</div>

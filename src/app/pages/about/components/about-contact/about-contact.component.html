@@ -1,18 +1,18 @@
-<div class="w-full flex flex-col gap-4 py-8">
-  <p class="text-4xl">Contact me</p>
+<div class="w-full flex flex-col gap-4 py-8 text-center">
+  <p class="md:text-4xl text-2xl">Contact me</p>
 
 
-  <div class="w-full flex justify-between items-center gap-4">
-    <div *ngFor="let data of dataList; let index;">
-      <div class="w-full flex flex-col items-center gap-2">
-        <!-- Contact card -->
-        <app-facon-md-regular *ngIf="data.title === dataList[0].title" [icon]="'brands/square-whatsapp.svg'" ></app-facon-md-regular>
-        <app-facon-md-regular *ngIf="data.title === dataList[1].title" [icon]="'solid/mobile-retro.svg'" ></app-facon-md-regular>
-        <app-facon-md-regular *ngIf="data.title === dataList[2].title" [icon]="'brands/square-twitter.svg'" ></app-facon-md-regular>
-        <app-facon-md-regular *ngIf="data.title === dataList[3].title" [icon]="'brands/linkedin.svg'" ></app-facon-md-regular>
-        <p>{{data?.title}}</p>
-        <p>{{data?.description}}</p>
-      </div>
+  <div class="w-full flex md:flex-row flex-col justify-between items-center gap-4">
+    <div *ngFor="let data of dataList; let index;" class="w-full flex flex-col justify-between items-center gap-2">
+      <!-- Contact card -->
+      <app-facon-md-regular *ngIf="data.title === dataList[0].title" [icon]="'brands/square-whatsapp.svg'" ></app-facon-md-regular>
+      <app-facon-md-regular *ngIf="data.title === dataList[1].title" [icon]="'solid/mobile-retro.svg'" ></app-facon-md-regular>
+      <app-facon-md-regular *ngIf="data.title === dataList[2].title" [icon]="'brands/square-twitter.svg'" ></app-facon-md-regular>
+      <app-facon-md-regular *ngIf="data.title === dataList[3].title" [icon]="'brands/linkedin.svg'" ></app-facon-md-regular>
+      <p>{{data?.title}}</p>
+      <p>{{data?.description}}</p>
     </div>
+    <!-- <div *ngFor="let data of dataList; let index;">
+    </div> -->
   </div>
 </div>

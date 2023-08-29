@@ -1,8 +1,57 @@
-<div class="w-full flex flex-col justify-between items-center  gap-10 bg-frnLight">
-    <h3>Dashboard works!</h3>
-    <button class="px-4 py-2 text-frnLight bg-frnHot" (click)="onHomeRoute()">Home</button>
-    <!-- Nav Container -->
-    <div class="w-full px-8 py-4 flex justify-between gap-8">
+<div class="
+min-h-screen bg-slate-300
+flex justify-between">
+<!-- Side Nav -->
+<ul class="hidden 
+bg-frnDark
+lg::w-1/5 min-h-screen
+lg:flex flex-col">
+    <div class="p-4 bg-slate-200">
+        <p>Hello</p>
+        <p>{{currentUser.email ?? ''}}</p>
     </div>
-    <!-- Nav Container End -->
+    <div class="flex-1 w-full flex flex-col">
+        <li class="list-container w-full flex gap-4 items-center" (click)="switchNav(nav)" [ngClass]="{'active-link': nav.isActive}" *ngFor="let nav of navs">
+            <i class="{{nav.icon}}"></i><a class="w-full" >{{nav.title}}</a>
+        </li>
+    </div>
+    <li class="list-container flex gap-4 items-center" (click)="onLogOut()">
+        <i class="fas fa-power-off text-frnHot"></i>
+        <a href="#">Logout</a>
+    </li>
+</ul>
+<!-- Side Nav End -->
+<!-- Content-->
+<div class="
+    lg:p-4
+    w-full 
+    min-h-screen
+    flex flex-col
+    lg:gap-4">
+    <div class="flex flex-col lg:rounded-md lg:flex md:flex-row items-center gap-4 w-full bg-slate-100 p-4">
+        <p class="md:text-2xl">Welcome:</p>
+        <p class="md:text-2xl flex-1" >{{currentUser.email ?? ''}}</p>
+        <a routerLink="/" class="flex text-center gap-1 px-4 py-2 
+        items-center border border-frnBase rounded-md
+        hover:bg-frnBase hover:rounded hover:text-white"><i class="fas fa-home"></i>HOME</a>
+    </div>
+
+    <!-- Mobile/ Table Tabs -->
+
+    <ul class="lg:hidden flex justify-between text-sm bg-frnDark">
+        <li class="list-container flex gap-2 items-center" (click)="switchNav(nav)" [ngClass]="{'active-link': nav.isActive}" *ngFor="let nav of navs">
+            <i class="hidden md:block {{nav.icon}} text-sm"></i><a class="w-full text-sm" >{{nav.title}}</a>
+        </li>
+    </ul>
+
+    <div class="p-4 lg:p-0">
+        <app-dash-overview *ngIf="currentSection?.id === 0" (selectedTab)="switchNav($event)"></app-dash-overview>
+        <app-dash-profile *ngIf="currentSection?.id === 1"></app-dash-profile>
+        <app-dash-articles *ngIf="currentSection?.id === 2"></app-dash-articles>
+        <app-dash-projects *ngIf="currentSection?.id === 3"></app-dash-projects>
+        <app-dash-resume *ngIf="currentSection?.id === 4"></app-dash-resume>
+    </div>
+
+    <!-- Sections -->
+</div>
 </div>

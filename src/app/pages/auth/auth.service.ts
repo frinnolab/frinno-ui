@@ -14,13 +14,6 @@ export class AuthService {
   loginRoute:string = 'login'
   registerRoute:string = 'register'
   api:string = environment.apiBase;
-  headerOptions = {
-    headers:new HttpHeaders ({'Content-type': 'application/json'})
-  }
-
-  responseData:any = {};
-  currentRequest = new BehaviorSubject<any>(this.responseData);
-
   constructor(
     private server:HttpClient,
     ) {
@@ -29,12 +22,12 @@ export class AuthService {
 
   login(data:LoginRequest):Observable<LoginResponse>
   {
-    return this.server.post<LoginResponse>(`${this.path}/${this.loginRoute}`, data, this.headerOptions);
+    return this.server.post<LoginResponse>(`${this.path}/${this.loginRoute}`, data);
   }
 
 
   register=(data:RegisterRequest):Observable<RegisterResponse>=>
   {
-    return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}`, data, this.headerOptions);
+    return this.server.post<RegisterResponse>(`${this.path}/${this.registerRoute}`, data);
   }
 }
