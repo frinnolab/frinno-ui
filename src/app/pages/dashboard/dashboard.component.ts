@@ -79,29 +79,11 @@ export class DashboardComponent implements OnInit {
       if(res)
       { 
         this.profile = res
+
+        console.log(res);
+        
       }
     })
-  }
-  fetchProfiles(query:string='')
-  {
-    this.profileService.getAll(query).pipe()
-    .subscribe((res)=>{
-      if(res)
-      {
-
-        //Deprecated Here. To remove
-        console.log('Profiles');
-        
-        console.log(res);
-        //this.totalProfiles = res['totalItems']
-      }
-      else
-      {
-        console.log("error from server");
-        
-      }
-    }
-    )
   }
 
   switchNav(nav:any)

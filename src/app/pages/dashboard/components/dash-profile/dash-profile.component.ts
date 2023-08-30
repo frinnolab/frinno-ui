@@ -25,6 +25,7 @@ export class DashProfileComponent implements OnInit {
     pro_lname: new FormControl(""),
     pro_uname: new FormControl("", Validators.required),
     pro_email: new FormControl("", [Validators.email, Validators.required]),
+    pro_password: new FormControl("", [Validators.required]),
     pro_role: new FormControl(),
     pro_mob: new FormControl(""),
     pro_city: new FormControl(""),
@@ -79,6 +80,7 @@ export class DashProfileComponent implements OnInit {
 
     this.profile_form.get('pro_city')?.setValue(`${profile?.addressInfo?.city}`);
     this.profile_form.get('pro_email')?.setValue(`${profile?.email}`);
+    this.profile_form.get('pro_password')?.setValue(``);
     this.profile_form.get("pro_uname")?.setValue(`${profile?.username}`);
     this.profile_form.get("pro_mob")?.setValue(`${profile?.addressInfo?.mobile}`);
   }
@@ -86,24 +88,39 @@ export class DashProfileComponent implements OnInit {
   onUpdateProfile=()=>{
   
 
-    //update Profile☺
     var data:Profile = 
     {
       profile_pic:`assets/images/frn_00.jpg`,
       id:`${this.profile.id}`,
       username:`${this.profile_form.value.pro_uname}`,
       email:`${this.profile_form.value.pro_email}`,
+      password:`${this.profile_form.value.pro_password ?? ''}`,
       addressInfo : {
         city:`${this.profile_form.value.pro_city}`,
         mobile:`${this.profile_form.value.pro_mob}`
       }
     }
 
-    console.log(data);
-    
+    this.profileService.updateProfile(this.profile.id,  data)
+    .pipe()
+    .subscribe((data)=>{
+      if(data)
+      {
+        console.log(data);
 
-    //this.profileService.updateProfile(this.profile.id,  data);
+        this.fetchProfile(this.profile_id);
 
+        alert(`Updated: ${this.profile.username}`);
+        //window.location.reload();
+      }
+    });
+
+  }
+
+  onCancel=()=>{
+    this.profile_form.reset();
+
+    this.fetchProfile(this.profile_id);
   }
 
 
