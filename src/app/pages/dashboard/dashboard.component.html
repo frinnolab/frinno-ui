@@ -47,9 +47,9 @@ lg:flex flex-col">
     <div class="p-4 lg:p-0">
         <app-dash-overview *ngIf="currentSection?.id === 0" (selectedTab)="switchNav($event)"></app-dash-overview>
         <app-dash-profile *ngIf="currentSection?.id === 1"></app-dash-profile>
-        <app-dash-articles *ngIf="currentSection?.id === 2"></app-dash-articles>
-        <app-dash-projects *ngIf="currentSection?.id === 3"></app-dash-projects>
-        <app-dash-resume *ngIf="currentSection?.id === 4"></app-dash-resume>
+        <!-- <app-dash-articles *ngIf="currentSection?.id === 2"></app-dash-articles> -->
+        <app-dash-projects *ngIf="currentSection?.id === 2"></app-dash-projects>
+        <app-dash-resume *ngIf="currentSection?.id === 3"></app-dash-resume>
     </div>
 
     <!-- Sections -->

@@ -1,16 +1,8 @@
-<div class="w-full flex md:flex-row flex-col justify-center items-center px-4 py-2">
-<!-- Socials -->
-<div class="w-full flex md:flex-row flex-col items-center">
-  <p>Follow me around the web.</p>
-  <!-- twitter -->
-  <app-facon-sm-regular class="p-2 rounded-full hover:bg-frnAccent" [icon]="'brands/twitter.svg'"></app-facon-sm-regular>
-  <!-- linkedin -->
-  <app-facon-sm-regular class="p-2 rounded-full hover:bg-frnAccent" [icon]="'brands/linkedin.svg'"></app-facon-sm-regular>
-<!-- yt -->
-<app-facon-sm-regular class="p-2 rounded-full hover:bg-frnAccent" [icon]="'brands/youtube.svg'"></app-facon-sm-regular>
-<!-- tiktok -->
-<app-facon-sm-regular class="p-2 rounded-full hover:bg-frnAccent" [icon]="'brands/tiktok.svg'"></app-facon-sm-regular>
-</div>
-<div>
-</div>
+<div class="flex md:flex-row flex-col justify-between items-center p-4
+gap-4">
+  <!-- Socials -->
+  <p class="md:text-2xl text-xl">Follow me around the web.</p>
+   <div *ngFor="let social of socials" class="flex justify-between gap-4">
+     <a href="{{social.link ?? '#' }}" target="_blank" class="block p-2 rounded-full hover:bg-frnBase hover:bg-opacity-30"> <img class="block md:w-6 md:h-6 w-4 h-4" src="{{social.icon}}" alt="Icon for {{social?.name ?? 'Social'}} profile." srcset=""> </a>
+   </div>
 </div>

@@ -8,56 +8,42 @@ import { Router } from '@angular/router';
 })
 export class HomeFeaturedComponent implements OnInit {
 
-  dummySkills:any[] =
-  [
+  tools:any[] = [
     {
       id:0,
-      title:`Backend Development`,
-      tools:[
-        {
-          id:0,
-          title:`ASP.Net Web API`,
-          logo:`assets/svgs/brands/microsoft.svg`,
-          language:`C#`
-        },
-        {
-          id:1,
-          title:`Laravel Web API`,
-          logo:`assets/svgs/brands/laravel.svg`,
-          language:`PhP`
-        },
-      ]
+      title:`.Net Core(C#)`,
+      icon:`assets/svgs/brands/microsoft.svg`
     },
     {
       id:1,
-      title:`Frontend Development`,
-      tools:[
-        {
-          id:0,
-          title:`Angular SPA`,
-          logo:`assets/svgs/brands/angular.svg`,
-          language:`Typescript, Javascript`
-        },
-        {
-          id:1,
-          title:`Nuxt`,
-          logo:`assets/svgs/brands/vuejs.svg`,
-          language:`Typescript, Javascript`
-        },
-      ]
+      title:`Angular`,
+      icon:`assets/svgs/brands/angular.svg`
     },
     {
       id:2,
-      title:`UI/UX Design`,
-      tools:[
-        {
-          id:0,
-          title:`Figma`,
-          logo:`assets/svgs/brands/figma.svg`,
-          language:`Web/Pc`
-        },
-      ]
-    }
+      title:`Tailwind Css`,
+      icon:`assets/svgs/brands/js.svg`
+    },
+    {
+      id:3,
+      title:`SQL`,
+      icon:`assets/svgs/solid/database.svg`
+    },
+    {
+      id:4,
+      title:`Node`,
+      icon:`assets/svgs/brands/node.svg`
+    },
+    {
+      id:5,
+      title:`git`,
+      icon:`assets/svgs/brands/github.svg`
+    },
+    {
+      id:6,
+      title:`figma`,
+      icon:`assets/svgs/brands/figma.svg`
+    },
   ]
 
   constructor(private router:Router) { }

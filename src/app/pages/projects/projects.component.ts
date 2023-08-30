@@ -28,7 +28,7 @@ export class ProjectsComponent implements OnInit {
       tools:[
         'DotNet Core 7 Web API',
         'SQL Server Database',
-        'Azure Hosting'
+        'Windows Hosting'
       ],
       url:`github.com/frinno-io`
     },

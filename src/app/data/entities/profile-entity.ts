@@ -9,6 +9,7 @@ export interface Profile extends BaseEntity
   lastName?:string;
   username?:string;
   email?:string;
+  password?:string;
   roleName?:string;
   addressInfo?:AddressInfo;
   stats?:ProfileStats;

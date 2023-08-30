@@ -1,15 +1,15 @@
 <app-layout></app-layout>
-<div class="w-full flex flex-col gap-8 min-h-screen">
+<div class="w-full flex flex-col gap-4 min-h-screen">
   <!-- Hero Info-->
   <app-home-hero></app-home-hero>
     <!-- Services Info-->
-  <div class="flex flex-col justify-between items-center gap-8 text-center w-full md:px-8">
+  <div class="flex flex-col justify-between items-center text-center w-full md:p-4">
     <p class="text-4xl">I Build Modern</p>
-    <div class="container flex md:flex-row flex-col justify-center md:px-4">
-      <div *ngFor="let sCard of dummyBuilds; let i" class="flex-1 flex flex-col text-center p-4">
+    <div class="container flex md:flex-row flex-col justify-between lg:px-8">
+      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center p-4">
         <!-- <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span>  -->
-        <div class="flex-1 flex flex-col border-2 border-frnBase rounded-2xl
-         text-start px-4 py-2 gap-2
+        <div class="flex flex-col border-2 border-frnBase rounded-2xl
+         text-start p-4 gap-2
          hover:border-transparent hover:shadow-lg">
           <i class="{{sCard.icon}} md:text-6xl text-2xl text-frnBase"></i>
           <p class="cursor-default md:text-4xl text-2xl text-frnHot">{{sCard.title}}</p>
@@ -19,22 +19,24 @@
       </div>
     </div>
 
-    <div class="w-full flex flex-col space-between items-center text-center gap-8 p-4" >
+    <div class="w-full flex flex-col space-between items-center text-center gap-10 p-8" >
       <p class="md:text-4xl text-2xl">Experiences for Individuals, Small-Medium businesses, Agencies & Myself.</p>
       <button class="text-frnBase text-lg border border-frnBase px-4 py-2 
-      rounded-md hover:bg-frnBase hover:text-white" (click)="onViewProjects()">View Projects</button>
+      rounded-md hover:bg-frnBase hover:text-white hover:shadow-lg" (click)="onViewProjects()">View Projects</button>
     </div>
 
   </div>
 
   <!-- Quick Contact -->
-  <div class="w-full flex md:flex-row flex-col  justify-between text-center gap-8">
-    <div class="md:w-1/2 flex flex-col justify-center items-center text-center bg-slate-300 md:p-6 p-10">
-      <p class="md:text-6xl text-4xl text-frnBase">Got a BIG Idea in Mind?.</p>
-      <p class="md:text-6xl text-4xl text-frnBase">Let me help you <span class="text-frnHot">Build</span>  it!.</p>
+  <div class="w-full flex lg:flex-row flex-col  justify-between text-center gap-8 ">
+    <div class="lg:w-1/2 flex flex-col justify-center items-center text-center  lg:p-8 p-12 bg-slate-300">
+      <p class="md:text-6xl text-4xl text-frnBase">Got a <span class="text-frnHot md:text-7xl text-6xl">BIG</span>  Idea in Mind?.</p>
+      <p class="md:text-6xl text-4xl text-frnBase">Let me help you <span class="text-frnHot md:text-7xl text-6xl">Build</span>  it!.</p>
     </div>
-    <div class="md:w-1/2 p-6">
-      <form class="flex flex-col justify-start gap-4 px-6 py-2 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
+
+
+    <div class="lg:w-1/2 p-6 ">
+      <form class="flex flex-col justify-start gap-4 px-8 py-4 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
         <p class="md:text-4xl text-2xl self-center text-frnBase">Get intouch with me</p>
         
         <!-- Inputs -->
@@ -69,8 +71,8 @@
         </div>
 
         <div class="flex justify-end gap-4">
-          <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnBase hover:text-white" (click)="onClearForm()">Clear</button>
-          <button class="text-white border bg-frnBase border-frnBase px-4 py-2 rounded-md  hover:bg-transparent hover:text-frnBase">Submit</button>
+          <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnHot hover:text-white" (click)="onClearForm()">Clear</button>
+          <button class="text-white border bg-frnBase border-frnBase px-4 py-2 rounded-md   hover:text-frnHot">Submit</button>
         </div>
       </form>
 
