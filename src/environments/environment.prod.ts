@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBase:`https://localhost:7291/api`
+  apiBase:`http://fserver-001-site1.htempurl.com/api`
 };
