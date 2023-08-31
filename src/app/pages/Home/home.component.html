@@ -3,10 +3,10 @@
   <!-- Hero Info-->
   <app-home-hero class="drop-shadow-sm"></app-home-hero>
     <!-- Services Info-->
-  <div class="flex flex-col justify-between items-center gap-4 text-center w-full lg:px-3">
+  <div class="flex flex-col justify-between items-center gap-4 text-center w-full lg:px-3 ">
     <p class="lg:text-4xl text-2xl">I Build Modern</p>
-    <div class="container flex md:flex-row flex-col justify-between lg:px-6 md:flex-1 gap-4">
-      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center  md:px-4">
+    <div class="container flex md:flex-row flex-col justify-between lg:px-6 md:flex-1 gap-4 lg:p-0 md:px-4">
+      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center lg:p-0 lg:px-4 px-2">
         <!-- <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span>  -->
         <div class="flex flex-col justify-between hover:shadow items-start rounded-2xl
         hover:border hover:border-transparent
@@ -36,8 +36,8 @@
     </div>
 
 
-    <div class="lg:w-1/2 p-6 ">
-      <form class="flex flex-col justify-start gap-4 px-8 py-4 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
+    <div class="lg:w-1/2 lg:p-6 md:p-12">
+      <form class="flex flex-col justify-start gap-4 px-12 py-8 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
         <p class="md:text-4xl text-2xl self-center text-frnBase">Get intouch with me</p>
         
         <!-- Inputs -->
