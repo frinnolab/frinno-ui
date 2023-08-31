@@ -3,10 +3,10 @@
   <!-- Hero Info-->
   <app-home-hero class="drop-shadow-sm"></app-home-hero>
     <!-- Services Info-->
-  <div class="flex flex-col justify-between items-center text-center w-full lg:px-4">
-    <p class="lg:text-5xl text-4xl">I Build Modern</p>
-    <div class="container flex md:flex-row flex-col justify-between lg:px-8 md:px-4 gap-4">
-      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center  p-4">
+  <div class="flex flex-col justify-between items-center gap-4 text-center w-full lg:px-3">
+    <p class="lg:text-4xl text-2xl">I Build Modern</p>
+    <div class="container flex md:flex-row flex-col justify-between lg:px-6 md:flex-1 gap-4">
+      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center  md:px-4">
         <!-- <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span>  -->
         <div class="flex flex-col justify-between hover:shadow items-start rounded-2xl
         hover:border hover:border-transparent
@@ -29,7 +29,7 @@
   </div>
 
   <!-- Quick Contact -->
-  <div class="w-full flex lg:flex-row flex-col  justify-between text-center gap-8 drop-shadow">
+  <div class="w-full flex lg:flex-row flex-col  justify-between text-center gap-8">
     <div class="lg:w-1/2 flex flex-col justify-center items-center text-center  lg:p-8 p-12 bg-slate-300">
       <p class="md:text-6xl text-4xl text-frnBase">Got a <span class="text-frnHot md:text-7xl text-6xl">BIG</span>  Idea in Mind?.</p>
       <p class="md:text-6xl text-4xl text-frnBase">Let me help you <span class="text-frnHot md:text-7xl text-6xl">Build</span>  it!.</p>

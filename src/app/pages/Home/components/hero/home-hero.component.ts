@@ -21,11 +21,7 @@ export class HomeHeroComponent implements OnInit {
     {
       id:3,
       title:`Frontend Developer`
-    },
-    {
-      id:4,
-      title:`Mobile Developer`
-    },
+    }
   ]
 
   currentTopic:any= {
@@ -55,9 +51,9 @@ export class HomeHeroComponent implements OnInit {
         case 2:
               this.currentTopic = this.dummyTopics[2]
           break;
-        case 3:
-              this.currentTopic = this.dummyTopics[3]
-          break;
+        // case 3:
+        //       this.currentTopic = this.dummyTopics[3]
+        //   break;
 
         default:
           this.currentTopic = this.dummyTopics[0]
