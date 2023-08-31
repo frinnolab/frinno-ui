@@ -1,18 +1,19 @@
 <app-layout></app-layout>
 <div class="w-full flex flex-col gap-4 min-h-screen">
   <!-- Hero Info-->
-  <app-home-hero></app-home-hero>
+  <app-home-hero class="drop-shadow-sm"></app-home-hero>
     <!-- Services Info-->
-  <div class="flex flex-col justify-between items-center text-center w-full md:p-4">
-    <p class="text-4xl">I Build Modern</p>
-    <div class="container flex md:flex-row flex-col justify-between lg:px-8">
-      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center p-4">
+  <div class="flex flex-col justify-between items-center text-center w-full lg:px-4">
+    <p class="lg:text-5xl text-4xl">I Build Modern</p>
+    <div class="container flex md:flex-row flex-col justify-between lg:px-8 md:px-4 gap-4">
+      <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center  p-4">
         <!-- <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span>  -->
-        <div class="flex flex-col border-2 border-frnBase rounded-2xl
-         text-start p-4 gap-2
-         hover:border-transparent hover:shadow-lg">
-          <i class="{{sCard.icon}} md:text-6xl text-2xl text-frnBase"></i>
-          <p class="cursor-default md:text-4xl text-2xl text-frnHot">{{sCard.title}}</p>
+        <div class="flex flex-col justify-between hover:shadow items-start rounded-2xl
+        hover:border hover:border-transparent
+         text-start p-4 gap-4
+         border border-frnBase  flex-1">
+          <i class="{{sCard.icon}} md:text-5xl text-2xl text-frnBase p-4 bg-slate-300 rounded-full"></i>
+          <p class="cursor-default md:text-2xl text-xl text-frnHot">{{sCard.title}}</p>
           <!-- <p class="text-start text-xl">{{sCard.description}}Lorem ipsum dolor sit amet.</p> -->
 
         </div>
@@ -28,7 +29,7 @@
   </div>
 
   <!-- Quick Contact -->
-  <div class="w-full flex lg:flex-row flex-col  justify-between text-center gap-8 ">
+  <div class="w-full flex lg:flex-row flex-col  justify-between text-center gap-8 drop-shadow">
     <div class="lg:w-1/2 flex flex-col justify-center items-center text-center  lg:p-8 p-12 bg-slate-300">
       <p class="md:text-6xl text-4xl text-frnBase">Got a <span class="text-frnHot md:text-7xl text-6xl">BIG</span>  Idea in Mind?.</p>
       <p class="md:text-6xl text-4xl text-frnBase">Let me help you <span class="text-frnHot md:text-7xl text-6xl">Build</span>  it!.</p>
