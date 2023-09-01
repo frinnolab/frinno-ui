@@ -9,30 +9,30 @@ import { Router } from '@angular/router';
 export class HomeFeaturedComponent implements OnInit {
 
   tools:any[] = [
-    {
-      id:0,
-      title:`.Net Core(C#)`,
-      icon:`assets/svgs/brands/microsoft.svg`
-    },
+    // {
+    //   id:0,
+    //   title:`DotNet`,
+    //   icon:`assets/svgs/brands/dotnet-core7-drk.svg`
+    // },
     {
       id:1,
+      title:`C#`,
+      icon:`assets/svgs/brands/csharp-drk.svg`
+    },
+    {
+      id:2,
       title:`Angular`,
       icon:`assets/svgs/brands/angular.svg`
     },
     {
-      id:2,
-      title:`Tailwind Css`,
-      icon:`assets/svgs/brands/js.svg`
-    },
-    {
       id:3,
-      title:`SQL`,
-      icon:`assets/svgs/solid/database.svg`
+      title:`Tailwind Css`,
+      icon:`assets/svgs/brands/tailwindcss-drk.svg`
     },
     {
       id:4,
-      title:`Node`,
-      icon:`assets/svgs/brands/node.svg`
+      title:`SQL`,
+      icon:`assets/svgs/solid/database.svg`
     },
     {
       id:5,
