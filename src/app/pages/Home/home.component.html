@@ -3,7 +3,7 @@
   <!-- Hero Info-->
   <app-home-hero class="drop-shadow-sm"></app-home-hero>
     <!-- Services Info-->
-  <div class="flex flex-col justify-between items-center gap-4 text-center w-full lg:px-3 ">
+  <div class="flex flex-col justify-between items-center lg:gap-12 gap-4 text-center w-full lg:px-3 lg:py-32">
     <p class="lg:text-4xl text-2xl">I Build Modern</p>
     <div class="container flex md:flex-row flex-col justify-between lg:px-6 md:flex-1 gap-4 lg:p-0 md:px-4">
       <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center lg:p-0 lg:px-4 px-2">
@@ -30,45 +30,45 @@
 
   <!-- Quick Contact -->
   <div class="w-full flex lg:flex-row flex-col  justify-between text-center gap-8">
-    <div class="lg:w-1/2 flex flex-col justify-center items-center text-center  lg:p-8 p-12 bg-slate-300">
+    <div class="lg:w-1/2 flex flex-col justify-center items-center text-center  lg:p-8 p-16 bg-slate-300">
       <p class="md:text-6xl text-4xl text-frnBase">Got a <span class="text-frnHot md:text-7xl text-6xl">BIG</span>  Idea in Mind?.</p>
       <p class="md:text-6xl text-4xl text-frnBase">Let me help you <span class="text-frnHot md:text-7xl text-6xl">Build</span>  it!.</p>
     </div>
 
 
-    <div class="lg:w-1/2 lg:p-6 p-12">
-      <form class="flex flex-col justify-start gap-4 px-12 py-8 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
+    <div class="lg:w-1/2 lg:p-8 p-4">
+      <form class="flex flex-col justify-start gap-4 lg:px-12 lg:py-8 p-4 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
         <p class="md:text-4xl text-2xl self-center text-frnBase">Get intouch with me</p>
         
         <!-- Inputs -->
         <div class="flex flex-col justify-start border-2 border-frnBase rounded-md p-1">
-          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_fullname">Fullname</label>
+          <label class="text-start text-lg text-frnBase" for="sender_fullname">Fullname</label>
           <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase"  type="text" formControlName="sender_fullname">
         </div>
 
         <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
-          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_email">Email</label>
+          <label class="text-start text-lg text-frnBase" for="sender_email">Email</label>
           <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="email" formControlName="sender_email">
         </div>
 
         <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
-          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_mobile">Mobile</label>
+          <label class="text-start text-lg text-frnBase" for="sender_mobile">Mobile</label>
           <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="tel" formControlName="sender_mobile">
         </div>
 
         <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
-          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_company">Company</label>
+          <label class="text-start text-lg text-frnBase" for="sender_company">Company</label>
           <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="text" formControlName="sender_company">
         </div>
 
         <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
-          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_role">Role/Occupation</label>
+          <label class="text-start text-lg text-frnBase" for="sender_role">Role/Occupation</label>
           <input class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="text" formControlName="sender_role">
         </div>
 
         <div class="flex flex-col border-2 border-frnBase rounded-md p-1">
-          <label class="text-start md:text-xl text-lg text-frnBase" for="sender_message">Message</label>
-            <textarea class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" formControlName="sender_message"  cols="5" rows="2"></textarea>
+          <label class="text-start text-lg text-frnBase" for="sender_message">Message</label>
+            <textarea class="p-1 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="sender_message"  cols="5" rows="2"></textarea>
         </div>
 
         <div class="flex justify-end gap-4">
@@ -82,7 +82,7 @@
   </div>
   <!-- Quick Contact End -->
 </div>
-<div class="md:p-10 p-5">
+<div class="md:p-10 p-5 lg:py-32">
   <app-home-featured ></app-home-featured>
 </div>
 

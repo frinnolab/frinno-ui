@@ -8,7 +8,7 @@ lg::w-1/5 min-h-screen
 lg:flex flex-col">
     <div class="p-4 bg-slate-200">
         <p>Hello</p>
-        <p>{{currentUser.email ?? ''}}</p>
+        <p>{{currentUser.userName ?? ''}}</p>
     </div>
     <div class="flex-1 w-full flex flex-col">
         <li class="list-container w-full flex gap-4 items-center" (click)="switchNav(nav)" [ngClass]="{'active-link': nav.isActive}" *ngFor="let nav of navs">
@@ -30,7 +30,7 @@ lg:flex flex-col">
     lg:gap-4">
     <div class="flex flex-col lg:rounded-md lg:flex md:flex-row items-center gap-4 w-full bg-slate-100 p-4">
         <p class="md:text-2xl">Welcome:</p>
-        <p class="md:text-2xl flex-1" >{{currentUser.email ?? ''}}</p>
+        <p class="md:text-2xl flex-1" >{{currentUser.userName ?? ''}}</p>
         <a routerLink="/" class="flex text-center gap-1 px-4 py-2 
         items-center border border-frnBase rounded-md
         hover:bg-frnBase hover:rounded hover:text-white"><i class="fas fa-home"></i>HOME</a>

@@ -78,10 +78,8 @@ export class DashboardComponent implements OnInit {
     .subscribe((res)=>{
       if(res)
       { 
-        this.profile = res
+        this.profile = res;
 
-        console.log(res);
-        
       }
     })
   }
