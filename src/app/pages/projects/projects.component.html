@@ -1,7 +1,7 @@
 <app-layout></app-layout>
 <div class="w-full flex flex-col gap-4 min-h-screen">
   <!-- Projects Hero -->
-  <div class="mb-4 top-0 p-10 flex flex-col md:flex-row justify-between items-center gap-4 bg-slate-300">
+  <div class="mb-4 top-0 p-10 flex flex-col md:flex-row justify-between items-center gap-4 bg-gradient-to-b from-slate-300 from-1% via-slate-200">
     <div class="flex flex-col gap-4 justify-center md:text-start text-center">
       <p class="md:text-4xl text-2xl text-frnBase"> <span class="text-frnHot text-opacity-90">Projects.</span>Repository</p>
       <p class="md:text-2xl text-xl">Here are some of the Projects i've been involved in.!</p>
@@ -14,18 +14,18 @@
 
   <div class="flex flex-col gap-8  md:px-10 md:py-4 p-4">
     <!-- Project List -->
-    <div class="w-full flex flex-col justify-between gap-4 border-b-2 pb-4">
-      <p class="lg:py-2 lg:text-4xl text-2xl text-center md:text-start">My Recent Projects</p>
+    <div class="w-full flex flex-col justify-between gap-4 rounded-2xl bg-slate-300 md:p-10  p-5">
+      <p class="lg:py-2 lg:text-4xl text-2xl text-center">My Recent Projects</p>
     
       <p *ngIf="totalProjects === 0" class="lg:text-2xl px-4 py-2 rounded-full bg-slate-300 text-frnBase md:text-center self-center">No Projects currently listed please check back soon.</p>
 
-      <div *ngIf="totalProjects > 0" class="w-full flex md:flex-row flex-col flex-wrap justify-between text-center md:mb-10 gap-4" >
+      <div *ngIf="totalProjects > 0" class="w-full flex md:flex-row flex-col flex-wrap justify-between text-center gap-4" >
         <div *ngFor="let pj of projects; let i" class="lg:w-[32.5%]">
           <div  
-            class="flex flex-col flex-1 border-2 border-frnBase rounded-2xl
+            class="flex flex-col flex-1 border-2 hover:border-transparent rounded-2xl bg-slate-50 hover:bg-slate-100
             text-start px-4 py-2 gap-2
-            hover:border-transparent 
-            hover:shadow-lg">
+            border-transparent 
+            shadow-lg">
             <p class="cursor-default md:text-2xl text-frnHot">{{pj?.title ?? ''}}</p>
             <p class="text-start">{{pj?.description ?? ''}}</p>
   
@@ -40,8 +40,8 @@
     <!-- Project List END-->
 
     <!-- Projects Techs Summary -->
-    <div class="rounded-2xl w-full flex flex-col justify-center items-center gap-4 bg-slate-300 text-center px-4 py-8 text-frnBase">
-      <p class="px-2 py-1 rounded-full bg-slate-400 text-start self-start md:text-2xl text-frnBase">For Nerds</p>
+    <div class="rounded-2xl w-full flex flex-col justify-center items-center gap-4 text-center px-4 py-8 text-frnBase">
+      <p class="px-2 py-1 rounded-full bg-slate-300 text-start self-start md:text-2xl text-frnBase">For Nerds</p>
 
       <p class="md:text-4xl text-frnBase text-center">This Site's Technology Stack</p>
 
