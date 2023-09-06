@@ -20,6 +20,11 @@ export class ApiInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if(!this.session.isLoggedIn())
     {
+      request = request.clone({
+        setHeaders:{
+          "Content-Type":"application/json",
+        }
+      });
       return next.handle(request);
     }else
     {
@@ -28,7 +33,7 @@ export class ApiInterceptor implements HttpInterceptor {
       request = request.clone({
         setHeaders:{
           "Content-Type":"application/json",
-          "Authorization":`Bearer ${user['token']}`
+          "Authorization":`Bearer ${user['token']}`,
         }
       });
 
