@@ -8,6 +8,7 @@ import { FaconLgRegularComponent } from './widgets/facons/facon-lg-regular/facon
 import { FaconMdRegularComponent } from './widgets/facons/facon-md-regular/facon-md-regular.component';
 import { FaconSmRegularComponent } from './widgets/facons/facon-sm-regular/facon-sm-regular.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogModule } from '@angular/cdk/dialog';
 
 
 
@@ -32,11 +33,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FaconSmRegularComponent,
     FormsModule,
     ReactiveFormsModule,
+    DialogModule
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DialogModule
   ]
 })
 export class SharedModule { }

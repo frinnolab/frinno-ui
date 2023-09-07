@@ -98,7 +98,6 @@ export class DashProfileComponent implements OnInit {
 
     var data:Profile = 
     {
-      profile_pic:`assets/images/frn_00.jpg`,
       id:`${this.profile.id}`,
       username:`${this.profile_form.value.pro_uname}`,
       firstName:`${this.profile_form.value.pro_fname}`,

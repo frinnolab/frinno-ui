@@ -46,6 +46,7 @@
 
                 <p class="bg-slate-300 p-2 rounded-full">Total Projects 0</p>
                 <button 
+                    (click)="onAddOrEdit(0)"
                     class="border px-2 py-1 
                     rounded md:text-lg text-base
                     bg-frnDark hover:bg-frnBase text-white"
@@ -69,12 +70,18 @@
         <tbody *ngIf="projects.length" class="w-full flex flex-col">
             <div *ngFor="let pj of projects">
                 <tr class="fle-1 flex flex-row justify-between items-center px-0 py-1">
-                    <td>{{pj?.title ?? ''}}</td>
-                    <td>{{pj?.description ?? ''}}</td>
+                    <td class="text-start">{{pj?.title ?? ''}}</td>
+                    <td class="text-start">{{pj?.description ?? ''}}</td>
                     <div class="flex flex-row justify-between gap-4 items-center">
-                        <td><button class="border-frnBase border px-4 py-1 rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" (click)="onView(pj.id)">View</button></td>
-                        <td><button class="border-frnBase border px-4 py-1 rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" (click)="onAddOrEdit(pj.id)">Edit</button></td>
-                        <td><button class="border-frnBase border px-4 py-1 rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" (click)="onDelete(pj.id)">Delete</button></td>
+                        <!-- <td><button class="border-frnBase border px-4 py-1 rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" (click)="onView(pj.id)">View</button></td> -->
+                        <td><button class="border-frnBase border px-4 py-1 
+                            rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" 
+                            (click)="onAddOrEdit(pj.id)">Edit</button>
+                        </td>
+                        <td><button class="border-frnBase border px-4 py-1 
+                            rounded md:text-lg text-basehover:bg-frnBase hover:text-white hover:bg-frnBase" 
+                            (click)="onDelete(pj.id)">Delete</button>
+                        </td>
                     </div>
                 </tr>
                 <hr>

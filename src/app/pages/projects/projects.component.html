@@ -3,8 +3,8 @@
   <!-- Projects Hero -->
   <div class="mb-4 top-0 p-10 flex flex-col md:flex-row justify-between items-center gap-4 bg-gradient-to-b from-slate-300 from-1% via-slate-200">
     <div class="flex flex-col gap-4 justify-center md:text-start text-center">
-      <p class="md:text-4xl text-2xl text-frnBase"> <span class="text-frnHot text-opacity-90">Projects.</span>Repository</p>
-      <p class="md:text-2xl text-xl">Here are some of the Projects i've been involved in.!</p>
+      <p class="lg:text-8xl md:text-4xl text-2xl text-frnBase"> <span class="text-frnHot text-opacity-90">Projects.</span>Repository</p>
+      <p class="lg:text-4xl md:text-2xl text-xl">Here are some of the Projects i've been involved in.!</p>
     </div>
     
     <img class="md:w-1/4 md:h-1/4 w-1/2 h-1/2 block" src="assets/svgs/logos/code-bro-0.svg" alt="">
@@ -14,22 +14,26 @@
 
   <div class="flex flex-col gap-8  md:px-10 md:py-4 p-4">
     <!-- Project List -->
-    <div class="w-full flex flex-col justify-between gap-4 rounded-2xl bg-slate-300 md:p-10  p-5">
-      <p class="lg:py-2 lg:text-4xl text-2xl text-center">My Recent Projects</p>
+    <div class="w-full flex flex-col justify-between gap-4 rounded-2xl bg-slate-300 md:px-8 md:py-12  px-5 py-10">
+      <div class="flex flex-col md:flex-row justify-between">
+        <p class="lg:py-2 lg:text-4xl text-2xl text-center">My Recent Projects</p>
+        <div class="p-4">
+          <p>Filters</p>
+        </div>
+      </div>
     
       <p *ngIf="totalProjects === 0" class="lg:text-2xl px-4 py-2 rounded-full bg-slate-300 text-frnBase md:text-center self-center">No Projects currently listed please check back soon.</p>
 
-      <div *ngIf="totalProjects > 0" class="w-full flex md:flex-row flex-col flex-wrap justify-between text-center gap-4" >
-        <div *ngFor="let pj of projects; let i" class="lg:w-[32.5%]">
+      <div *ngIf="totalProjects > 0" class="w-full flex lg:flex-row flex-col flex-wrap gap-4" >
+        <div *ngFor="let pj of projects; let i" class="lg:w-[32.5%] p-2">
           <div  
-            class="flex flex-col flex-1 border-2 hover:border-transparent rounded-2xl bg-slate-50 hover:bg-slate-100
+            class="flex flex-col justify-between items-start flex-1 border-2 hover:border-transparent rounded-2xl bg-slate-50 hover:bg-slate-100
             text-start px-4 py-2 gap-2
             border-transparent 
             shadow-lg">
-            <p class="cursor-default md:text-2xl text-frnHot">{{pj?.title ?? ''}}</p>
+            <p class="cursor-default lg:text-2xl text-xl text-frnHot">{{pj?.title ?? ''}}</p>
             <p class="text-start">{{pj?.description ?? ''}}</p>
-  
-            <div class="flex justify-end">
+            <div class="self-end flex justify-end">
               <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnBase hover:text-white"  (click)="onView(pj?.id)">View</button>
             </div>
           </div>
@@ -45,12 +49,12 @@
 
       <p class="md:text-4xl text-frnBase text-center">This Site's Technology Stack</p>
 
-      <div class="w-full flex md:flex-row flex-col md:gap-10 gap-4 md:justify-center md:text-start text-center">
+      <div class="w-full flex lg:flex-row flex-col lg:gap-10 gap-4 lg:justify-center text-center">
         <div class="flex flex-col justify-between gap-4" *ngFor="let stack of stackList">
           <p class="md:text-4xl text-2xl">{{stack.title}}</p>
-          <div class="flex flex-col flex-1 md:justify-between justify-center md:items-start items-center">
+          <div class="flex flex-col flex-1 justify-center items-center lg:justify-start">
             <div class="flex gap-4 md:justify-normal justify-center" *ngFor="let stackTool of stack.tools">
-              <li class="md:text-2xl list-none md:list-disc">{{stackTool}}</li>
+              <li class="md:text-2xl list-none">{{stackTool}}</li>
             </div>
             <a href="#" class="underline md:text-2xl inline-flex gap-4 items-center">
               <span>

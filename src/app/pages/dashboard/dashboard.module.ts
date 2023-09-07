@@ -9,6 +9,7 @@ import { DashArticlesComponent } from './components/dash-articles/dash-articles.
 import { DashResumeComponent } from './components/dash-resume/dash-resume.component';
 import { DashOverviewComponent } from './components/dash-overview/dash-overview.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DashProjectDetailComponent } from './components/dash-projects/dash-project-detail/dash-project-detail.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -17,6 +18,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     DashArticlesComponent,
     DashResumeComponent,
     DashOverviewComponent,
+    DashProjectDetailComponent,
   ],
   imports: [
     CommonModule,
