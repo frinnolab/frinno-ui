@@ -59,11 +59,14 @@ export class DashProfileComponent implements OnInit {
           profile_pic:`assets/images/frn_00.jpg`,
           id:data['id'],
           username:`${data['username']}`,
+          firstName:`${data['firstName']}`,
+          lastName:`${data['lastName']}`,
           email:`${data['email']}`,
           roleName:`${data['role']}`,
           addressInfo : {
             city:`${data['addressInfo']['city']}`,
-            mobile:`${data['addressInfo']['mobile']}`
+            mobile:`${data['addressInfo']['mobile']}`,
+            country:`${data['addressInfo']['country']}`
           },
           stats:{
             totalArticles:data['totalArticles'],
@@ -71,18 +74,23 @@ export class DashProfileComponent implements OnInit {
           }
           
         }
+
+        console.log(data);
+        
         this.setProfileForm(this.profile);
       }
     },)
   }
 
   setProfileForm = (profile:Profile)=>{
-
-    this.profile_form.get('pro_city')?.setValue(`${profile?.addressInfo?.city}`);
-    this.profile_form.get('pro_email')?.setValue(`${profile?.email}`);
+    this.profile_form.get('pro_city')?.setValue(`${profile?.addressInfo?.city ?? ''}`);
+    this.profile_form.get('pro_country')?.setValue(`${profile?.addressInfo?.country ?? ''}`);
+    this.profile_form.get('pro_email')?.setValue(`${profile?.email ?? ''}`);
     this.profile_form.get('pro_password')?.setValue(``);
-    this.profile_form.get("pro_uname")?.setValue(`${profile?.username}`);
-    this.profile_form.get("pro_mob")?.setValue(`${profile?.addressInfo?.mobile}`);
+    this.profile_form.get("pro_uname")?.setValue(`${profile?.username ?? ''}`);
+    this.profile_form.get("pro_fname")?.setValue(`${profile?.firstName ?? ''}`);
+    this.profile_form.get("pro_lname")?.setValue(`${profile?.lastName ?? ''}`);
+    this.profile_form.get("pro_mob")?.setValue(`${profile?.addressInfo?.mobile ?? ''}`);
   }
 
   onUpdateProfile=()=>{
@@ -93,10 +101,13 @@ export class DashProfileComponent implements OnInit {
       profile_pic:`assets/images/frn_00.jpg`,
       id:`${this.profile.id}`,
       username:`${this.profile_form.value.pro_uname}`,
+      firstName:`${this.profile_form.value.pro_fname}`,
+      lastName:`${this.profile_form.value.pro_lname}`,
       email:`${this.profile_form.value.pro_email}`,
       password:`${this.profile_form.value.pro_password ?? ''}`,
       addressInfo : {
         city:`${this.profile_form.value.pro_city}`,
+        country:`${this.profile_form.value.pro_country}`,
         mobile:`${this.profile_form.value.pro_mob}`
       }
     }
@@ -106,12 +117,10 @@ export class DashProfileComponent implements OnInit {
     .subscribe((data)=>{
       if(data)
       {
-        console.log(data);
-
         this.fetchProfile(this.profile_id);
 
         alert(`Updated: ${this.profile.username}`);
-        //window.location.reload();
+        window.location.reload();
       }
     });
 
