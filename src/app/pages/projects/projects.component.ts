@@ -4,6 +4,8 @@ import { Project } from 'src/app/data/entities/project/project-entity';
 import { ProjectsService } from 'src/app/utils/services/projects-service/projects.service';
 import { Subject, takeUntil } from 'rxjs';
 import { damp } from 'three/src/math/MathUtils';
+import { Dialog } from '@angular/cdk/dialog';
+import { ProjectOverviewComponent } from './project-overview/project-overview.component';
 
 @Component({
   selector: 'app-projects',
@@ -38,7 +40,8 @@ export class ProjectsComponent implements OnInit {
   $subscribe= new Subject<Project>();
   totalProjects:number = 0;
   constructor(
-    private projectService:ProjectsService
+    private projectService:ProjectsService,
+    public dialog: Dialog
   ) { }
 
   ngOnInit(): void {
@@ -68,14 +71,14 @@ export class ProjectsComponent implements OnInit {
   onView=(project_id:number)=>{
     if(project_id>0)
     {
-      this.projectService.getProject(project_id)
-      .pipe(takeUntil(this.$subscribe))
-      .subscribe((data)=>{
-        if(data)
-        {
-          console.log(data);
-        }
-      })
+      let ref = this.dialog.open(ProjectOverviewComponent, {
+        minHeight:`auto`,
+        minWidth:`450px`,
+        data:{
+          id:`${project_id}`
+        },
+        panelClass: 'my-dialog'
+      });
     }
   }
 

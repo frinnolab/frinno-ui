@@ -34,7 +34,8 @@ export class DashProjectDetailComponent implements OnInit {
     private session:StorageService,
     private projectService:ProjectsService,
     public dialogRef: DialogRef<any>, 
-    @Inject(DIALOG_DATA) public data: any) {}
+    @Inject(DIALOG_DATA) public data: any
+    ) {}
   ngOnInit(): void {
     this.profile_id = this.session.getCurrentUser()['id'];
     this.project_id = Number(this.data['id']);
