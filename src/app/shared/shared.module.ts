@@ -9,6 +9,8 @@ import { FaconMdRegularComponent } from './widgets/facons/facon-md-regular/facon
 import { FaconSmRegularComponent } from './widgets/facons/facon-sm-regular/facon-sm-regular.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from '@angular/cdk/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -33,13 +35,18 @@ import { DialogModule } from '@angular/cdk/dialog';
     FaconSmRegularComponent,
     FormsModule,
     ReactiveFormsModule,
-    DialogModule
+    DialogModule,
+    MatFormFieldModule,
+    MatSelectModule
+    
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    DialogModule
+    DialogModule,
+    MatFormFieldModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }

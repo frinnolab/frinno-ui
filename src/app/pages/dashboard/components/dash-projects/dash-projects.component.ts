@@ -87,6 +87,7 @@ export class DashProjectsComponent implements OnInit {
   }
 
   mapProjects=(data:any[]):Project[]=>{
+    console.log(data)
     var response:Project [] = data.map((p,i)=>{
       return {
         id:p?.id,

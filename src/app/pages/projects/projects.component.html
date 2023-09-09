@@ -15,11 +15,14 @@
   <div class="flex flex-col gap-8  md:px-10 md:py-4 p-4">
     <!-- Project List -->
     <div class="w-full flex flex-col justify-between gap-4 rounded-2xl bg-slate-300 md:px-8 md:py-12  px-5 py-10">
-      <div class="flex flex-col md:flex-row justify-between">
+      <div class="flex flex-col md:flex-row justify-between py-4">
         <p class="lg:py-2 lg:text-4xl text-2xl text-center">My Recent Projects</p>
-        <div class="p-4">
-          <p>Filters</p>
-        </div>
+        <mat-form-field appearance="fill" class="border-none focus:border-none rounded-2xl">
+          <mat-label class="text-xl">Sort By</mat-label>
+          <mat-select [(value)]="sortedOption" (selectionChange)="sortedOption">
+            <mat-option [value]="option" *ngFor="let option of sortOptions">{{ option.text }}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
     
       <p *ngIf="totalProjects === 0" class="lg:text-2xl px-4 py-2 rounded-full bg-slate-300 text-frnBase md:text-center self-center">No Projects currently listed please check back soon.</p>
@@ -33,7 +36,7 @@
             border-transparent 
             shadow-lg">
             <div class="flex flex-row justify-between items-center">
-              <p class="rounded-2xl bg-slate-300 px☻-1">STATUS</p>
+              <div class="p-1 bg-slate-400 border-4 border-slate-200  hover:border-slate-300 rounded-full"></div>
 
               <button class="flex justify-center items-center rounded-full bg-slate-300 hover:bg-slate-200 hover:shadow-md p-4" (click)="onView(pj?.id)">
                 <i class="fa fa-external-link-alt text-frnBase"></i>

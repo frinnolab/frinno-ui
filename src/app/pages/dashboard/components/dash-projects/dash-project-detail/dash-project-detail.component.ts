@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { DIALOG_DATA, Dialog, DialogRef } from '@angular/cdk/dialog';
-import { Project } from 'src/app/data/entities/project/project-entity';
+import { Project, ProjectOverView } from 'src/app/data/entities/project/project-entity';
 import { StorageService } from 'src/app/utils/storage.service';
 import { ProjectsService } from 'src/app/utils/services/projects-service/projects.service';
 import { take, takeUntil } from 'rxjs';
@@ -117,12 +117,22 @@ export class DashProjectDetailComponent implements OnInit {
     
     console.log(data);
     
-    var pj:Project = {
+    var pj:ProjectOverView = {
       id:data['id'],
+      created:`${data?.created}`,
+      modified:`${data?.modified}`,
+      project_start:`${data?.projectStart}`,
+      project_end:`${data?.projectEnd}`,
+      duration:`${'End Date - Start Date'}`,
       title:`${data?.title}`,
       description:`${data?.description}`,
-      project_url:`${data?.url}`,
+      project_url:`${data?.projectUrl}`,
+      is_repo_public:data?.isRepoPublic,
+      project_repo_url:`${data?.repositoryUrl}`,
       project_status: Number(`${data?.status ?? 0}`),
+      project_type: Number(`${data?.projectType ?? 0}`),
+      clientInfo: data?.clientInfo,
+      companyAgencyInfo: data?.companyAgencyInfo,
     };
 
     return pj;

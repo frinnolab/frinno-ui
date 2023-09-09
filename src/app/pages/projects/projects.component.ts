@@ -36,6 +36,41 @@ export class ProjectsComponent implements OnInit {
     },
   ]
 
+  sortOptions:any[]=[
+    {
+      id:0,
+      text:`All`,
+      value:`all`
+    },
+    {
+      id:1,
+      text:`Fullstack`,
+      value:`fullstack`
+    },
+    {
+      id:2,
+      text:`Backend`,
+      value:`backend`
+    },
+    {
+      id:3,
+      text:`Frontend`,
+      value:`frontend`
+    },
+    {
+      id:4,
+      text:`Mobile`,
+      value:`mobile`
+    },
+    {
+      id:5,
+      text:`Graphics`,
+      value:`graphics`
+    },
+  ]
+
+  sortedOption:any = {};
+
   projects:Project[] = []
   $subscribe= new Subject<Project>();
   totalProjects:number = 0;
@@ -50,7 +85,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-
+    this.sortedOption = this.sortOptions[0]
   }
 
   fetchAllProjects=()=>{
@@ -59,6 +94,7 @@ export class ProjectsComponent implements OnInit {
     .subscribe((data)=>{
       if(data)
       {
+        console.table(data);
         this.totalProjects = data?.response?.totalItems ?? 0;
         this.projects =[...this.mapProjects(data?.response?.data)];
 
@@ -93,6 +129,15 @@ export class ProjectsComponent implements OnInit {
     })
 
     return response;
+  }
+
+  onSortChange=(e:any)=>{
+
+
+    let option_id = (e.target as HTMLSelectElement).value;
+
+    console.log(option_id);
+    
   }
 
   ngOnDestroy()
