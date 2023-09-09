@@ -30,7 +30,7 @@ export interface companyAgencyInfo {
     companyAgencyCity?:string;
     companyAgencyCountry?:string;
 }
-export interface ProjectOverView extends Project 
+export interface ProjectDetailOverView extends Project 
 {
     duration?:string;
     clientInfo?:clientInfo;

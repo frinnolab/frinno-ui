@@ -1,10 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { DIALOG_DATA, Dialog, DialogRef } from '@angular/cdk/dialog';
-import { Project, ProjectOverView } from 'src/app/data/entities/project/project-entity';
 import { StorageService } from 'src/app/utils/storage.service';
 import { ProjectsService } from 'src/app/utils/services/projects-service/projects.service';
 import { take, takeUntil } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ProjectDetailOverView } from 'src/app/data/entities/project/project-entity';
 
 @Component({
   selector: 'app-dash-project-detail',
@@ -20,13 +20,26 @@ export class DashProjectDetailComponent implements OnInit {
    project_id:number = 0;
    profile_id:string = ''
 
-   projectDetail:Project = {};
+   projectDetail:ProjectDetailOverView = {};
 
    project_form = new FormGroup({
     title : new FormControl(""),
     description : new FormControl(""),
     url : new FormControl(""),
-    status : new FormControl(""),
+    repoUrl : new FormControl(""),
+    isRepo : new FormControl(false),
+    status : new FormControl(),
+    type : new FormControl(),
+    pjStart : new FormControl(""),
+    pjEnd : new FormControl(""),
+    clName : new FormControl(""),
+    clCity : new FormControl(""),
+    clMobile : new FormControl(""),
+    clPubLink : new FormControl(""),
+    cAName : new FormControl(""),
+    cACity : new FormControl(""),
+    cAMobile : new FormControl(""),
+    cAPubLink : new FormControl(""),
    })
 
   constructor
@@ -52,7 +65,7 @@ export class DashProjectDetailComponent implements OnInit {
     }
   }
 
-  setForm(data:Project)
+  setForm(data:ProjectDetailOverView)
   {
     this.project_id = Number(data?.id);
     this.project_form.get('title')?.setValue(data?.title ?? '');
@@ -113,11 +126,9 @@ export class DashProjectDetailComponent implements OnInit {
 
   }
 
-  mapProject=(data:any):Project=>{
+  mapProject=(data:any):ProjectDetailOverView=>{
     
-    console.log(data);
-    
-    var pj:ProjectOverView = {
+    var pj:ProjectDetailOverView = {
       id:data['id'],
       created:`${data?.created}`,
       modified:`${data?.modified}`,
