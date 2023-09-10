@@ -1,0 +1,86 @@
+<div class="flex flex-col bg-slate-100 rounded-2xl p-4">
+    <div class="flex flex-row justify-between items-center">
+        <div class="flex flex-col">
+            <p class="text-frnHot lg:text-4xl text-2xl">{{projectDetail.title}}</p>
+            
+        </div>
+
+        <button class="flex justify-center items-center rounded-full bg-slate-300 hover:bg-slate-200 hover:shadow-md p-4" (click)="onClose()">
+            <i class="fa fa-compress-alt text-frnBase"></i>
+        </button>
+    </div>
+    <div class="flex flex-row gap-1 text-xl">
+                <!-- F-Stack -->
+        <p class="py-1 px-2 bg-slate-300 hover:bg-slate-200 rounded-md" *ngIf="projectDetail?.project_type === 0">
+        <i   class="fa fa-home text-frnBase" ></i>
+        Fullstack
+        </p> 
+                <!-- B-Stack -->
+        <p class="py-1 px-2 bg-slate-300 hover:bg-slate-200 rounded-md" *ngIf="projectDetail?.project_type === 1">
+        <i   class="fa fa-server text-frnBase" ></i>
+        Backend
+        </p> 
+                <!-- F-Stack -->
+        <p class="py-1 px-2 bg-slate-300 hover:bg-slate-200 rounded-md" *ngIf="projectDetail?.project_type === 2">
+        <i   class="fa fa-paint-roller text-frnBase" ></i>
+        Frontend
+        </p> 
+                <!-- M-Stack -->
+        <p class="py-1 px-2 bg-slate-300 hover:bg-slate-200 rounded-md" *ngIf="projectDetail?.project_type === 3">
+        <i   class="fa fa-book text-frnBase" ></i>
+        Mobile
+        </p> 
+                <!-- G-Stack -->
+        <p class="py-1 px-2 bg-slate-300 hover:bg-slate-200 rounded-md" *ngIf="projectDetail?.project_type === 4">
+        <i   class="fa fa-pen text-frnBase" ></i>
+        Graphics
+        </p> 
+                <!-- p-type -->
+    </div>            
+    <!-- Card Content -->
+    <div class="flex flex-col">
+        <div>
+            <p class="text-2xl">Overview</p>
+
+            <article class="text-xl">{{projectDetail.description}}</article>
+        </div>
+        <hr>
+        <div class="flex flex-col text-start py-4">
+            <p class="text-2xl">Status</p>
+            <p *ngIf="projectDetail?.project_status === 0" class="text-frnBase bg-slate-300 border border-transparent  hover:border-slate-200 rounded-md p-2 text-center text-2xl">PLANNING</p>
+            <p *ngIf="projectDetail?.project_status === 1" class="text-frnBase bg-amber-300 border border-transparent  hover:border-amber-200 rounded-md p-2 text-center text-2xl">ONGOING</p>
+            <p *ngIf="projectDetail?.project_status === 2" class="text-frnBase bg-lime-300 border border-transparent hover:border-lime-200 rounded-md p-2 text-center text-2xl">DEPLOYED</p>
+            <!-- <p class="text-xl">{{projectDetail.project_status}}</p> -->
+        </div>
+        <hr>
+        <div>
+            <p class="text-2xl">Duration</p>
+            <p class="text-xl"><i class="fa fa-stopwatch text-frnBase"></i> End: {{ projectDetail.project_end | date :'mediumDate' ?? '00:00:00'}} - Start: {{projectDetail.project_start | date :'mediumDate' ??  '00:00:00'}}</p>
+        </div>
+        <hr>
+        <div>
+            <p class="text-2xl">Links</p>
+
+            <div class="flex justify-start gap-2 items-center">
+                <a href="{{projectDetail.project_url}}" target="_blank" class="flex items-center">
+                  <i class="block fa fa-link text-frnBase"></i>
+                  <!-- p-url -->
+                </a>
+                <a href="{{projectDetail.project_repo_url}}" target="_blank" class="flex items-center">
+                  <i class="block fa fa-book text-frnBase"></i>
+                  <!-- p-git -->
+                </a>
+                <span class="flex items-center">
+                    <!-- <i *ngIf="pj?.project_type === 4"  class="block fa fa-pen text-frnBase" ></i> -->
+  
+                    <i *ngIf="!projectDetail?.is_repo_public" class="block fa fa-lock text-frnHot"></i>
+                    <i *ngIf="projectDetail?.is_repo_public" class="block fa fa-lock text-frnBase"></i>
+                    <!-- p-git -->
+                  </span>
+  
+                <!-- <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnBase hover:text-white"  (click)="onView(pj?.id)">View</button> -->
+              </div>
+        </div>
+    </div>
+    <!-- Card Content End -->
+</div>

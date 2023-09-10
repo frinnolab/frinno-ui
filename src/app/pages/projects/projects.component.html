@@ -3,8 +3,8 @@
   <!-- Projects Hero -->
   <div class="mb-4 top-0 p-10 flex flex-col md:flex-row justify-between items-center gap-4 bg-gradient-to-b from-slate-300 from-1% via-slate-200">
     <div class="flex flex-col gap-4 justify-center md:text-start text-center">
-      <p class="md:text-4xl text-2xl text-frnBase"> <span class="text-frnHot text-opacity-90">Projects.</span>Repository</p>
-      <p class="md:text-2xl text-xl">Here are some of the Projects i've been involved in.!</p>
+      <p class="lg:text-8xl md:text-4xl text-2xl text-frnBase"> <span class="text-frnHot text-opacity-90">Projects.</span>Repository</p>
+      <p class="lg:text-4xl md:text-2xl text-xl">Here are some of the Projects i've been involved in.!</p>
     </div>
     
     <img class="md:w-1/4 md:h-1/4 w-1/2 h-1/2 block" src="assets/svgs/logos/code-bro-0.svg" alt="">
@@ -14,25 +14,76 @@
 
   <div class="flex flex-col gap-8  md:px-10 md:py-4 p-4">
     <!-- Project List -->
-    <div class="w-full flex flex-col justify-between gap-4 rounded-2xl bg-slate-300 md:p-10  p-5">
-      <p class="lg:py-2 lg:text-4xl text-2xl text-center">My Recent Projects</p>
+    <div class="w-full flex flex-col justify-between gap-4 rounded-2xl bg-slate-300 md:px-8 md:py-12  px-5 py-10">
+      <div class="flex flex-col md:flex-row justify-between py-4">
+        <p class="lg:py-2 lg:text-4xl text-2xl text-center">Recent Projects</p>
+        <!-- <mat-form-field appearance="fill" class="border-none focus:border-none rounded-2xl">
+          <mat-label class="text-xl">Sort By</mat-label>
+          <mat-select [(value)]="sortedOption" (selectionChange)="sortedOption">
+            <mat-option [value]="option" *ngFor="let option of sortOptions">{{ option.text }}</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+      </div>
     
       <p *ngIf="totalProjects === 0" class="lg:text-2xl px-4 py-2 rounded-full bg-slate-300 text-frnBase md:text-center self-center">No Projects currently listed please check back soon.</p>
 
-      <div *ngIf="totalProjects > 0" class="w-full flex md:flex-row flex-col flex-wrap justify-between text-center gap-4" >
-        <div *ngFor="let pj of projects; let i" class="lg:w-[32.5%]">
+      <div *ngIf="totalProjects > 0" class="w-full flex lg:flex-row flex-col flex-wrap gap-4" >
+        <div *ngFor="let pj of projects; let i" class="lg:w-[32.5%] p-2">
+          <!-- Project Card -->
           <div  
-            class="flex flex-col flex-1 border-2 hover:border-transparent rounded-2xl bg-slate-50 hover:bg-slate-100
-            text-start px-4 py-2 gap-2
+          class="flex flex-col flex-1 border-2 hover:border-transparent rounded-2xl bg-slate-50 hover:bg-slate-100
+            text-start px-4 py-2 
             border-transparent 
             shadow-lg">
-            <p class="cursor-default md:text-2xl text-frnHot">{{pj?.title ?? ''}}</p>
-            <p class="text-start">{{pj?.description ?? ''}}</p>
+            <div class="flex flex-row justify-between items-center">
+              <div *ngIf="pj?.project_status === 0" class="p-1 bg-slate-500 border-4 border-slate-400  hover:border-slate-300 rounded-full"></div>
+              <div *ngIf="pj?.project_status === 1" class="p-1 bg-amber-500 border-4 border-amber-400  hover:border-amber-300 rounded-full"></div>
+              <div *ngIf="pj?.project_status === 2" class="p-1 bg-lime-500 border-4 border-lime-400  hover:border-lime-300 rounded-full"></div>
+
+
+              <button class="flex justify-center items-center rounded-full bg-slate-300 hover:bg-slate-200 hover:shadow-md p-4" (click)="onView(pj?.id)">
+                <i class="fa fa-external-link-alt text-frnBase"></i>
+              </button>
+            </div>
+            <p class="cursor-default lg:text-2xl text-xl text-frnHot">{{pj?.title ?? ''}}</p>
+            <div class="flex flex-col gap-5">
+              <article class="text-start text-frnBase p-1">{{pj?.description ?? ''}}</article>
+              <!-- <p class="text-start flex gap-2 items-center"> <i class="fa fa-stopwatch text-frnBase"></i> {{'28 Months'}}</p> -->
+              <div class="flex justify-start gap-3 items-center">
+                <span  class="flex items-center gap-2">
+                  <!-- F-Stack -->
+                  <i *ngIf="pj?.project_type === 0"  class="block fa fa-home text-frnBase" ></i>
+                  <!-- B-Stack -->
+                  <i *ngIf="pj?.project_type === 1"  class="block fa fa-server text-frnBase" ></i>
+                  <!-- F-Stack -->
+                  <i *ngIf="pj?.project_type === 2"  class="block fa fa-paint-roller text-frnBase" ></i>
+                  <!-- M-Stack -->
+                  <i *ngIf="pj?.project_type === 3"  class="block fa fa-book text-frnBase" ></i>
+                  <!-- G-Stack -->
+                  <i *ngIf="pj?.project_type === 4"  class="block fa fa-pen text-frnBase" ></i>
+                  <!-- p-type -->
+                </span>
+                <a href="{{pj?.project_url}}" target="_blank" class="flex items-center">
+                  <i class="block fa fa-link text-frnBase"></i>
+                  <!-- p-url -->
+                </a>
+                <a href="{{pj?.project_repo_url}}" target="_blank" [ariaDisabled]="!pj?.is_repo_public" class="flex items-center">
+                  <i class="block fa fa-book text-frnBase"></i>
+                  <!-- repo-url -->
+                </a>
+                <span class="flex items-center">
+                  <!-- <i *ngIf="pj?.project_type === 4"  class="block fa fa-pen text-frnBase" ></i> -->
+
+                  <i *ngIf="pj?.is_repo_public" class="block fa fa-lock text-frnHot"></i>
+                  <i *ngIf="!pj?.is_repo_public" class="block fa fa-lock text-frnBase"></i>
+                  <!-- p-git -->
+                </span>
   
-            <div class="flex justify-end">
-              <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnBase hover:text-white"  (click)="onView(pj?.id)">View</button>
+                <!-- <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnBase hover:text-white"  (click)="onView(pj?.id)">View</button> -->
+              </div>
             </div>
           </div>
+          <!-- Project Card End -->
         </div>
       </div>
     </div>
@@ -45,12 +96,12 @@
 
       <p class="md:text-4xl text-frnBase text-center">This Site's Technology Stack</p>
 
-      <div class="w-full flex md:flex-row flex-col md:gap-10 gap-4 md:justify-center md:text-start text-center">
+      <div class="w-full flex lg:flex-row flex-col lg:gap-10 gap-4 lg:justify-center text-center">
         <div class="flex flex-col justify-between gap-4" *ngFor="let stack of stackList">
           <p class="md:text-4xl text-2xl">{{stack.title}}</p>
-          <div class="flex flex-col flex-1 md:justify-between justify-center md:items-start items-center">
+          <div class="flex flex-col flex-1 justify-center items-center lg:justify-start">
             <div class="flex gap-4 md:justify-normal justify-center" *ngFor="let stackTool of stack.tools">
-              <li class="md:text-2xl list-none md:list-disc">{{stackTool}}</li>
+              <li class="md:text-2xl list-none">{{stackTool}}</li>
             </div>
             <a href="#" class="underline md:text-2xl inline-flex gap-4 items-center">
               <span>

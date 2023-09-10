@@ -1,0 +1,115 @@
+<div class="bg-white px-8 py-4 flex flex-col gap-2 rounded-2xl">
+    <div class="flex flex-row justify-between">
+        <p class="text-2xl">{{projectDetail.id > 0 ? "Edit " : "Add New Project"}} {{projectDetail.title ?? ''}}</p>
+        <button><i class="fa fa-close" (click)="this.dialogRef.close()"></i></button>
+    </div>
+
+    <!-- Dialog Content -->
+        <form class="relative flex flex-col justify-start gap-4 rounded-md" [formGroup]="project_form" (ngSubmit)="onUpdateProject() ">
+          <div class="flex flex-col gap-3 overflow-y-scroll p-4">
+                        <!-- Inputs -->
+                        <div class="flex flex-col justify-start border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="pj_title">Title</label>
+                          <input [value]="this.projectDetail.title" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase"  type="text" formControlName="title" placeholder="{{projectDetail.title ?? 'Project Title'}}" />
+                        </div>
+                        <div class="flex flex-col justify-start border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="pj_title">Title</label>
+                          <input [value]="this.projectDetail.title" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase"  type="text" formControlName="title" placeholder="{{projectDetail.title ?? 'Project Title'}}" />
+                        </div>
+                    
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="pj_url">Project Url</label>
+                          <input [value]="this.projectDetail.project_url" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="text" formControlName="url" placeholder="{{projectDetail.project_url ?? 'Url:eg.(www.example.com)'}}">
+                        </div>
+
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Repo Url</label>
+                            <input [value]="this.projectDetail.project_repo_url" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="repoUrl"  cols="5" rows="2" placeholder="{{projectDetail.project_repo_url?? 'Project Repository link.'}}">
+                        </div>
+
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Is Public Repo</label>
+                            <input type="checkbox" [value]="this.projectDetail.is_repo_public" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="isRepo">
+                        </div>
+                
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_role">Status</label>
+                          <input [value]="this.projectDetail.project_status" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="text" formControlName="status" placeholder="{{projectDetail.project_status ?? 'Status'}}">
+                        </div>
+
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_role">Type</label>
+                          <input [value]="this.projectDetail.project_status" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase" type="text" formControlName="type" placeholder="{{projectDetail.project_type ?? 'Type'}}">
+                        </div>
+
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+            
+                        <div class="flex flex-col border border-frnBase rounded-md p-2">
+                          <label class="text-start text-lg text-frnBase" for="sender_message">Description</label>
+                            <textarea [value]="this.projectDetail.description" class="p-2 bg-transparent border-b-2 focus:border-b-2 focus:border-b-frnBase resize-none" formControlName="description"  cols="5" rows="2" placeholder="{{projectDetail.description?? 'Project Description.'}}"></textarea>
+                        </div>
+          </div>
+            
+
+    
+
+            <div class="flex justify-end gap-4">
+              <button class="text-frnBase border border-frnBase px-4 py-2 rounded-md hover:bg-frnHot hover:text-white" (click)="onClearForm()">Clear</button>
+              <button class="text-white border bg-frnBase border-frnBase px-4 py-2 rounded-md   hover:text-frnHot">Submit</button>
+            </div>
+          </form>
+</div>

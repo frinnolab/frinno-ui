@@ -7,6 +7,7 @@ export const environment = {
   apiBase:`https://localhost:7291/api`
 };
 
+//apiBase:`https://1dl40cv3-7291.uks1.devtunnels.ms/api`
 //apiBase:`https://localhost:7291/api`
 /*
  * For easier debugging in development mode, you can import the following file
