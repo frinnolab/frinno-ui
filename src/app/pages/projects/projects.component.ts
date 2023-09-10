@@ -39,31 +39,37 @@ export class ProjectsComponent implements OnInit {
   sortOptions:any[]=[
     {
       id:0,
+      index:null,
       text:`All`,
       value:`all`
     },
     {
       id:1,
+      index:0,
       text:`Fullstack`,
       value:`fullstack`
     },
     {
       id:2,
+      index:1,
       text:`Backend`,
       value:`backend`
     },
     {
       id:3,
+      index:2,
       text:`Frontend`,
       value:`frontend`
     },
     {
       id:4,
+      index:3,
       text:`Mobile`,
       value:`mobile`
     },
     {
       id:5,
+      index:4,
       text:`Graphics`,
       value:`graphics`
     },
@@ -82,6 +88,9 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
 
     this.fetchAllProjects();
+
+    console.log(this.projects);
+    
   }
 
   ngAfterViewInit(){
@@ -94,10 +103,10 @@ export class ProjectsComponent implements OnInit {
     .subscribe((data)=>{
       if(data)
       {
-        console.table(data);
         this.totalProjects = data?.response?.totalItems ?? 0;
         this.projects =[...this.mapProjects(data?.response?.data)];
-
+        
+        console.table(this.projects);
       }
     })
 
@@ -124,7 +133,12 @@ export class ProjectsComponent implements OnInit {
       return {
         id:p?.id,
         title:`${p?.title}`,
-        description:`${p?.description}`
+        description:`${p?.description}`,
+        project_url:`${p?.projectUrl}`,
+        project_repo_url:`${p?.repositoryUrl}`,
+        project_status:p?.status,
+        project_type:p?.projectType,
+        is_repo_public: Boolean(p?.IsRepoPublic) 
       }
     })
 
