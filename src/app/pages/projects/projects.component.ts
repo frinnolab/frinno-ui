@@ -23,16 +23,16 @@ export class ProjectsComponent implements OnInit {
         'Tailwind CSS',
         'Vercel Hosting'
       ],
-      url:`github.com/frinno-ui`
+      url:`https://github.com/frinnolab/frinno-ui`
     },
     {
-      title:`Backend`,
+      title:`Backend Repo`,
       tools:[
         'DotNet Core 7 Web API',
         'SQL Server Database',
         'Windows Hosting'
       ],
-      url:`github.com/frinno-io`
+      url:`https://github.com/frinnolab/frinno-io`
     },
   ]
 
@@ -105,8 +105,6 @@ export class ProjectsComponent implements OnInit {
       {
         this.totalProjects = data?.response?.totalItems ?? 0;
         this.projects =[...this.mapProjects(data?.response?.data)];
-        
-        console.table(this.projects);
       }
     })
 
@@ -150,7 +148,6 @@ export class ProjectsComponent implements OnInit {
 
     let option_id = (e.target as HTMLSelectElement).value;
 
-    console.log(option_id);
     
   }
 
