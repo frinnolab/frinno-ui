@@ -13,25 +13,25 @@ export class HeaderActionComponent implements OnInit {
       id:0,
       name:`LinkedIn`,
       icon:`assets/svgs/brands/linkedin.svg`,
-      url:``
+      url:`https://www.linkedin.com/in/frank-leons-malisawa-94511716b/`
     },
     {
       id:1,
       name:`Twitter - X`,
       icon:`assets/svgs/brands/twitter.svg`,
-      url:``
+      url:`https://twitter.com/frinno_io`
     },
     {
       id:2,
       name:`Youtube`,
       icon:`assets/svgs/brands/youtube.svg`,
-      url:``
+      url:`https://youtube.com/@frinno_io`
     },
     {
       id:3,
       name:`Twitch`,
       icon:`assets/svgs/brands/twitch.svg`,
-      url:``
+      url:`https://www.twitch.tv/frinno_io`
     },
   ]
   constructor() { }
