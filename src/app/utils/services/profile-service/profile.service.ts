@@ -36,9 +36,13 @@ export class ProfileService {
   {
     return this.server.post<any>(`${this.api}/${this.path}`, data);
   }
-
+  
   deleteProfile(id:string)
   {
     return this.server.delete<any>(`${this.api}/${this.path}/${id}`);
+  }
+  sendTestMail(data:{})
+  {
+    return this.server.post<any>(`${this.api}/${this.path}/Test-Send-Email`, data);
   }
 }
