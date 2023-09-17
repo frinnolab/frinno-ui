@@ -96,15 +96,15 @@
 
       <p class="md:text-4xl text-frnBase text-center">This Site's Technology Stack</p>
 
-      <div class="w-full flex lg:flex-row flex-col lg:gap-10 gap-4 lg:justify-center text-start">
-        <div class="flex flex-col justify-between gap-4" *ngFor="let stack of stackList">
+      <div class="w-full flex lg:flex-row flex-col lg:gap-10 gap-4 lg:justify-center text-center">
+        <div class="flex flex-col justify-between gap-8" *ngFor="let stack of stackList">
           <p class="md:text-4xl text-2xl">{{stack.title}}</p>
-          <div class="flex flex-col flex-1 justify-center items-center lg:justify-start">
+          <div class="flex flex-col flex-1 justify-between items-center">
             <div class="flex gap-4 justify-start text-start" *ngFor="let stackTool of stack.tools">
               <li class="md:text-2xl list-none">{{stackTool}}</li>
             </div>
-            <a href="{{stack.url}}" target="_blank" class="no-underline md:text-2xl inline-flex gap-4 items-center bg-frnHot px-4 py-2 rounded-md hover:text-white">
-              Visit Repo<i class="fa fa-external-link-alt text-frnBase"></i>
+            <a href="{{stack.url}}" target="_blank" class="no-underline md:text-2xl inline-flex gap-4 items-center bg-frnBase hover:bg-opacity-90 px-4 py-2 rounded-md text-white">
+              Visit Repo<i class="fa fa-external-link-alt text-white"></i>
             </a>
           </div>
         </div>
