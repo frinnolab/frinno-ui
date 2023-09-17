@@ -3,9 +3,9 @@
   <!-- Hero Info-->
   <app-home-hero class="drop-shadow-sm"></app-home-hero>
     <!-- Services Info-->
-  <div class="flex flex-col justify-between items-center lg:gap-12 gap-4 text-center w-full lg:px-3 lg:py-32">
+  <div class="flex flex-col justify-between items-center lg:gap-12 gap-4 text-center w-full lg:px-3 lg:py-36">
     <p class="lg:text-4xl text-2xl">I Build Modern</p>
-    <div class="container flex md:flex-row flex-col justify-between lg:px-6 md:flex-1 gap-4 lg:p-0 md:px-4">
+    <div class="container flex md:flex-row flex-col justify-between lg:px-6 md:flex-1 gap-8 lg:p-0 md:px-4">
       <div *ngFor="let sCard of dummyBuilds; let i" class="flex flex-1 flex-col text-center lg:p-0 lg:px-4 px-2">
         <!-- <span class="text-frnHot text-6xl" >{{currentBuild.title}}</span>  -->
         <div class="flex flex-col justify-between bg-slate-50 hover:bg-slate-100 items-start rounded-2xl
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="w-full flex flex-col space-between items-center text-center gap-10 p-8" >
+    <div class="w-full flex flex-col space-between items-center text-center gap-12 p-8" >
       <p class="md:text-4xl text-2xl">Experiences for Individuals, Small-Medium businesses, Agencies & Myself.</p>
       <button class="text-frnBase text-lg border border-frnBase px-4 py-2 
       rounded-md hover:bg-frnBase hover:text-white hover:shadow-lg" (click)="onViewProjects()">View Projects</button>
@@ -29,13 +29,13 @@
 
   <!-- Quick Contact -->
   <div class="w-full flex lg:flex-row flex-col  justify-between text-center gap-8">
-    <div class="lg:w-1/2 flex flex-col justify-center items-center text-center  lg:p-8 p-16 bg-slate-300">
+    <div class="lg:w-1/2 flex flex-col justify-center items-center text-center  p-10 bg-slate-300">
       <p class="md:text-6xl text-4xl text-frnBase">Got a <span class="text-frnHot md:text-7xl text-6xl">BIG</span>  Idea in Mind?.</p>
       <p class="md:text-6xl text-4xl text-frnBase">Let me help you <span class="text-frnHot md:text-7xl text-6xl">Build</span>  it!.</p>
     </div>
 
 
-    <div class="lg:w-1/2 lg:p-8 p-4">
+    <div class="lg:w-1/2 lg:p-8">
       <form class="flex flex-col justify-start gap-4 lg:px-12 lg:py-8 p-4 border-2 border-frnBase rounded-md" [formGroup]="contactForm" (ngSubmit)="onSendContact()">
         <p class="md:text-4xl text-2xl self-center text-frnBase">Get intouch with me</p>
         

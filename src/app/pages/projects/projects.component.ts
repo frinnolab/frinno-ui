@@ -116,7 +116,8 @@ export class ProjectsComponent implements OnInit {
     {
       let ref = this.dialog.open(ProjectOverviewComponent, {
         minHeight:`auto`,
-        minWidth:`450px`,
+        minWidth:`200px`,
+        maxWidth:`auto`,
         data:{
           id:`${project_id}`
         },

@@ -94,8 +94,11 @@ export class HomeComponent implements OnInit {
 
     this.ps.sendTestMail(data)
     .subscribe((s)=>{
-      console.log(s);
-      
+
+      if(s)
+      {
+        alert("Mail has been sent to Frank.!")
+      }
     })
 
     
