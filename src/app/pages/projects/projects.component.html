@@ -32,7 +32,7 @@
           <!-- Project Card -->
           <div  
           class="flex flex-col flex-1 border-2 hover:border-transparent rounded-2xl bg-slate-50 hover:bg-slate-100
-            text-start px-4 py-2 
+            text-start p-6
             border-transparent 
             shadow-lg">
             <div class="flex flex-row justify-between items-center">
@@ -96,15 +96,15 @@
 
       <p class="md:text-4xl text-frnBase text-center">This Site's Technology Stack</p>
 
-      <div class="w-full flex lg:flex-row flex-col lg:gap-10 gap-4 lg:justify-center text-center">
+      <div class="w-full flex lg:flex-row flex-col lg:gap-10 gap-4 lg:justify-center text-start">
         <div class="flex flex-col justify-between gap-4" *ngFor="let stack of stackList">
           <p class="md:text-4xl text-2xl">{{stack.title}}</p>
           <div class="flex flex-col flex-1 justify-center items-center lg:justify-start">
-            <div class="flex gap-4 md:justify-normal justify-center" *ngFor="let stackTool of stack.tools">
+            <div class="flex gap-4 justify-start text-start" *ngFor="let stackTool of stack.tools">
               <li class="md:text-2xl list-none">{{stackTool}}</li>
             </div>
-            <a href="{{stack.url}}" target="_blank" class="underline md:text-2xl inline-flex gap-4 items-center">
-              <i class="fa fa-external-link-alt text-frnBase"></i>
+            <a href="{{stack.url}}" target="_blank" class="no-underline md:text-2xl inline-flex gap-4 items-center bg-frnHot px-4 py-2 rounded-md hover:text-white">
+              Visit Repo<i class="fa fa-external-link-alt text-frnBase"></i>
             </a>
           </div>
         </div>

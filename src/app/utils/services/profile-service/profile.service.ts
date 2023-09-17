@@ -43,6 +43,6 @@ export class ProfileService {
   }
   sendTestMail(data:{})
   {
-    return this.server.post<any>(`${this.api}/${this.path}/Test-Send-Email`, data);
+    return this.server.post<any>(`${this.api}/${this.path}/SendEmail`, data);
   }
 }

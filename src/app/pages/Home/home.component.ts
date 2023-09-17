@@ -99,8 +99,6 @@ export class HomeComponent implements OnInit {
       {
         alert("Mail has been sent to Frank.!")
       }
-      console.log(s);
-      
     })
 
     
