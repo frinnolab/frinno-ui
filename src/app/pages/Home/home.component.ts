@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ProfileService } from 'src/app/utils/services/profile-service/profile.service';
 
 @Component({
   selector: 'app-home',
@@ -71,7 +72,8 @@ export class HomeComponent implements OnInit {
   })
 
   constructor(
-    private router:Router
+    private router:Router,
+    private ps:ProfileService
   ) { }
 
   ngOnInit(): void {
@@ -80,6 +82,23 @@ export class HomeComponent implements OnInit {
   onSendContact = ()=>
   {
     console.log(this.contactForm.value);
+
+    var data = {
+      "fullname": this.contactForm.value.sender_fullname,
+      "senderEmail": this.contactForm.value.sender_email,
+      "mobile": this.contactForm.value.sender_mobile,
+      "company": this.contactForm.value.sender_company,
+      "roleOcupation": this.contactForm.value.sender_role,
+      "messageBody": this.contactForm.value.sender_message
+    }
+
+    this.ps.sendTestMail(data)
+    .subscribe((s)=>{
+      console.log(s);
+      
+    })
+
+    
   }
 
   onClearForm=()=>{
