@@ -98,6 +98,8 @@ export class HomeComponent implements OnInit {
       if(s)
       {
         alert("Mail has been sent to Frank.!")
+
+        this.contactForm.reset();
       }
     })
 
