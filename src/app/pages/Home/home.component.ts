@@ -81,38 +81,38 @@ export class HomeComponent implements OnInit {
 
   onSendContact = ()=>
   {
-    console.log(this.contactForm.value);
-
-    var data = {
-      "fullname": this.contactForm.value.sender_fullname,
-      "senderEmail": this.contactForm.value.sender_email,
-      "mobile": this.contactForm.value.sender_mobile,
-      "company": this.contactForm.value.sender_company,
-      "roleOcupation": this.contactForm.value.sender_role,
-      "messageBody": this.contactForm.value.sender_message
-    }
-
-    this.ps.sendTestMail(data)
-    .subscribe((s)=>{
-
-      if(s)
-      {
-        alert("Mail has been sent to Frank.!")
-
-        this.contactForm.reset();
+    if(!this.contactForm.errors)
+    {      
+      var data = {
+        "fullname": this.contactForm.value.sender_fullname,
+        "senderEmail": this.contactForm.value.sender_email,
+        "mobile": this.contactForm.value.sender_mobile,
+        "company": this.contactForm.value.sender_company,
+        "roleOcupation": this.contactForm.value.sender_role,
+        "messageBody": this.contactForm.value.sender_message
       }
-    })
+  
+      this.ps.sendTestMail(data)
+      .subscribe((s)=>{
+  
+        if(s)
+        {
+          alert("Mail has been sent to Frank.!")
+  
+          this.contactForm.reset();
+        }
+      })
+    }
+    else
+    {
+      
+    }
 
     
   }
 
   onClearForm=()=>{
-    this.contactForm.get('sender_fullname')?.setValue("");
-    this.contactForm.get('sender_company')?.setValue("");
-    this.contactForm.get('sender_email')?.setValue("");
-    this.contactForm.get('sender_mobile')?.setValue("");
-    this.contactForm.get('sender_role')?.setValue("");
-    this.contactForm.get('sender_message')?.setValue("");
+    this.contactForm.reset();
   }
 
   ngAfterViewInit(){
