@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChildFn, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivateChildFn, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable, catchError, map, of, retry } from 'rxjs';
 import { AuthService } from './auth.service';
 import { LoginRequest, LoginResponse } from 'src/app/data/dtos/auth/auth-dto.model';
