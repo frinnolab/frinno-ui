@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frinno-ui:build:production"
+              "buildTarget": "frinno-ui:build:production"
             },
             "development": {
-              "browserTarget": "frinno-ui:build:development"
+              "buildTarget": "frinno-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frinno-ui:build"
+            "buildTarget": "frinno-ui:build"
           }
         },
         "test": {
